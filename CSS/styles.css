@@ -1,0 +1,8 @@
+/* Selects root (the whole HTML doc) */
+:root {
+    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}   
