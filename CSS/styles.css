@@ -4,6 +4,8 @@
     font-size: 18px;
     --COC-Blue: rgba(1, 27, 64, 1);
     --COC-Yellow: rgba(255, 226, 18, 1);
+    --COC-Gray: rgba(217, 217, 217, 1);
+    --MESA-Red: rgba(255, 116, 107, 1);
 }  
 
 * {
@@ -99,6 +101,7 @@
 }
 
 #about-content {
+
 }
 
 #about-content > h1 {
@@ -113,4 +116,32 @@
 #about-content > button {
     display: grid;
     margin: auto;
+}
+
+#results-container {
+    padding: 4rem 1rem;
+    background-color: var(--MESA-Red);
+}
+
+#results-container > h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#results-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.stat-square {
+    background-color: var(--COC-Gray);
+    padding: 2rem 1rem;
+}
+
+#services-container {
+    padding: 4rem 1rem;
 }
