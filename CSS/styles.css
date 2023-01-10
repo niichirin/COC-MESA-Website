@@ -62,13 +62,13 @@
 }
 
 #headline-container p {
+    line-height: 1.5rem;
     padding: 2rem 0;
 }
 
-#join-mesa-btn {
+.primary-btn {
     background-color: var(--COC-Yellow);
     padding: 0.5rem 1rem;
-    width: 100%;
     font-weight: 900;
     font-size: 1rem;
     border: 2px solid black;
@@ -76,7 +76,23 @@
     transition: 0.15s;
 }
 
+#join-mesa-btn {
+    width: 100%;
+}
+
 #join-mesa-btn:hover {
     transform: scale(1.01, 1.01);
     background-color: white;
+}
+
+#about-container {
+    padding: 4rem 2rem;
+}
+
+#about-container > h1 {
+    text-align: center;
+}
+
+#about-container > p {
+    text-align: center;
 }
