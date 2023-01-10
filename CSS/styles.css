@@ -143,5 +143,21 @@
 }
 
 #services-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     padding: 4rem 1rem;
+    gap: 2rem;
+}
+
+#services-description {
+}
+
+#services-menu {
+    width: 75%;
+    height: 400px;
+    margin: auto;
+    background-color: lightgray;
 }
