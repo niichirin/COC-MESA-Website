@@ -13,6 +13,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* paddings for all containers */
+#headline-container, #about-container, #results-container, #services-container, #skills-lab-container, footer {
+    padding: 4rem 2rem;
+}
+
+@media only screen and (min-width: 769px) {
+    #headline-container, #about-container, #results-container, #services-container, #skills-lab-container, footer {
+        padding: 8rem 4rem;
+    }   
+}
+
+@media only screen and (min-width: 1025px) {
+    #headline-container, #about-container, #results-container, #services-container, #skills-lab-container, footer {
+        padding: 8rem 6rem;
+    }   
+}
+
+@media only screen and (min-width: 1201px) {
+    #headline-container, #about-container, #results-container, #services-container, #skills-lab-container, footer {
+        padding: 8rem 12rem;
+    }   
+}
+
 #topnav {
     position: fixed;
     top: 0;
@@ -21,8 +45,14 @@
     background-color: var(--COC-Blue);
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 550px) {
+    #nav-logo {
+        justify-content: right;
+    }
 }
 
 #topnav > img {
@@ -47,20 +77,31 @@
     margin-right: 1rem;
 }
 
+@media (max-width: 550px) {
+    #nav-logo {
+        display: none;
+    }
+}
+
 #headline-container {
     margin-top: 70px;
-    padding: 4rem 2rem;
     background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
     background-size: cover;
     color: white;
 }
 
-#headline-container h1 {
+#headline-container > h1 {
     text-align: center;
     font-size: 1.6rem;
 }
 
-#headline-container p {
+#headline-container > small {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+#headline-container > p {
     line-height: 1.5rem;
     padding: 2rem 0;
 }
@@ -87,7 +128,6 @@
 }
 
 #about-container {
-    padding: 4rem 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -119,7 +159,6 @@
 }
 
 #results-container {
-    padding: 4rem 1rem;
     background-color: var(--MESA-Red);
 }
 
@@ -148,7 +187,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 4rem 1rem;
     gap: 2rem;
 }
 
@@ -160,4 +198,13 @@
     height: 400px;
     margin: auto;
     background-color: lightgray;
+}
+
+#skills-lab-container {
+}
+
+footer {
+    background-color: var(--COC-Blue);
+    color: white;
+    padding: 4rem 1rem;
 }
