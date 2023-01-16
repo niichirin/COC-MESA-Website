@@ -191,30 +191,24 @@
     padding: 4rem 1rem;
 }
 
-.collapsible:last-of-type {
-    margin-bottom: 2rem;
-}
-
 .collapsible {
     cursor: pointer;
 
     width: 100%;
     padding: 1rem;
+    border: 1px solid white;
 
     text-align: left;
     font-size: 18px;
 
     background-color: var(--COC-Blue);
     color: white;
-    border: none;
 
     transition: 0.25s;
 }
 
 .collapsible:hover {
-    outline: 1px solid var(--COC-Blue);
-    background-color: white;
-    color: var(--COC-Blue);
+    background-color: #002860;
 }
 
 .collapsible::after {
@@ -224,6 +218,7 @@
 
 .collapsible-content {
     background-color: var(--COC-Gray);
+    border: 1px solid white;
     display: none;
     overflow: hidden;
     padding: 1rem;
