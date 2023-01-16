@@ -4,7 +4,7 @@
     font-size: 18px;
     --COC-Blue: rgba(1, 27, 64, 1);
     --COC-Yellow: rgba(255, 226, 18, 1);
-    --COC-Gray: rgba(217, 217, 217, 1);
+    --COC-Gray: rgba(228, 228, 228, 1);
     --MESA-Red: rgba(255, 116, 107, 1);
 }  
 
@@ -14,6 +14,7 @@
     box-sizing: border-box;
 }
 
+/* NAVIGATION */
 #topnav {
     position: fixed;
     top: 0;
@@ -60,7 +61,9 @@
     }
 }
 
+/* HEADLINE */
 #headline-container {
+    padding: 4rem 1rem;
     margin-top: 70px;
     background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
     background-size: cover;
@@ -104,7 +107,9 @@
     background-color: white;
 }
 
+/* ABOUT */
 #about-container {
+    padding: 4rem 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -135,7 +140,9 @@
     margin: auto;
 }
 
+/* RESULTS */
 #results-container {
+    padding: 4rem 1rem;
     background-color: var(--MESA-Red);
 }
 
@@ -158,7 +165,9 @@
     padding: 2rem 1rem;
 }
 
+/* SERVICES */
 #services-container {
+    padding: 4rem 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -177,7 +186,47 @@
     background-color: lightgray;
 }
 
+/* SKILLS LAB */
 #skills-lab-container {
+    padding: 4rem 1rem;
+}
+
+.collapsible:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.collapsible {
+    cursor: pointer;
+
+    width: 100%;
+    padding: 1rem;
+
+    text-align: left;
+    font-size: 18px;
+
+    background-color: var(--COC-Blue);
+    color: white;
+    border: none;
+
+    transition: 0.25s;
+}
+
+.collapsible:hover {
+    outline: 1px solid var(--COC-Blue);
+    background-color: white;
+    color: var(--COC-Blue);
+}
+
+.collapsible::after {
+    content: '+';
+    float: right;
+}
+
+.collapsible-content {
+    background-color: var(--COC-Gray);
+    display: none;
+    overflow: hidden;
+    padding: 1rem;
 }
 
 footer {
