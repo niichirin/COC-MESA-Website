@@ -5,7 +5,7 @@
     --COC-Blue: rgba(1, 27, 64, 1);
     --COC-Yellow: rgba(255, 226, 18, 1);
     --COC-Gray: rgba(228, 228, 228, 1);
-    --MESA-Red: rgba(255, 116, 107, 1);
+    --MESA-Red: rgb(255, 140, 132);
 }  
 
 * {
@@ -193,27 +193,25 @@
 }
 
 #about-container > img {
+    order: 1;
     width: 100%;
-}
-
-@media only screen and (min-width: 481px) {
-    #about-container > img {
-        width: 80%;
-    }
 }
 
 @media only screen and (min-width: 769px) {
     #about-container > img {
+        order: 2;
         width: 50%;
     }
 }
 
 #about-content {
+    order: 2;
     width: 100%;
 }
 
 @media only screen and (min-width: 769px) {
     #about-content {
+        order: 1;
         width: 50%;
     }
 }
