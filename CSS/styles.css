@@ -219,16 +219,11 @@
 }
 
 #about-content > h1 {
-    text-align: center;
+    text-align: left;
 }
 
 #about-content > p {
     padding: 1rem 0;
-}
-
-#about-content > button {
-    display: grid;
-    margin: auto;
 }
 
 /* RESULTS */
