@@ -14,29 +14,6 @@
     box-sizing: border-box;
 }
 
-/* paddings for all containers */
-#headline-container, #about-container, #results-container, #services-container, #skills-lab-container, footer {
-    padding: 4rem 2rem;
-}
-
-@media only screen and (min-width: 769px) {
-    #headline-container, #about-container, #results-container, #services-container, #skills-lab-container, footer {
-        padding: 8rem 4rem;
-    }   
-}
-
-@media only screen and (min-width: 1025px) {
-    #headline-container, #about-container, #results-container, #services-container, #skills-lab-container, footer {
-        padding: 8rem 6rem;
-    }   
-}
-
-@media only screen and (min-width: 1201px) {
-    #headline-container, #about-container, #results-container, #services-container, #skills-lab-container, footer {
-        padding: 8rem 12rem;
-    }   
-}
-
 #topnav {
     position: fixed;
     top: 0;
