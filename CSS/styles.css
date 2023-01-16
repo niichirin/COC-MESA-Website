@@ -207,20 +207,30 @@
     transition: 0.25s;
 }
 
-.collapsible:hover {
+.collapsible:hover, .collapsible-active {
     background-color: #002860;
 }
 
-.collapsible::after {
+.collapsible::after { /* Open icon */
     content: '+';
+    color: white;
     float: right;
 }
 
-.collapsible-content {
+.collapsible-active::after { /* Close icon */
+    content: "-";
+}
+
+.collapsible-content { /* Hidden by default */
     background-color: var(--COC-Gray);
     border: 1px solid white;
-    display: none;
+
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.collapsible-content p {
     padding: 1rem;
 }
 
