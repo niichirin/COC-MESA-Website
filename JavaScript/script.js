@@ -12,7 +12,7 @@ function toggleCollapsible(e) {
     if (content.style.maxHeight) { // if content shows
         content.style.maxHeight = null; // hide it (remove height)
     } else {
-        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.maxHeight = `${content.scrollHeight}px`;
         // account for all visible and off-screen content with .scrollHeight
     }
 }
