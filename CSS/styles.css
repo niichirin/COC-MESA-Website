@@ -27,6 +27,12 @@
     align-items: center;
 }
 
+@media (max-width: 550px) {
+    #nav-logo {
+        justify-content: right;
+    }
+}
+
 @media only screen and (min-width: 481px) {
     #topnav {
         padding: 0 1rem;
@@ -48,12 +54,6 @@
 @media only screen and (min-width: 1201px) {
     #topnav {
         padding: 0 12rem;
-    }
-}
-
-@media (max-width: 550px) {
-    #nav-logo {
-        justify-content: right;
     }
 }
 
@@ -79,7 +79,7 @@
     margin-right: 1rem;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 769px) {
     #nav-logo {
         display: none;
     }
@@ -92,6 +92,30 @@
     background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
     background-size: cover;
     color: white;
+}
+
+@media only screen and (min-width: 481px) {
+    #headline-container {
+        padding: 4rem 2rem;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    #headline-container {
+        padding: 4rem;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #headline-container {
+        padding: 8rem;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    #headline-container {
+        padding: 8rem 12rem;
+    }
 }
 
 #headline-container > h1 {
@@ -141,6 +165,31 @@
     align-items: center;
     gap: 1rem;
 }
+
+@media only screen and (min-width: 481px) {
+    #about-container {
+        padding: 4rem 2rem;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    #about--container {
+        padding: 4rem;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #about-container {
+        padding: 8rem;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    #about-container {
+        padding: 8rem 12rem;
+    }
+}
+
 
 #about-container > img {
     width: 300px;
