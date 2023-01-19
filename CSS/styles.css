@@ -98,8 +98,11 @@
 
 @media only screen and (min-width: 481px) {
     #headline-container {
-        font-size: 1.2rem;
         padding: 4rem 2rem;
+    }
+
+    #headline-container > p {
+        font-size: 1.2rem;
     }
 }
 
@@ -111,8 +114,11 @@
 
 @media only screen and (min-width: 1025px) {
     #headline-container {
-        font-size: 1.4rem;
         padding: 8rem;
+    }
+
+    #headline-container > p {
+        font-size: 1.4rem;
     }
 }
 
@@ -225,12 +231,13 @@
     }
 }
 
+
 #about-content > h1 {
     text-align: left;
 }
 
 #about-content > p {
-    padding: 1rem 0;
+    margin-bottom: 1rem;
 }
 
 /* RESULTS */
