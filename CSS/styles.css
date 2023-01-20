@@ -1,6 +1,6 @@
 /* Selects root (the whole HTML doc) */
 :root {
-    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+    font-family: Kievit, Helvetica, Arial, Lucida, sans-serif;
     font-size: 18px;
     --COC-Blue: rgba(1, 27, 64, 1);
     --COC-Yellow: rgba(255, 226, 18, 1);
@@ -15,7 +15,8 @@
     box-sizing: border-box;
 }
 
-/* NAVIGATION */
+/* NAVIGATION 
+*/
 #topnav {
     position: fixed;
     top: 0;
@@ -335,7 +336,14 @@
 }
 
 footer {
-    background-color: var(--COC-Blue);
+    background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
+    background-repeat: no-repeat;
+    background-size: cover; /* image covers entire footer */
     color: white;
     padding: 4rem 1rem;
+}
+
+input, textarea {
+    font-size: 1rem;
+    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
 }
