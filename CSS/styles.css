@@ -308,15 +308,34 @@
     flex-grow: 1;
 }
 
-@media only screen and (min-width: 650px) {
-    .service-icon {
-
-    }
-}
-
 /* SKILLS LAB */
 #skills-lab-container {
     padding: 4rem 1rem;
+}
+
+@media only screen and (min-width: 480px) {
+    #skills-lab-container {
+        padding: 4rem 2rem;
+    }   
+}
+
+@media only screen and (min-width: 769px) {
+    #skills-lab-container {
+        padding: 4rem 4rem;
+    }   
+}
+
+@media only screen and (min-width: 1200px) {
+    #skills-lab-container {
+        padding: 4rem 8rem;
+    }   
+}
+
+@media only screen and (min-width: 992px) {
+    #collapsible-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .collapsible-btn {
