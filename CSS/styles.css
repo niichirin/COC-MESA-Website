@@ -4,7 +4,7 @@
     font-size: 18px;
     --COC-Blue: rgba(1, 27, 64, 1);
     --COC-Yellow: rgba(255, 226, 18, 1);
-    --COC-Gray: rgba(228, 228, 228, 1);
+    --COC-Gray: rgba(236, 236, 236, 1);
     --MESA-Red: rgb(255, 140, 132);
 }  
 
@@ -381,8 +381,41 @@
     padding: 1rem;
 } */
 
+#skills-lab-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 
+.skills-lab-btn {   
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--COC-Blue);
+    color: white;
 
+    width: 25%;
+    padding: 1rem 2rem;
+
+    cursor: pointer; /* show icon interactivity */
+}
+
+.skills-lab-tab {
+    background-color: var(--COC-Gray);
+    padding: 2rem 1rem;
+    margin-bottom: .5rem;
+    border: 1px var(--COC-Blue) solid;
+
+    display: none;
+}
+
+.closeLabBtn {
+    float: right;
+    cursor: pointer; /* show icon interactivity */
+}
 /* FOOTER */
 footer {
     background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
