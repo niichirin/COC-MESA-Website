@@ -15,8 +15,7 @@
     box-sizing: border-box;
 }
 
-/* NAVIGATION 
-*/
+/* NAVIGATION */
 #topnav {
     position: fixed;
     top: 0;
@@ -264,6 +263,7 @@
 .stat-square {
     background-color: var(--COC-Gray);
     padding: 2rem 1rem;
+    width: 90%;
 }
 
 /* SERVICES */
