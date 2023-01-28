@@ -331,7 +331,7 @@
     }   
 }
 
-@media only screen and (min-width: 992px) {
+/* @media only screen and (min-width: 992px) {
     #collapsible-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -358,28 +358,30 @@
     background-color: #002860;
 }
 
-.collapsible-btn::after { /* Open icon */
+.collapsible-btn::after {
     content: '+';
     color: white;
     float: right;
 }
 
-.collapsible-btn-active::after { /* Close icon */
+.collapsible-btn-active::after {
     content: "-";
 }
 
-.collapsible-content { /* Hidden by default */
+.collapsible-content {
     background-color: var(--COC-Gray);
     border: 1px solid white;
 
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: height 0.2s ease-out;
 }
 
 .collapsible-content p {
     padding: 1rem;
-}
+} */
+
+
 
 /* FOOTER */
 footer {
