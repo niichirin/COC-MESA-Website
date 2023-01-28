@@ -319,7 +319,7 @@
     padding: 4rem 1rem;
 }
 
-.collapsible {
+.collapsible-btn {
     cursor: pointer;
 
     width: 100%;
@@ -335,17 +335,17 @@
     transition: 0.25s;
 }
 
-.collapsible:hover, .collapsible-active {
+.collapsible-btn:hover, .collapsible-btn-active {
     background-color: #002860;
 }
 
-.collapsible::after { /* Open icon */
+.collapsible-btn::after { /* Open icon */
     content: '+';
     color: white;
     float: right;
 }
 
-.collapsible-active::after { /* Close icon */
+.collapsible-btn-active::after { /* Close icon */
     content: "-";
 }
 
@@ -362,6 +362,7 @@
     padding: 1rem;
 }
 
+/* FOOTER */
 footer {
     background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
     background-repeat: no-repeat;
