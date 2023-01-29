@@ -442,6 +442,7 @@
     float: right;
     cursor: pointer; /* show icon interactivity */
 }
+
 /* FOOTER */
 footer {
     background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
@@ -449,9 +450,13 @@ footer {
     background-size: cover; /* image covers entire footer */
     color: white;
     padding: 4rem 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, min-content);
 }
 
-input, textarea {
-    font-size: 1rem;
-    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+footer > h1 {
+    text-align: center;
+    grid-column: 1 / -1;
 }
