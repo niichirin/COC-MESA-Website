@@ -404,6 +404,27 @@
     cursor: pointer; /* show icon interactivity */
 }
 
+/* prevent single row of buttons on smaler viewports*/
+@media only screen and (max-width: 769px) {
+    #skills-lab-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .skills-lab-btn {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #skills-lab-row {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .skills-lab-btn {
+        width: 100%;
+    }
+}
+
 .skills-lab-btn:hover , .skills-lab-btn-active {
     background-color: #002860;
 }
