@@ -168,6 +168,11 @@
     margin-bottom: 1rem;
 }
 
+#about-content > button:hover {
+    transform: scale(1.01, 1.01);
+    background-color: white;
+}
+
 /* RESULTS */
 #results-container {
     padding: 4rem 1rem;
@@ -285,9 +290,18 @@
     color: black;
     background-color: var(--COC-Yellow);
     padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
 
     width: 100%;
     height: 150px;
+
+    transition: 0.25s;
+}
+
+.service-square:hover {
+    transform: translateX(-2px) translateY(-2px);
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.25);
 }
 
 @media only screen and (min-width: 480px) {
@@ -375,6 +389,14 @@
     padding: 1rem 2rem;
 
     cursor: pointer; /* show icon interactivity */
+
+    transition: 0.25s;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.skills-lab-btn:hover {
+    transform: translateY(3px);
+    box-shadow: 2px 5px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* prevent single row of buttons on smaler viewports*/
