@@ -396,11 +396,16 @@
     text-align: center;
     background-color: var(--COC-Blue);
     color: white;
+    transition: 0.25s;
 
     width: 25%;
     padding: 1rem 2rem;
 
     cursor: pointer; /* show icon interactivity */
+}
+
+.skills-lab-btn:hover , .skills-lab-btn-active {
+    background-color: #002860;
 }
 
 .skills-lab-tab {
@@ -409,7 +414,7 @@
     margin-bottom: .5rem;
     border: 1px var(--COC-Blue) solid;
 
-    display: none;
+    display: none; /* display w/ JS */
 }
 
 .closeLabBtn {

@@ -18,3 +18,23 @@ function toggleCollapsible(e) {
     }
 }
 */
+
+const skillsLabTabs = document.querySelectorAll('.skills-lab-tab');
+const skillsLabBtns = document.querySelectorAll('skills-lab-btn')
+
+/* GUIDE for changing lab displays: https://www.w3schools.com/howto/howto_js_expanding_grid.asp */
+function openLab(newTab) {
+    skillsLabTabs.forEach( tab => {
+        if (tab.id != newTab) {
+            tab.style.display = 'none';
+        } else {
+            tab.style.display = 'block';
+        }
+    })
+}
+
+function closeLab(currentTab) {
+    skillsLabTabs.forEach( tab => {
+        if (tab.id == currentTab) tab.style.display = 'none';
+    });
+}
