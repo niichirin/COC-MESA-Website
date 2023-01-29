@@ -79,7 +79,7 @@
 
 .primary-btn {
     background-color: var(--COC-Yellow);
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     font-weight: 900;
     font-size: 1rem;
     border: 2px solid black;
@@ -451,11 +451,52 @@ footer > h1 {
     text-align: center;
 }
 
-/* footer grid 1 */
+#footer-form {
+    display: flex; /* default for mobile design */
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+    width: 100%;
+}
+
+input[value="Send Message"] {
+    width: 100%;
+}
+
+textarea {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+
+    resize: vertical;
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+#footer-details > * > h3 {
+    margin-top: .5rem;
+    text-decoration: underline;
+}
+
+/* footer grid query 1 (smaller than tablet) */
 @media only screen and (min-width: 480px) and (max-width: 769px) {
     footer {
         padding: 4rem 2rem;
     }
+
+    input[value="Send Message"] {
+        margin: auto;
+        width: 50%;
+    }
+
     #footer-details {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -471,19 +512,13 @@ footer > h1 {
     }
 }
 
-#footer-details > * > h3 {
-    margin-top: .5rem;
-    text-decoration: underline
-}
-
-/* footer grid 2 */
-/* prevent footer grid from shrinking too small on smaller viewports */
+/* footer grid query 2 (bigger than tablet) */
 @media only screen and (min-width: 769px) {
     footer {
         padding: 4rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, min-content);
+        grid-template-rows: repeat(3, min-content);
         gap: 1rem;
     }
 
@@ -492,14 +527,22 @@ footer > h1 {
     }
     
     #footer-form {
+        padding: 0 1rem;
+
         grid-column: 1 / -2;
 
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, min-content);
+        grid-template-rows: repeat(4, min-content);
         gap: 0.5rem;
     }
-    
+
+    input[value="Send Message"] {
+        margin-top: 0;
+        width: 100%;
+        grid-column: 3 / -1;
+    }
+
     #name-div {
         grid-column: 1 / 3;
         grid-row: 1 / 2;
@@ -524,22 +567,20 @@ footer > h1 {
     }
 }
 
-input {
-    padding: 0.25rem 0.5rem;
-    font-size: 1rem;
-    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
-    width: 100%;
+@media only screen and (min-width: 992px) {
+    #footer-form {
+        padding: 0 2rem;
+    }
+
+    input[value="Send Message"] {
+        margin-top: 0;
+        grid-column: 4 / -1;
+    }
 }
 
-textarea {
-    padding: 0.25rem 0.5rem;
-    font-size: 1rem;
-    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
 
-    resize: vertical;
-    width: 100%;
-    max-width: 100%;
-    height: 150px;
-    min-height: 100px;
-    max-height: 200px;
+@media only screen and (min-width: 1200px) {
+    #footer-form {
+        padding: 0 4rem;
+    }
 }
