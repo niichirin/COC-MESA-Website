@@ -460,3 +460,18 @@ footer > h1 {
     text-align: center;
     grid-column: 1 / -1;
 }
+
+input, textarea {
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+}
+
+textarea {
+    resize: vertical;
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    min-height: 100px;
+    max-height: 200px;
+}
