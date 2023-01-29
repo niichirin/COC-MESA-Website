@@ -5,7 +5,7 @@
     --COC-Blue: rgba(1, 27, 64, 1);
     --COC-Yellow: rgba(255, 226, 18, 1);
     --COC-Gray: rgba(236, 236, 236, 1);
-    --MESA-Red: rgb(255, 140, 132);
+    --MESA-Red: #FF6257;
 }  
 
 * {
@@ -40,7 +40,7 @@
     }
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 992px) {
     #headline-container {
         padding: 8rem;
     }
@@ -50,7 +50,7 @@
     }
 }
 
-@media only screen and (min-width: 1201px) {
+@media only screen and (min-width: 1200px) {
     #headline-container {
         padding: 8rem 12rem;
     }
@@ -172,6 +172,29 @@
 #results-container {
     padding: 4rem 1rem;
     background-color: var(--MESA-Red);
+}
+
+@media only screen and (min-width: 480px) {
+    #results-container {
+        padding: 4rem 2rem;
+    }
+}
+@media only screen and (min-width: 769px) {
+    #results-container {
+        padding: 4rem 4rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #results-container {
+        padding: 4rem 8rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #results-container {
+        padding: 4rem 12rem;
+    }
 }
 
 #results-container > h1 {
