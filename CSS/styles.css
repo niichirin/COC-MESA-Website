@@ -331,56 +331,6 @@
     }   
 }
 
-/* @media only screen and (min-width: 992px) {
-    #collapsible-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.collapsible-btn {
-    cursor: pointer;
-
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid white;
-
-    text-align: left;
-    font-size: 18px;
-
-    background-color: var(--COC-Blue);
-    color: white;
-
-    transition: 0.25s;
-}
-
-.collapsible-btn:hover, .collapsible-btn-active {
-    background-color: #002860;
-}
-
-.collapsible-btn::after {
-    content: '+';
-    color: white;
-    float: right;
-}
-
-.collapsible-btn-active::after {
-    content: "-";
-}
-
-.collapsible-content {
-    background-color: var(--COC-Gray);
-    border: 1px solid white;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: height 0.2s ease-out;
-}
-
-.collapsible-content p {
-    padding: 1rem;
-} */
-
 #skills-lab-row {
     display: flex;
     flex-direction: row;
