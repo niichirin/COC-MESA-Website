@@ -461,6 +461,27 @@ footer > h1 {
     grid-column: 1 / -1;
 }
 
+#footer-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, min-content);
+}
+
+#name {
+
+}
+
+#email {
+
+}
+
+#subject {
+
+}
+
+#message {
+}
+
 input, textarea {
     width: 100%;
     font-size: 1rem;
