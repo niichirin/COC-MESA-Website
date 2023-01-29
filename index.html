@@ -88,55 +88,27 @@
     <div id="skills-lab-container">
         <h2>MESA Skills Lab</h2>
         <p style="margin-bottom:2rem;">Learn practical skills with other STEM students.</p>
-        <!-- <div id="collapsible-container">
-            <div>
-                <button type="button" class="collapsible-btn">Biology</button>
-                <div class="collapsible-content">
-                    <p>Learn biology laboratory skills such as pipetting and micropipetting.</p>
-                </div>    
-            </div>
-    
-            <div>
-                <button type="button" class="collapsible-btn">Engineering</button>
-                <div class="collapsible-content">
-                    <p>Construct a spectrophotometer.</p>
-                </div>    
-            </div>
-    
-            <div>
-                <button type="button" class="collapsible-btn">Physics</button>
-                <div class="collapsible-content">
-                    <p>Learn the basics of physics with a cart that you will design, build, test, and record data with.</p>
-                </div>
-            </div>
-    
-            <div>
-                <button type="button" class="collapsible-btn">Front-End Development</button>
-                <div class="collapsible-content">
-                    <p>Collaborate with others using Git and GitHub. Learn how to build a static webpage with markup HTML and CSS. Then, make it dynamic by adding interactivity with JavaScript programming.</p>
-                </div>
-            </div>
-        </div> -->
+        <!-- open/close button id corresponds with tab id -->
         <div id="skills-lab-row">
-            <div class="skills-lab-btn" onclick="openLab('biology')"><p>Biology</p></div>
-            <div class="skills-lab-btn" onclick="openLab('engineering')"><p>Engineering</p></div>
-            <div class="skills-lab-btn" onclick="openLab('physics')"><p>Physics</p></div>
-            <div class="skills-lab-btn" onclick="openLab('coding')"><p>Coding</p></div>
+            <div class="skills-lab-btn" onclick="openLab('biology-tab')"><p>Biology</p></div>
+            <div class="skills-lab-btn" onclick="openLab('engineering-tab')"><p>Engineering</p></div>
+            <div class="skills-lab-btn" onclick="openLab('physics-tab')"><p>Physics</p></div>
+            <div class="skills-lab-btn" onclick="openLab('coding-tab')"><p>Coding</p></div>
         </div>
-        <div id="biology" class="skills-lab-tab">
-            <h3>Biology Skills Lab<span class="closeLabBtn" onclick="closeLab('biology')">X</span></h3>
+        <div id="biology-tab" class="skills-lab-tab">
+            <h3>Biology Skills Lab<span class="closeLabBtn" onclick="closeLab('biology-tab')">X</span></h3>
             <p>Learn biology laboratory skills such as pipetting and micropipetting.</p>
         </div>
-        <div id="engineering" class="skills-lab-tab">
-            <h3>Engineering Skills Lab<span class="closeLabBtn" onclick="closeLab('engineering')">X</span></h3>
+        <div id="engineering-tab" class="skills-lab-tab">
+            <h3>Engineering Skills Lab<span class="closeLabBtn" onclick="closeLab('engineering-tab')">X</span></h3>
             <p>Learn soldering, circuitry, and 3-D printing by constructing a spectrophotometer</p>
         </div>
-        <div id="physics" class="skills-lab-tab">
-            <h3>Physics Skills Lab<span class="closeLabBtn" onclick="closeLab('physics')">X</span></h3>
+        <div id="physics-tab" class="skills-lab-tab">
+            <h3>Physics Skills Lab<span class="closeLabBtn" onclick="closeLab('physics-tab')">X</span></h3>
             <p>Learn the basics of physics with a cart that you will design, build, test, and record data with.</p>
         </div>
-        <div id="coding" class="skills-lab-tab">
-            <h3>Front-End Development Lab<span class="closeLabBtn" onclick="closeLab('coding')">X</span></h3>
+        <div id="coding-tab" class="skills-lab-tab">
+            <h3>Front-End Development Lab<span class="closeLabBtn" onclick="closeLab('coding-tab')">X</span></h3>
             <p>Collaborate with others using Git and GitHub. Learn how to build a static webpage with markup HTML and CSS. Then, make it dynamic by adding interactivity with JavaScript programming.</p>
         </div>
     </div>
