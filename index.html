@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/nav-and-header.css">
+    <link rel="stylesheet" href="CSS/universal.css">
     <link rel="stylesheet" href="CSS/styles.css">
     <title>MESA at College of the Canyons</title>
 </head>
@@ -85,29 +85,29 @@
         </div>
     </div>
 
-    <div id="skills-lab-container">
+    <div id="lab-overview-container">
         <h2>MESA Skills Lab</h2>
         <p style="margin-bottom:2rem;">Learn practical skills with other STEM students.</p>
         <!-- open/close button id corresponds with tab id -->
-        <div id="skills-lab-row">
-            <div class="skills-lab-btn" onclick="openLab('biology-tab')"><p>Biology</p></div>
-            <div class="skills-lab-btn" onclick="openLab('engineering-tab')"><p>Engineering</p></div>
-            <div class="skills-lab-btn" onclick="openLab('physics-tab')"><p>Physics</p></div>
-            <div class="skills-lab-btn" onclick="openLab('coding-tab')"><p>Coding</p></div>
+        <div id="lab-overview-row">
+            <div class="lab-overview-btn" onclick="openLab('biology-tab')"><p>Biology</p></div>
+            <div class="lab-overview-btn" onclick="openLab('engineering-tab')"><p>Engineering</p></div>
+            <div class="lab-overview-btn" onclick="openLab('physics-tab')"><p>Physics</p></div>
+            <div class="lab-overview-btn" onclick="openLab('coding-tab')"><p>Coding</p></div>
         </div>
-        <div id="biology-tab" class="skills-lab-tab">
+        <div id="biology-tab" class="lab-overview-tab">
             <h3>Biology Skills Lab<span class="closeLabBtn" onclick="closeLab('biology-tab')">X</span></h3>
             <p>Learn biology laboratory skills such as pipetting and micropipetting.</p>
         </div>
-        <div id="engineering-tab" class="skills-lab-tab">
+        <div id="engineering-tab" class="lab-overview-tab">
             <h3>Engineering Skills Lab<span class="closeLabBtn" onclick="closeLab('engineering-tab')">X</span></h3>
             <p>Learn soldering, circuitry, and 3-D printing by constructing a spectrophotometer</p>
         </div>
-        <div id="physics-tab" class="skills-lab-tab">
+        <div id="physics-tab" class="lab-overview-tab">
             <h3>Physics Skills Lab<span class="closeLabBtn" onclick="closeLab('physics-tab')">X</span></h3>
             <p>Learn the basics of physics with a cart that you will design, build, test, and record data with.</p>
         </div>
-        <div id="coding-tab" class="skills-lab-tab">
+        <div id="coding-tab" class="lab-overview-tab">
             <h3>Front-End Development Lab<span class="closeLabBtn" onclick="closeLab('coding-tab')">X</span></h3>
             <p>Collaborate with others using Git and GitHub. Learn how to build a static webpage with markup HTML and CSS. Then, make it dynamic by adding interactivity with JavaScript programming.</p>
         </div>

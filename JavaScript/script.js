@@ -19,8 +19,8 @@ function toggleCollapsible(e) {
 }
 */
 
-const skillsLabTabs = document.querySelectorAll('.skills-lab-tab');
-const skillsLabBtns = document.querySelectorAll('skills-lab-btn')
+const skillsLabTabs = document.querySelectorAll('.lab-overview-tab');
+const skillsLabBtns = document.querySelectorAll('lab-overview-btn')
 
 /* GUIDE for changing lab displays: https://www.w3schools.com/howto/howto_js_expanding_grid.asp */
 function openLab(newTab) {
