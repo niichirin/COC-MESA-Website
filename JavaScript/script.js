@@ -1,23 +1,11 @@
-const collapsibleBtns = document.querySelectorAll('.collapsible-btn');
-collapsibleBtns.forEach( (button) => {
-    button.addEventListener('click', toggleCollapsible);
-});
-
-/*
-function toggleCollapsible(e) {
-    let button = e.target;
-    button.classList.toggle('collapsible-btn-active');
-
-    let content = button.nextElementSibling;
-    if (content.style.maxHeight) { // if content shows
-        content.style.maxHeight = null; // hide it (remove height)
+function openNavBar() {
+    let navbar = document.getElementById("primaryTopnav");
+    if (navbar.className === "topnav") {
+        navbar.className += " responsive";
     } else {
-        content.style.maxHeight = `${content.style.height}px`;
-
-        // account for all visible and off-screen content with .scrollHeight
+        navbar.className = "topnav";
     }
-}
-*/
+  }
 
 const skillsLabTabs = document.querySelectorAll('.lab-overview-tab');
 const skillsLabBtns = document.querySelectorAll('lab-overview-btn')
