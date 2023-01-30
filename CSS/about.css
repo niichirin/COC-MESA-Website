@@ -46,4 +46,14 @@ input, textarea {
 .biography-container > img {
     display: block;
     margin: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
 }
+.biography-container{
+    padding: 1rem 4rem;
+
+
+}
+
