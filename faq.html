@@ -7,15 +7,25 @@
     <title>MESA FAQs</title>
 </head>
 <body>
-    <div id="topnav">
-        <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt="">
+    <div id="primaryTopnav" class="topnav">
+        <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
         <a href="index.html">Home</a>
         <a href="join.html">Join</a>
         <a href="about.html">About</a>
         <a href="events.html">Events</a>
-        <a href="faq.html">Help</a>
+        <div class="dropdown">
+            <button class="dropdown-btn">Help
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-links">
+                <a href="faq.html">Counseling</a>
+                <a href="faq.html">Tutoring</a>
+                <a href="faq.html">FAQ</a>
+                <a href="faq.html">Contact</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
     </div>
-
     <h1 style="margin-top: 70px">Frequently Asked Questions</h1>
     <h2><u>Who Are We?</u></h2>
     <p>The <b>M</b>athematics, <b>E</b>ngineering, and <b>S</b>cience <b>A</b>chievement (MESA) Program serves to enrich the experience of students in math, science, and engineering at College of the Canyons. We support financially disadvantaged and/or historically underrepresented students by providing a variety of services, including: academic advisement, discipline-specific enrichment, and community building opportunities. Our primary goal is to equip MESA students with the skills and attitudes necessary for their successful transfer to university.</p>
@@ -136,7 +146,7 @@
     <p>If you have a GPA of at least 3.0 and are eligible for financial aid, you may qualify for the Physics/Calculus Book Award Program! You may receive a free textbook if your are enrolled in <b>Physics 220</b> OR <b>Math 211</b>. A limited number of awards are available so make sure to submit your application as soon as possible! This program is open to all STEM majors. For more information and an application, please visit the MESA Center.</p>
 
     <p>If you have any further questions, please contact Amy Foote at <b>amy.foote@canyons.edu</b></p>
-
+    <script src="JavaScript/script.js"></script>
 </body>
 <footer>
     <h1 id="footer-heading">MESA at College of the Canyons</h1>
