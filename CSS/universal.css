@@ -29,6 +29,7 @@
 }
 
 /* ||| NAVIGATION BAR ||| */
+
 /* fix bar to top and add background color */
 .topnav {
     position: fixed;
@@ -36,6 +37,12 @@
     width: 100%;
     z-index: 2;
     background-color: var(--COC-Blue);
+}
+
+/* Prevent overlay with container/item after the topnav */
+/* NOTE: topnav must be the first container in the body tag for this to work */
+body:nth-child(2) {
+    margin-top: 64.4px;
 }
 
 /* must style primary links with > selector */

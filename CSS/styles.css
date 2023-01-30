@@ -3,7 +3,6 @@
 /* ||| index-lab.html ||| */
 /* || HEADLINE */
 #headline-container {
-    margin-top: 64.4;
     padding: 4rem 1rem;
     background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
     background-size: cover;
