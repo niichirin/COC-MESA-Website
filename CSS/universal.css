@@ -17,6 +17,11 @@
     box-sizing: border-box;
 }
 
+/* counteract margin and padding being CSS reset by * selector */
+li {
+    margin-left: 40px;
+}
+
 /* primary buttons */
 .primary-btn {
     background-color: var(--COC-Yellow);
