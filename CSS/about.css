@@ -1,0 +1,49 @@
+:root {
+    font-family: Kievit, Helvetica, Arial, Lucida, sans-serif;
+    font-size: 18px;
+    --COC-Blue: rgba(1, 27, 64, 1);
+    --COC-Yellow: rgba(255, 226, 18, 1);
+    --COC-Gray: rgba(228, 228, 228, 1);
+    --MESA-Red: rgb(255, 140, 132);
+}  
+* {
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#Mission-container {
+    padding: 4rem 1rem;
+    margin-top: 0px;
+    background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://b620782.smushcdn.com/620782/wp-content/uploads/2021/03/web-klassen-corp-036-850x458-1.jpg?lossy=1&strip=1&webp=1");
+    background-size: cover;
+    color: white;
+}
+footer {
+    background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://images.squarespace-cdn.com/content/v1/5b5f36c7266c07f5f69b2e22/1534883574204-LMOZ3O7QHQDW2QFU4AE1/college-of-the-canyons.png?format=750w");
+    background-repeat: no-repeat;
+    background-size: cover; /* image covers entire footer */
+    color: white;
+    padding: 4rem 1rem;
+}
+input, textarea {
+    font-size: 1rem;
+    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+}
+#footer-heading {
+    color:rgb(255, 140, 132)
+}
+#mission-heading {
+    color: rgb(255, 140, 132);
+}
+#nav-container{
+    background-color: rgba(1, 27, 64, 1);
+}
+.biography-container > h2, .biography-container > h4 {
+    text-align: center;
+}
+
+.biography-container > img {
+    display: block;
+    margin: auto;
+}
