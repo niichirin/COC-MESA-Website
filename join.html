@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/universal.css">
-    <link rel="stylesheet" href="CSS/styles.css">
+    <!-- <link rel="stylesheet" href="CSS/universal.css">
+    <link rel="stylesheet" href="CSS/styles.css"> -->
     <title>Join MESA at COC!</title>
 </head>
 <body>
@@ -77,132 +77,313 @@
     <h1 id="join-us">MESA Community College Program (MCCP) Application</h1>
     <p>Please Complete All Items</p>
     <form action="joinus.php" method="post">
+        <h3>Student Info</h3>
         <label for="coc-id">CoC ID Number</label><br>
         <input type="text" id="coc-id" name="coc-id"><br>
+
         <label for="date">Date</label><br>
-        <input type="text" id="date" name="date"><br>
-        <label for="date">Date</label><br>
-        <input type="text" id="date" name="date"><br>
+        <input type="date" id="date" name="date"><br>
+
         <label for="fname">First Name:</label><br>
         <input type="text" id="fname" name="fname"><br>
+
         <label for="mname">Middle (or intial)</label><br>
         <input type="text" id="mname" name="mname"><br>
+
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname"><br>
+
+        <label for="address">Permanent Address</label><br>
+        <input type="text" id="address" name="address"><br>
+
         <label for="address">Current Address/Mailing Address(if different)</label><br>
         <input type="text" id="address" name="address"><br>
+
         <label for="city">City</label><br>
         <input type="text" id="city" name="city"><br>
+
         <label for="state">State</label><br>
         <input type="text" id="state" name="state"><br>
+
+        <label for="state">ZIP</label><br>
+        <input type="text" id="state" name="state"><br>
+
+        <!-- TO DO:
+            Use phone number specific inputs
+        -->
         <label for="homephone">Home Phone</label><br>
         <input type="text" id="homephone" name="homephone"><br>
+
         <label for="cellphone">Cell Phone</label><br>
         <input type="text" id="cellphone" name="cellphone"><br>
-        <label for="pemail">Personal Email</label><br>
-        <input type="text" id="pemail" name="pemail"><br>
-        <label for="cocemail">COC Email</label><br>
-        <input type="text" id="cocemail" name="cocemail"><br>
+
+
+        <!-- TO DO:
+            Use email specific inputs
+        -->
+        <label for="p-email">Personal Email</label><br>
+        <input type="email" id="pemail" name="pemail"><br>
+
+        <label for="coc-email">COC Email</label><br>
+        <input type="email" id="cocemail" name="cocemail"><br>
+
+        <!-- TO DO:
+            Use date-specific input
+        -->
         <label for="bdate">Birth Date</label><br>
-        <input type="text" id="bdate" name="bdate"><br>
-        <label for="male">Male</label>
-        <input type="checkbox" id="male" name="male">
-        <label for="female">Female</label>
-        <input type="checkbox" id="gender" name="gender"><br>
+        <input type="date" id="bdate" name="bdate"><br>
+
+        <h3>Demographics</h3>
+
+        <p>Sex</p>
+        <label>
+            <input type="radio" id="male" name="gender" value="male">Male<br>
+        </label>
+        <label for="female">
+            <input type="radio" id="female" name="gender" value="female">Female<br>
+        </label>
 
         <label for="ethnicity">Ethnicity</label><br>
-        <input type="text" id="ethnicity" name="ethnicity"><br>
+        <input type="text" id="ethnicity" name="ethnicity" placeholder="Ethnicity 1"><br>
+        <input type="text" id="ethnicity" name="ethnicity" placeholder="Ethnicity 2"><br>
+
         <label for="indian_native">American Indian/Alaskan Native Tribal Affiliation </label>
         <input type="checkbox" id="indian_native" name="indian_native"><br>
-        <label for="english">Is any other language other than English spoen regularly in your home</label><br>
-        <input type="checkbox" id="english" name="english">Yes
-        <label for="nenglish"></label>
-        <input type="checkbox" id="nenglish" name="nenglish">No<br>
+
+        <!-- TO DO:
+            If possible, do this:
+            If "Yes" isn't selected, then gray out the field for specifying the language.
+        -->
+        <p>Is any other language other than English spoken regularly in your home</p>
+        <label>
+            <input  type="radio" 
+                    id="english_in_home" 
+                    name="english_in_home"
+                    value="yes">
+                    Yes
+                    <br>
+        </label>
+        <label>
+            <input  type="radio" 
+                    id="english_in_home" 
+                    name="english_in_home"
+                    value="no">
+                    No
+                    <br>
+        </label>
+        <br>
         <label for="other_lang">If yes, specify</label>
         <input type="text" id="other_lang" name="other_lang"><br>
-        <label for="US_citizen"></label><br>
-        <input type="checkbox" id="US_citizen" name="US_citizen">US Citizen<br>
-        <label for="permanent_res"></label>
-        <input type="text" id="permanent_res" name="permanent_res">Permanent Residential <br>
-        <label for="F1_visa"></label><br>
-        <input type="text" id="F1_visa" name="F1_visa">F1 Visa<br>
-        <label for="res_alien"></label><br>
-        <input type="text" id="res_alien" name="res_alien">Resident Alien<br>
 
+        <p>Residential Status:</p>
+        <label>
+            <input 
+                type="radio" 
+                id="residential-status" 
+                name="residential-status" 
+                value="US-Citizen">
+                US Citizen
+                <br>
+        </label>
+        <label>
+            <input 
+                type="radio" 
+                id="residential-status" 
+                name="residential-status" 
+                value="Permanent-Resident">
+                Permanent Resident
+                <br>
+        </label>
+        <label>
+            <input 
+            type="radio" 
+            id="residential-status" 
+            name="residential-status" 
+            value="F1-Visa">
+            F1 Visa
+            <br>
+        </label>
+        <label>
+            <input 
+                type="radio" 
+                id="residential-status" 
+                name="residential-status" 
+                value="Resident-Alien">
+                Resident Alien
+                <br>
+        </label>
+
+        <h3>Academic Info</h3>
+        <!-- TO DO: 
+            Instead of textboxes, we can try making a menu where you press a plus button to add a line for each class you input.
+         -->
         <label for="current_math_science">Current Science and Math classes</label><br>
         <input type="text" id="current_math_science" name="current_math_science"><br>
+        
         <label for="complete_math_science">Completed Science and Math Classes</label><br>
         <input type="text" id="complete_math_science" name="complete_math_science"><br>
-        <label for="college_enroll_date">When did you first enroll at this college(Semester/Year)</label><br>
+
+        <!-- TO DO: 
+            Use a dropdown for semester and a date-specfic input for year
+         -->
+        <label for="college_enroll_date">When did you first enroll at this college (Semester/Year)</label><br>
         <input type="text" id="college_enroll_date" name="college_enroll_date"><br>
+
         <label for="counselor">Current College Counselor</label><br>
         <input type="text" id="counselor" name="counselor"><br>
-        Total Number of College Units Compeleted<br>
+        
+        <!-- TO DO:
+            Use dropdown instead of checkboxes
+        -->
+        <p>Total Number of College Units Compeleted</p>
         <label for="0-29_unit">0-29</label><br>
         <input type="checkbox" id="0-29_unit" name="0-29_unit"><br>
+
         <label for="30-60_unit">30-60</label><br>
         <input type="checkbox" id="30-60_unit" name="30-60_unit"><br>
+
         <label for="60+_unit">60+</label><br>
         <input type="checkbox" id="60+_unit" name="60+_unit"><br>
-        Do you have a Bachelor's Degree?
-        <label for="bachelor_yes">Yes</label><br>
-        <input type="checkbox" id="bachelor_yes" name="bachelor_yes"><br>
-        <label for="bachelor_no">No</label><br>
-        <input type="checkbox" id="bachelor_no" name="bachelor_no"><br>
+
+        <p>Do you have a Bachelor's degree?</p>
+        <label>
+            <input  type="radio" 
+                    id="bachelor" 
+                    name="bachelor"
+                    value="yes">
+                    Yes
+            <br>
+        </label>
+        <label>
+            <input  type="radio" 
+                    id="bachelor" 
+                    name="bachelor" 
+                    value="no">
+                    No
+                    <br>   
+        </label>
+       
+        
         <label for="major">Declared Major</label><br>
         <input type="text" id="major" name="major"><br>
         <label for="gpa">Current College GPA</label><br>
         <input type="text" id="gpa" name="gpa"><br>
+        <!-- TO DO: 
+            Because we don't have that many classes to select from, we could probably just use a dropdown menu
+         -->
         <label for="fmath_class">First College Math Class</label><br>
         <input type="text" id="fmath_class" name="fmath_class"><br>
-        <label for="1college">First Choice College(for transfer)</label><br>
+
+        <label for="1college">First Choice College (for transfer)</label><br>
         <input type="text" id="1college" name="1college"><br>
+
         <label for="2college">Second Choice College(for transfer)</label><br>
         <input type="text" id="2college" name="2college"><br>
+
         <label for="3college">Third Choice College(for transfer)</label><br>
         <input type="text" id="3college" name="3college"><br>
+
+        <!-- TO DO: 
+            Use a dropdown menu for semester and a date-specific input for year
+         -->
         <label for="trans_date">Prospective Transfer Date(Semester/Year)</label><br>
         <input type="text" id="trans_date" name="trans_date"><br>
 
-        Previous School(s) Attended:
+        <p>Previous School(s) Attended:</p>
+
         <label for="HS">High School</label><br>
         <input type="text" id="HS" name="HS"><br>
+
+        <!-- TO DO: 
+            Ask for start date and end date (including present) using a date-specific menu.
+         -->
         <label for="HS_date">Date Attended</label><br>
         <input type="text" id="HS_date" name="HS_date"><br>
+
         <label for="College">College</label><br>
         <input type="text" id="College" name="College"><br>
+
+        <!-- TO DO: 
+            Ask for start date and end date (including present) using a date-specific menu.
+         -->
         <label for="College_date">Date Attended</label><br>
         <input type="text" id="College_date" name="College_date"><br>
+
         <label for="2College">College</label><br>
         <input type="text" id="2College" name="2College"><br>
+
+        <!-- TO DO: 
+            Ask for start date and end date (including present) using a date-specific menu.
+         -->
         <label for="2College_date">Date Attended</label><br>
         <input type="text" id="2College_date" name="2College_date"><br>
 
-        Obstacles that may interfere with your education (check all that apply):<br>
-        <label for="financial_need"></label><br>
-        <input type="checkbox" id="financial_need" name="financial_need">Financial need<br>
-        <label for="employment_issue"></label><br>
-        <input type="checkbox" id="employment_issue" name="employment_issue">Employment issues<br>
-        <label for="family_obligation"></label><br>
-        <input type="checkbox" id="family_obligation" name="family_obligation">Family obligations<br>
-        <label for="knowledge_educ"></label><br>
-        <input type="checkbox" id="knowledge_educ" name="knowledge_educ">Knowledge of educational system<br>
+        <p>Obstacles that may interfere with your education (check all that apply):</p>
+        <label>
+            <input type="checkbox" id="financial_need" name="financial_need">Financial need<br>
+        </label>
+        <label>
+            <input type="checkbox" id="employment_issue" name="employment_issue">Employment issues<br>
+        </label>
+
+        <label>
+            <input type="checkbox" id="family_obligation" name="family_obligation">Family obligations<br>    
+        </label>
+        <label>
+            <input type="checkbox" id="knowledge_educ" name="knowledge_educ">Knowledge of educational system<br>
+        </label>
+
         <label for="other_needs">Excpetional Needs(specify)</label><br>
-        <input type="text" id="other_needs" name="other_needs"><br>
-        <label for="employeed">Are you employed?</label><br>
-        <input type="checkbox" id="employeed" name="employed"><br>
-        <label for="employeed_hours">If yes how many hours?</label><br>
-        <input type="text" id="employeed_hours" name="employeed_hours"><br>
+        <textarea id="other_needs" name="other_needs"></textarea><br>
+
+        <!-- TO DO: 
+            Ask for start date and end date (including present) using a date-specific menu.
+         -->
+        <label for="employed">Are you employed?</label><br>
+        <input  type="radio" 
+                id="employed" 
+                name="employed"
+                value="yes">
+                Yes
+                <br>
+        <input  type="radio" 
+                id="employed" 
+                name="employed"
+                value="no">
+                No
+                <br>
+        <!-- TO DO: 
+            Just use a number input
+         -->
+        <label for="employed_hours">If yes, how many hours a week?</label><br>
+        <input type="number" id="employed_hours" name="employed_hours"><br>
+
         <label for="veteran">Are you a Veteran?</label><br>
-        <input type="checkbox" id="veteran" name="veteran"><br>
+        <input  type="radio" 
+                id="veteran" 
+                name="veteran"
+                value="yes">
+                Yes
+                <br>
+        <input  type="radio" 
+                id="veteran" 
+                name="veteran"
+                value="no">
+                No
+                <br>
         <label for="tutoring">Are you interested in teaching math or science?</label><br>
         <input type="checkbox" id="tutoring" name="tutoring"><br>
 
-        Highest level of education achieved by each of your parents/guardians(indicate by letter)
+        <!-- TO DO:
+            Use select element and option elements to make a dropdown menu
+            https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ol_type
+        -->
+        <p>Highest level of education achieved by each of your parents/guardians(indicate by letter)</p>
         <label for="father_edu">Father</label><br>
         <input type="text" id="father_edu" name="father_edu"><br>
         <label for="mother_edu">Mother</label><br>
         <input type="text" id="mother_edu" name="mother_edu"><br>
+
         <p>A. No school/elementary school<br>
         B. 8th grade or less<br>
         C. Some high school<br>
@@ -218,11 +399,24 @@
         <label for="other_par_edu">If other specify</label>
         <input type="text" id="other_par_edu" name="other_parent_edu"><br>
 
-        Type of work your parents or gaurdian have done over the past years or prior to retiring(indicate by letter)
+        <p>Type of work your parents or gaurdian have done over the past years or prior to retiring(indicate by letter)</p><br>
+        <!-- TO DO:
+            Use select element and option elements to make a dropdown menu
+            https://www.w3schools.com/tags/tag_select.asp
+        -->
         <label for="father_work">Father</label><br>
         <input type="text" id="father_work" name="father_work"><br>
+        
+        <!-- TO DO:
+            Use select element and option elements to make a dropdown menu
+            https://www.w3schools.com/tags/tag_select.asp
+        -->
         <label for="mother_work">Mother</label><br>
         <input type="checkbox" id="mother_work"name="mother_work"><br>
+
+        <!-- TO DO:
+            Can use <ol type="A"> to make numbered list instead of using a bunch of <br> tags
+        -->
         <p>
             A. Never Employed <br>
             B. Farm Worker<br>
@@ -238,16 +432,30 @@
             L. Other<br>
             M. Don’t know<br>
         </p>
-        <label for="other_par_work">If other specify</label>
-        <p>
-            I give my permission for MESA to give my name, phone number, and/or email-address to college and employer representatives, and
-to use my photograph in MESA and college promotional materials.
-        </p>
+
+        <label for="other_par_work">If other, specify</label><br>
         <input type="text" id="other_par_work" name="other_parent_work"><br>
-        <label for="Mesa_permission_yes">Yes</label>
-        <input type="checkbox" id="Mesa_permission_yes" name="Mesa_permission_yes"><br>
-        <label for="Mesa_permission_no">No</label>
-        <input type="checkbox" id="Mesa_permission_no" name="Mesa_permission_no"><br>
+
+        <p>I give my permission for MESA to give my name, phone number, and/or email-address to college and employer representatives, and
+to use my photograph in MESA and college promotional materials.</p>
+
+        <label>
+            <input  type="radio" 
+                    id="mesa-permission" 
+                    name="mesa-permission"
+                    value="yes">
+                    Yes
+                    <br>
+        </label>
+        <label>
+            <input  type="radio" 
+                    id="mesa-permission" 
+                    name="mesa-permission"
+                    value="no">
+                    No
+                    <br>
+        </label>
+
         <input type="submit">
     </form>
     <script src="JavaScript/script.js"></script>
