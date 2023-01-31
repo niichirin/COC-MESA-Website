@@ -521,6 +521,38 @@
     color: white;
 }
 
+/* ||| about.html ||| */
+/* || MISSION STATEMENT */
+#mission-container {
+    padding: 4rem 1rem;
+    margin-top: 0px;
+    background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://b620782.smushcdn.com/620782/wp-content/uploads/2021/03/web-klassen-corp-036-850x458-1.jpg?lossy=1&strip=1&webp=1");
+    background-size: cover;
+    color: white;
+}
+
+#mission-heading {
+    color: var(--MESA-Red);
+}
+
+/* || BIOGRAPHIES */
+.biography-container > h2, .biography-container > h4 {
+    text-align: center;
+}
+
+.biography-container > img {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+}
+.biography-container{
+    padding: 1rem 4rem;
+}
+
+
 /* ||| help.html ||| */
 
 /* ||| faq.html ||| */
