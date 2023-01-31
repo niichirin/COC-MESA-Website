@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/universal.css">
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>MESA at College of the Canyons</title>
 </head>
 
@@ -100,10 +98,11 @@
 
     <div id="lab-overview-container">
         <h2>MESA Skills Lab</h2>
-        <p style="margin-bottom:2rem;">Learn practical skills with other STEM students.</p>
+        <p>Learn practical skills with other STEM students.</p>
+        <button class="primary-btn">Join Today!</button>
         <!-- open/close button id corresponds with tab id -->
         <div id="lab-overview-row">
-            <div class="lab-overview-btn" onclick="openLab('biology-tab')"><p>Biology</p></div>
+            <div class="lab-overview-btn" onclick="openLab('biology-tab')"><p>Biology/Chemistry</p></div>
             <div class="lab-overview-btn" onclick="openLab('engineering-tab')"><p>Engineering</p></div>
             <div class="lab-overview-btn" onclick="openLab('physics-tab')"><p>Physics</p></div>
             <div class="lab-overview-btn" onclick="openLab('coding-tab')"><p>Coding</p></div>
@@ -124,6 +123,7 @@
             <h3>Front-End Development Lab<span class="closeLabBtn" onclick="closeLab('coding-tab')">X</span></h3>
             <p>Collaborate with others using Git and GitHub. Learn how to build a static webpage with markup HTML and CSS. Then, make it dynamic by adding interactivity with JavaScript programming.</p>
         </div>
+        <!-- TO DO: Add placeholder pictures inside tabs, have one open by default  -->
     </div>
     <script src="JavaScript\script.js"></script>
 </body>

@@ -17,6 +17,11 @@
     box-sizing: border-box;
 }
 
+/* counteract margin and padding being CSS reset by * selector */
+li {
+    margin-left: 40px;
+}
+
 /* primary buttons */
 .primary-btn {
     background-color: var(--COC-Yellow);
@@ -29,6 +34,7 @@
 }
 
 /* ||| NAVIGATION BAR ||| */
+
 /* fix bar to top and add background color */
 .topnav {
     position: fixed;
@@ -36,6 +42,12 @@
     width: 100%;
     z-index: 2;
     background-color: var(--COC-Blue);
+}
+
+/* Prevent overlay with container/item after the topnav */
+/* NOTE: topnav must be the first container in the body tag for this to work */
+body:nth-child(2) {
+    margin-top: 64.4px;
 }
 
 /* must style primary links with > selector */
@@ -155,7 +167,7 @@
     }
 }
 
-/* ||| FOOTER ||| */
+/* FOOTER */
 footer {
     background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
     background-repeat: no-repeat;
@@ -168,24 +180,14 @@ footer > h1 {
     text-align: center;
 }
 
-#footer-form {
-    display: flex; /* default for mobile design */
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-input {
+footer input {
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
     font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
     width: 100%;
 }
 
-input[value="Send Message"] {
-    width: 100%;
-}
-
-textarea {
+footer textarea {
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
     font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
@@ -198,22 +200,11 @@ textarea {
     max-height: 200px;
 }
 
-#footer-details > * > h3 {
-    margin-top: .5rem;
-    text-decoration: underline;
-}
-
-/* footer grid query 1 (smaller than tablet) */
+/* footer grid 1 */
 @media only screen and (min-width: 480px) and (max-width: 769px) {
     footer {
         padding: 4rem 2rem;
     }
-
-    input[value="Send Message"] {
-        margin: auto;
-        width: 50%;
-    }
-
     #footer-details {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -229,13 +220,19 @@ textarea {
     }
 }
 
-/* footer grid query 2 (bigger than tablet) */
+#footer-details > * > h3 {
+    margin-top: .5rem;
+    text-decoration: underline
+}
+
+/* footer grid 2 */
+/* prevent footer grid from shrinking too small on smaller viewports */
 @media only screen and (min-width: 769px) {
     footer {
         padding: 4rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, min-content);
+        grid-template-rows: repeat(2, min-content);
         gap: 1rem;
     }
 
@@ -244,22 +241,14 @@ textarea {
     }
     
     #footer-form {
-        padding: 0 1rem;
-
         grid-column: 1 / -2;
 
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, min-content);
+        grid-template-rows: repeat(3, min-content);
         gap: 0.5rem;
     }
-
-    input[value="Send Message"] {
-        margin-top: 0;
-        width: 100%;
-        grid-column: 3 / -1;
-    }
-
+    
     #name-div {
         grid-column: 1 / 3;
         grid-row: 1 / 2;
@@ -281,23 +270,5 @@ textarea {
     #footer-details {
         text-align: right;
         grid-column: 3 / -1;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    #footer-form {
-        padding-right: 2rem;
-    }
-
-    input[value="Send Message"] {
-        margin-top: 0;
-        grid-column: 4 / -1;
-    }
-}
-
-
-@media only screen and (min-width: 1200px) {
-    #footer-form {
-        padding-right: 4rem;
     }
 }
