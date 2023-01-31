@@ -546,7 +546,7 @@
     color: white;
 }
 
-#mission-heading {
+#mission-container > h1 {
     color: var(--MESA-Red);
 }
 
