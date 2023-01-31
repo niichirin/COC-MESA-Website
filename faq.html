@@ -4,25 +4,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/universal.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <title>MESA FAQs</title>
 </head>
 <body>
-    <div id="topnav">
-        <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt="">
+    <div id="primaryTopnav" class="topnav">
+        <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
         <a href="index.html">Home</a>
         <a href="join.html">Join</a>
         <a href="about.html">About</a>
         <a href="events.html">Events</a>
-        <a href="faq.html">Help</a>
+        <div class="dropdown">
+            <button class="dropdown-btn">Help
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-links">
+                <a href="faq.html">Counseling</a>
+                <a href="faq.html">Tutoring</a>
+                <a href="faq.html">FAQ</a>
+                <a href="faq.html">Contact</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
     </div>
 
-    <h1 style="margin-top: 70px">Frequently Asked Questions</h1>
+    <h1 id="FAQ-heading">Frequently Asked Questions</h1>
+
+    <!-- div 1 -->
     <h2><u>Who Are We?</u></h2>
     <p>The <b>M</b>athematics, <b>E</b>ngineering, and <b>S</b>cience <b>A</b>chievement (MESA) Program serves to enrich the experience of students in math, science, and engineering at College of the Canyons. We support financially disadvantaged and/or historically underrepresented students by providing a variety of services, including: academic advisement, discipline-specific enrichment, and community building opportunities. Our primary goal is to equip MESA students with the skills and attitudes necessary for their successful transfer to university.</p>
     <p>MESA works closely with industry partners and the University of California, California State University, the California Community Colleges, the Association of Independent Colleges and Universities and the State Department of Education. MESA is nationally recognized for its innovative academic development program.</p>
 
+    <!-- div 2 -->
     <h2><u>Joining MESA</u></h2>
-
     <h3>How Do You Join MESA?</h3>
     <p>Students must submit an <a href="join.html">application</a>, be enrolled at College of the Canyons, and have a COC ID card. Once your application is reviewed, you will be notified by email if you meet the requirements.</p>
 
@@ -106,6 +120,7 @@
             <li>Textbook, laptop, and calculator rentals</li>
         </ul>
 
+    <!-- div 3 -->
     <h2><u>MESA Center</u></h2>
     <h3>What is the MESA Center?</h3>
     <p>It is a dedicated space for studying and workshops, with areas for individual and group studying. The MESA Center has nine computers equipped with MatLab, MiniTab, and AutoCad. Students also have access to printers, textbooks, 3-D printers, and a kitchenette.</p>
@@ -122,6 +137,7 @@
         <li>Friday: 9:00am - 12:00pm</li>
     </ul>
 
+    <!-- div 4 -->
     <h2><u>Resources</u></h2>
     <h3>How Can I Meet with a MESA tutor?</h3>
     <p>Tutors are avaliable in-person at the MESA center or online through MESA's Discord. Please visit the <a href="tutoring.html">tutor's page</a> for more information.</p>
@@ -136,7 +152,8 @@
     <p>If you have a GPA of at least 3.0 and are eligible for financial aid, you may qualify for the Physics/Calculus Book Award Program! You may receive a free textbook if your are enrolled in <b>Physics 220</b> OR <b>Math 211</b>. A limited number of awards are available so make sure to submit your application as soon as possible! This program is open to all STEM majors. For more information and an application, please visit the MESA Center.</p>
 
     <p>If you have any further questions, please contact Amy Foote at <b>amy.foote@canyons.edu</b></p>
-
+    
+    <script src="JavaScript/script.js"></script>
 </body>
 <footer>
     <h1 id="footer-heading">MESA at College of the Canyons</h1>

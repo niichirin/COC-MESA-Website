@@ -1,18 +1,75 @@
 /* styles.css will contain styles for SPECIFIC pages */
+/* The organization conventions are as follows:
+
+- DO try to make ID and class names as short as possible.
+
+- DO design for mobile first if you can.
+
+- DO write unique, specific IDs for each element you are styling. 
+    - This will prevent more generalized selectors from interfering with new selectors.
+    - BAD SELECTOR: h1
+        - Uses an element selector that ISN'T SPECIFIC to one container.
+        - This may interfere with other h1 elements on the website.
+    - GOOD SELECTOR: #section-heading, .section-heading, .section-heading > h1
+        - Uses an id or class selector
+        - Uses an element selector SPECIFIC to one container.
+        - This is specific to one section of the website.
+
+- DO separate your selectors using comments.
+    - To selectors for specific html pages, type this by the first selector: 
+        ||| <insert-page-name>.html |||
+    - || page section to find a section of a page
+
+- DO place media queries in an order that makes sense. For example, for media queries going from small to large viewports, you write:
+    - your default selectors
+    - media query for phone viewport
+    - media query for tablet viewport
+    - media query for small laptop viewport
+    - media query for large laptop viewport
+
+- DO try to place media queries next to the selector you are modifying.
+
+- DO NOT write directly into this file. Instead:
+    - Create a new test file.
+    - Once you are done with your changes, include them in your pull request
+    - Someone else will attempt to merge the main styles.css file and your test file.
+
+*/
+
+/* ||| root and all elements ||| */
+:root {
+    --COC-Blue: rgba(1, 27, 64, 1);
+    --COC-Yellow: rgba(255, 226, 18, 1);
+    --COC-Gray: rgba(236, 236, 236, 1);
+    --MESA-Red: #FF6257;
+}  
 
 /* ||| index-lab.html ||| */
 /* || HEADLINE */
 #headline-container {
-    margin-top: 64.4;
     padding: 4rem 1rem;
+    text-align: justify;
     background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
     background-size: cover;
     color: white;
 }
 
-@media only screen and (min-width: 481px) {
+#headline-container > h1 {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+#headline-container > p {
+    line-height: 1.4
+}
+
+@media only screen and (min-width: 480px) {
     #headline-container {
         padding: 4rem 2rem;
+    }
+
+    #headline-container > h1 {
+        font-size: 1.5rem;
     }
 
     #headline-container > p {
@@ -24,6 +81,9 @@
     #headline-container {
         padding: 4rem;
     }
+    #headline-container > h1 {
+        font-size: 2.2rem;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -31,8 +91,13 @@
         padding: 8rem;
     }
 
+    #headline-container > h1 {
+        font-size: 2.2rem;
+    }
+
     #headline-container > p {
-        font-size: 1.4rem;
+        line-height: 1.3;
+        font-size: 1.3rem;
     }
 }
 
@@ -40,22 +105,13 @@
     #headline-container {
         padding: 8rem 12rem;
     }
-}
 
-#headline-container > h1 {
-    text-align: center;
-    font-size: 1.6rem;
-}
-
-@media only screen and (min-width: 769px) {
     #headline-container > h1 {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
     }
-}
 
-@media only screen and (min-width: 1025px) {
-    #headline-container > h1 {
-        font-size: 3rem;
+    #headline-container > p {
+        line-height: 1.2;
     }
 }
 
@@ -222,6 +278,7 @@
     }
 
     #services-description {
+        padding: 0 4rem;
         font-size: 1.2rem;
     }
 }
@@ -232,7 +289,8 @@
     }
 
     #services-description {
-        font-size: 1.3rem;
+        padding: 0 6rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -242,7 +300,8 @@
     }
 
     #services-description {
-        font-size: 1.4rem;
+        padding: 0 8rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -312,7 +371,7 @@
 @media only screen and (min-width: 1200px) {
     #service-square-container {
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 300px;
+        grid-template-rows: min-content;
     }
     .service-square {
         width: 100%;
@@ -334,24 +393,24 @@
 
 /* || SKILLS LAB */
 #lab-overview-container {
-    padding: 4rem 1rem;
+    padding: 0 1rem 4rem;
 }
 
 @media only screen and (min-width: 480px) {
     #lab-overview-container {
-        padding: 4rem 2rem;
+        padding: 0 2rem 4rem;
     }   
 }
 
 @media only screen and (min-width: 769px) {
     #lab-overview-container {
-        padding: 4rem 4rem;
+        padding: 0 4rem 4rem;
     }   
 }
 
 @media only screen and (min-width: 1200px) {
     #lab-overview-container {
-        padding: 4rem 8rem;
+        padding: 0 8rem 4rem;
     }   
 }
 
@@ -362,7 +421,7 @@
     justify-content: center;
     align-items: stretch;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin: 1rem 0;
 }
 
 .lab-overview-btn {   
@@ -476,3 +535,39 @@
     background-color: #555;
     color: white;
 }
+
+/* ||| about.html ||| */
+/* || MISSION STATEMENT */
+#mission-container {
+    padding: 4rem 1rem;
+    margin-top: 0px;
+    background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://b620782.smushcdn.com/620782/wp-content/uploads/2021/03/web-klassen-corp-036-850x458-1.jpg?lossy=1&strip=1&webp=1");
+    background-size: cover;
+    color: white;
+}
+
+#mission-heading {
+    color: var(--MESA-Red);
+}
+
+/* || BIOGRAPHIES */
+.biography-container > h2, .biography-container > h4 {
+    text-align: center;
+}
+
+.biography-container > img {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+}
+.biography-container{
+    padding: 1rem 4rem;
+}
+
+
+/* ||| help.html ||| */
+
+/* ||| faq.html ||| */
