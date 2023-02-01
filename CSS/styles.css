@@ -250,33 +250,33 @@
 
 .stat-square {
     background-color: white;
-    padding: 2rem 1rem;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+
     width: 100%;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    
+    transition: 0.25s ease-out;
+}
+
+.stat-square:hover {
+    transform: translateX(-3px) translateY(-3px);
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* || SERVICES */
 #services-container {
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
 }
 
 #services-description {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
-}
-
-@media only screen and (min-width: 480px) {
-    #services-container {
-        padding: 2rem;
-    }
+    margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 769px) {
-    #services-container {
-        padding: 2rem 4rem;
-    }
-
     #services-description {
         padding: 0 4rem;
         font-size: 1.2rem;
@@ -284,10 +284,6 @@
 }
 
 @media only screen and (min-width: 992px) {
-    #services-container {
-        padding: 2rem;
-    }
-
     #services-description {
         padding: 0 6rem;
         font-size: 1.2rem;
@@ -295,10 +291,6 @@
 }
 
 @media only screen and (min-width: 1200px) {
-    #services-container {
-        padding: 2rem 4rem;
-    }
-
     #services-description {
         padding: 0 8rem;
         font-size: 1.3rem;
@@ -310,7 +302,9 @@
     margin: auto;
     justify-content: center;
     gap: .5rem;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto-fit, 300px);
 }
 
 .service-square {
@@ -329,7 +323,7 @@
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
 
     width: 100%;
-    height: 150px;
+    height: 300px;
 
     transition: 0.25s;
 }
@@ -339,43 +333,31 @@
     box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.25);
 }
 
+/* service grid 1 */
 @media only screen and (min-width: 480px) {
     #service-square-container {
-        grid-template-columns: repeat(3, 150px);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 250px);
+    }
+    .service-square {
+        height: 250px;
     }
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 769px) {
     #service-square-container {
-        grid-template-columns: repeat(3, 200px);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 300px);
     }
     .service-square {
-        font-size: 1em;
-        width: 200px;
-        height: 200px;
+        height: 300px;
     }
 }
 
 @media only screen and (min-width: 992px) {
     #service-square-container {
-        grid-template-columns: repeat(3, 250px);
-        grid-template-rows: repeat(2, 1fr);
-    }
-    .service-square {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    #service-square-container {
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: min-content;
-    }
-    .service-square {
-        width: 100%;
-        height: 200px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, min-content);
     }
 }
 
@@ -388,6 +370,7 @@
     /* placeholder icon */
     background-color: gray;
     color: white;
+    width: 100%;
     flex-grow: 1;
 }
 
@@ -426,13 +409,14 @@
 
 .lab-overview-btn {   
     font-size: 1rem;
-    text-align: center;
     background-color: var(--COC-Blue);
+
+    text-align: center;
     color: white;
-    transition: 0.25s;
 
     width: 25%;
     padding: 1rem 2rem;
+    border-radius: 10px;
 
     cursor: pointer; /* show icon interactivity */
 
@@ -445,17 +429,7 @@
     box-shadow: 2px 5px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* prevent single row of buttons on smaler viewports*/
-@media only screen and (max-width: 769px) {
-    #lab-overview-row {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .lab-overview-btn {
-        width: 40%;
-    }
-}
-
+/* prevent single row of buttons on smaller viewports*/
 @media only screen and (max-width: 480px) {
     #lab-overview-row {
         flex-direction: column;
@@ -463,6 +437,16 @@
     }
     .lab-overview-btn {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    #lab-overview-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .lab-overview-btn {
+        width: 40%;
     }
 }
 
@@ -475,10 +459,14 @@
     padding: 2rem 1rem;
     margin-bottom: .5rem;
     border: 1px var(--COC-Blue) solid;
-
-    display: none; /* display w/ JS */
+    border-radius: 10px;
 }
 
+/* display first tab by default */
+/* this selector selects tabs that are not the first child of a parent element (div) */
+.lab-overview-tab:not(:first-child) {
+    display: none;
+}
 .closeLabBtn {
     float: right;
     cursor: pointer; /* show icon interactivity */
@@ -494,20 +482,6 @@
     display: grid;
     justify-content: center;
     gap: 0.5rem;
-}
-
-@media only screen and (min-width: 480px) {
-
-}
-
-@media only screen and (min-width: 769px) {
-}
-
-@media only screen and (min-width: 992px) {
-}
-
-@media only screen and (min-width: 1200px) {
-    
 }
 
 .skills-lab-square {

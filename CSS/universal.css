@@ -180,6 +180,11 @@ footer > h1 {
     text-align: center;
 }
 
+#footer-form {
+    display: grid;
+    gap: 0.5rem;
+}
+
 footer input {
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
@@ -200,11 +205,17 @@ footer textarea {
     max-height: 200px;
 }
 
+#footer-details > * > h3 {
+    margin-top: .5rem;
+    text-decoration: underline;
+}
+
 /* footer grid 1 */
 @media only screen and (min-width: 480px) and (max-width: 769px) {
     footer {
         padding: 4rem 2rem;
     }
+
     #footer-details {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -218,11 +229,6 @@ footer textarea {
     #footer-contact {
         text-align: right;
     }
-}
-
-#footer-details > * > h3 {
-    margin-top: .5rem;
-    text-decoration: underline
 }
 
 /* footer grid 2 */
@@ -243,10 +249,8 @@ footer textarea {
     #footer-form {
         grid-column: 1 / -2;
 
-        display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, min-content);
-        gap: 0.5rem;
     }
     
     #name-div {
