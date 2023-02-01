@@ -577,6 +577,7 @@
 }
 #faq-heading{
     color: var(--MESA-Red);
+    padding-top: 10px;
 }
 #faq-email{
     padding-top:80px;
