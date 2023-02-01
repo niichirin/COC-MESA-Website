@@ -55,7 +55,7 @@ li {
 /* Prevent overlay with container/item after the topnav */
 /* NOTE: topnav must be the first container in the body tag for this to work */
 body:nth-child(2) {
-    margin-top: 64.4px;
+    margin-top: 61.2px;
 }
 
 /* must style primary links with > selector */
