@@ -18,7 +18,8 @@
 - DO separate your selectors using comments.
     - To selectors for specific html pages, type this by the first selector: 
         ||| <insert-page-name>.html |||
-    - || page section to find a section of a page
+    - To declare a section of a page, type this by the appropriate selectors:
+        || PAGE SECTION
 
 - DO place media queries in an order that makes sense. For example, for media queries going from small to large viewports, you write:
     - your default selectors
@@ -588,35 +589,171 @@
     margin-top: 0px;
     background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://b620782.smushcdn.com/620782/wp-content/uploads/2021/03/web-klassen-corp-036-850x458-1.jpg?lossy=1&strip=1&webp=1");
     background-size: cover;
-    color: white;
+    color:  rgba(228, 228, 228, 1);
 }
 
-#mission-container > h1 {
-    color: var(--MESA-Red);
+
+#mission-heading {
+    color: rgb(255, 140, 132);
 }
 
-/* || BIOGRAPHIES */
-.biography-container > h2, .biography-container > h4 {
+.logo {
+    width:120px;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+/* || SLIDES */
+.slide-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
+}
+ 
+.biography {
+    position: relative;
+ 
+    margin: auto;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+      
+.biography .biography-inner {
+    position: relative;
+    width: 400%;
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.858, 0.01, 0.068, 0.99);
+}
+      
+.biography-inner .biography-item {
+    width: 25%;
+}
+      
+.biography-caption {
+    padding: 50px 120px 80px;
     text-align: center;
 }
 
-.biography-container > img {
-    display: block;
-    margin: auto;
-    border-radius: 50%;
+.biography-caption img {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    width: 300px;
-    height: 300px;
+    padding: 5px;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
 }
-.biography-container{
-    padding: 1rem 4rem;
+      
+.biography-caption h2 {
+    color:  rgb(255, 140, 132);
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+      
+.biography-caption h2 .job-title {
+    font-size: 22px;
+    font-weight: 500;
+}
+      
+.biography-caption p {
+    color: rgba(1, 27, 64, 1);
+    font-size: 17px;
+    font-weight: 500;
+}
+      
+.biography input {
+    display: none;
+}
+      
+.biography .indicators {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+      
+.biography .indicators label {
+    position: relative;
+    width: 25%;
+    height: 2rem;
+    margin: 0 3px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.biography .indicators label:hover {
+    background-color: #c0c0c0;
+}
+      
+#indicator1:checked ~ .indicators label:nth-child(1),
+#indicator2:checked ~ .indicators label:nth-child(2),
+#indicator3:checked ~ .indicators label:nth-child(3),
+#indicator4:checked ~ .indicators label:nth-child(4){
+    background-color: rgb(255, 140, 132);
+}
+      
+#indicator1:checked ~ .biography-inner {
+    transform: translateX(0%);
+}
+      
+#indicator2:checked ~ .biography-inner {
+    transform: translateX(-25%);
+}
+      
+#indicator3:checked ~ .biography-inner {
+    transform: translateX(-50%);
+}
+      
+#indicator4:checked ~ .biography-inner {
+    transform: translateX(-75%);
+}
+
+@media (max-width: 768px) {
+    .biography-caption {
+        padding: 50px 70px 80px;
+    }
+}
+   
+@media (max-width: 576px) {
+    .biography-caption {
+        padding: 50px 15px 80px;
+    }
+        
+    .biography-caption h2 {
+        font-size: 20px;
+    }
+        
+    .biography-caption h2 .job-title {
+        font-size: 17px;
+    }
+        
+    .biography-caption p {
+        font-size: 16px;
+    }
 }
 
 
 /* ||| help.html ||| */
 
 /* ||| faq.html ||| */
-/* GENERAL TEXT */
+/* || GENERAL TEXT */
 #faq-container{
     padding: 1rem 4rem;
     margin-top: 0px;
@@ -636,7 +773,7 @@
     padding-bottom: 20px;
 }
 
-/* REQUIREMENTS */
+/* || REQUIREMENTS */
 #faq-require-container{
     padding: 5px;
     display: flex;
@@ -651,7 +788,7 @@
     flex-direction: column;
 }
 
-/* MAP */
+/* || MAP */
 #faq-map-img{
     padding: 5px;
     height: 150px;
@@ -661,7 +798,7 @@
     opacity: 75%;
 }
 
-/* EMAIL */
+/* || EMAIL */
 #faq-email{
     padding-top:70px;
     padding-bottom:5px;
