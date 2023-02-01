@@ -416,9 +416,12 @@
 
     transition: 0.25s;
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+
+    overflow:scroll;
 }
 
-.lab-overview-btn:hover {
+.lab-overview-btn:hover, .lab-overview-btn.active {
+    background-color: #002860;
     transform: translateY(3px);
     box-shadow: 2px 5px 10px 2px rgba(0, 0, 0, 0.3);
 }
@@ -444,42 +447,42 @@
     }
 }
 
-.lab-overview-btn:hover , .lab-overview-btn-active {
-    background-color: #002860;
-}
-
 .lab-overview-tab {
     background-color: var(--COC-Gray);
     margin-bottom: .5rem;
     border: 1px var(--COC-Blue) solid;
     border-radius: 10px;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
 }
-
+    
 /* display first tab by default */
 /* this selector selects tabs that are not the first child of a parent element (div) */
 .lab-overview-tab:not(:first-child) {
     display: none;
 }
 
-/* selects text content in tab */
 .lab-overview-tab > div {
-    width: 50%;
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%; /* stretch full width of tab div */
+}
+
+.lab-overview-tab > div > button {
+    width: max-content;
+}
+
+/* select text content div */
+.lab-overview-tab > div:first-child {
+    padding: 2rem 1rem;
 }
 
 .lab-overview-img {
     background-color: gray;
+
     width: 100%;
-    height: 500px;
+    height: 400px;
 
     object-fit: cover;
     border-radius: 10px;
@@ -487,9 +490,31 @@
     order: 2;
 }
 
-.closeLabBtn {
-    float: right;
-    cursor: pointer; /* show icon interactivity */
+@media only screen and (min-width: 992px) {
+    .lab-overview-tab {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+    
+    /* selects text content in tab */
+    .lab-overview-tab > div {
+        width: 50%;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .lab-overview-tab > div > h3 {
+        text-align: center;
+    }
+
+    .lab-overview-img {
+        height: 500px;
+    }
 }
 
 /* ||| skills-lab.html ||| */
