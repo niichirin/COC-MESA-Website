@@ -125,11 +125,6 @@
     width: 75%;
 }
 
-#headline-container > button:hover {
-    transform: scale(1.01, 1.01);
-    background-color: white;
-}
-
 /* ABOUT */
 #about-container {
     padding: 4rem 1rem;
@@ -198,11 +193,6 @@
 
 #about-content > p {
     margin-bottom: 1rem;
-}
-
-#about-content > button:hover {
-    transform: scale(1.01, 1.01);
-    background-color: white;
 }
 
 /* || RESULTS */
@@ -397,6 +387,10 @@
     }   
 }
 
+#lab-overview-container > button {
+    margin-top: 1rem;
+}
+
 #lab-overview-row {
     display: flex;
     flex-direction: row;
@@ -456,10 +450,15 @@
 
 .lab-overview-tab {
     background-color: var(--COC-Gray);
-    padding: 2rem 1rem;
     margin-bottom: .5rem;
     border: 1px var(--COC-Blue) solid;
     border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
 }
 
 /* display first tab by default */
@@ -467,6 +466,27 @@
 .lab-overview-tab:not(:first-child) {
     display: none;
 }
+
+/* selects text content in tab */
+.lab-overview-tab > div {
+    width: 50%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lab-overview-img {
+    background-color: gray;
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+    border-radius: 10px;
+
+    order: 2;
+}
+
 .closeLabBtn {
     float: right;
     cursor: pointer; /* show icon interactivity */

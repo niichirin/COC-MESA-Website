@@ -8,15 +8,13 @@ function openNavBar() {
   }
 
 const skillsLabTabs = document.querySelectorAll('.lab-overview-tab');
-const skillsLabBtns = document.querySelectorAll('lab-overview-btn')
-
 /* GUIDE for changing lab displays: https://www.w3schools.com/howto/howto_js_expanding_grid.asp */
 function openLab(newTab) {
     skillsLabTabs.forEach( tab => {
         if (tab.id != newTab) {
             tab.style.display = 'none';
         } else {
-            tab.style.display = 'block';
+            tab.style.display = 'flex';
         }
     })
 }
