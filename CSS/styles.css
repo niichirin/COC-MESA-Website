@@ -616,3 +616,53 @@
 /* ||| help.html ||| */
 
 /* ||| faq.html ||| */
+/* GENERAL TEXT */
+#faq-container{
+    padding: 1rem 4rem;
+    margin-top: 0px;
+}
+#faq-title{
+    color: var(--MESA-Red);
+    padding-top: 10px;
+}
+.faq-heading{
+    padding-bottom:10px;
+    color:var(--COC-Blue);
+}
+.faq-section{
+    padding-top: 30px;
+}
+.faq-question{
+    padding-bottom: 20px;
+}
+
+/* REQUIREMENTS */
+#faq-require-container{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+.faq-require-section{
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-left: 30px;
+    flex-direction: column;
+}
+
+/* MAP */
+#faq-map-img{
+    padding: 5px;
+    height: 150px;
+    width: 250px;
+}
+#faq-map-lnk > img:hover{
+    opacity: 75%;
+}
+
+/* EMAIL */
+#faq-email{
+    padding-top:70px;
+    padding-bottom:5px;
+}
