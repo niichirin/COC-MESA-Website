@@ -266,10 +266,18 @@
     margin-bottom: 2rem;
 }
 
+#services-description > h1 {
+    font-size: 1.8rem;
+}
+
 @media only screen and (min-width: 769px) {
     #services-description {
         padding: 0 4rem;
         font-size: 1.2rem;
+    }
+
+    #services-description > h1 {
+        font-size: 2rem;
     }
 }
 
@@ -281,6 +289,10 @@
 }
 
 @media only screen and (min-width: 1200px) {
+    #services-container {
+        padding: 4rem 8rem;
+    }
+    
     #services-description {
         padding: 0 8rem;
         font-size: 1.3rem;
@@ -457,6 +469,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
 }
     
 /* display first tab by default */
@@ -467,6 +481,10 @@
 
 .lab-overview-tab > div {
     width: 100%; /* stretch full width of tab div */
+}
+
+.lab-overview-tab > div > h3 {
+    text-align: center;
 }
 
 .lab-overview-tab > div > button {
@@ -507,9 +525,9 @@
         flex-direction: column;
         justify-content: center;
     }
-    
+
     .lab-overview-tab > div > h3 {
-        text-align: center;
+        text-align: left;
     }
 
     .lab-overview-img {
