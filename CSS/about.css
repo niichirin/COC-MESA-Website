@@ -12,17 +12,160 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: white;
+    font-family: "Dosis", sans-serif;
+    align-items: center;
+    justify-content: center;
+  }
+  
 #Mission-container {
     padding: 4rem 1rem;
     margin-top: 0px;
+    height: 40%;
     background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://b620782.smushcdn.com/620782/wp-content/uploads/2021/03/web-klassen-corp-036-850x458-1.jpg?lossy=1&strip=1&webp=1");
     background-size: cover;
-    color: white;
+    color:  rgba(228, 228, 228, 1);
+}
+.slide-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+ 
+.biography {
+    position: relative;
+ 
+    margin: 0 auto;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+      
+.biography .biography-inner {
+    position: relative;
+    width: 400%;
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.858, 0.01, 0.068, 0.99);
+}
+      
+.biography-inner .biography-item {
+    width: 25%;
+}
+      
+.biography-caption {
+    padding: 50px 120px 80px;
+    text-align: center;
+}
+
+.biography-caption img {
+    display: inline-block;
+    max-width: 200px;
+    max-height: 150px;
+    padding: 5px;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    border-radius: 60%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+}
+      
+.biography-caption h2 {
+    color:  rgb(255, 140, 132);
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+      
+.biography-caption h2 .job-title {
+    font-size: 22px;
+    font-weight: 500;
+}
+      
+.biography-caption p {
+    color: rgba(1, 27, 64, 1);
+    font-size: 17px;
+    font-weight: 500;
+}
+      
+.biography input {
+    display: none;
+}
+      
+.biography .indicators {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+      
+.biography .indicators label {
+    position: relative;
+    width: 25px;
+    height: 7px;
+    margin: 0 3px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+      
+#indicator1:checked ~ .indicators label:nth-child(1),
+#indicator2:checked ~ .indicators label:nth-child(2),
+#indicator3:checked ~ .indicators label:nth-child(3),
+#indicator4:checked ~ .indicators label:nth-child(4){
+    background-color: rgb(255, 140, 132);
+}
+      
+#indicator1:checked ~ .biography-inner {
+    transform: translateX(0%);
+}
+      
+#indicator2:checked ~ .biography-inner {
+    transform: translateX(-25%);
+}
+      
+#indicator3:checked ~ .biography-inner {
+    transform: translateX(-50%);
+}
+      
+#indicator4:checked ~ .biography-inner {
+    transform: translateX(-75%);
+}
+
+@media (max-width: 768px) {
+    .biography-caption {
+    padding: 50px 70px 80px;
+}
+}
+   
+@media (max-width: 576px) {
+    .biography-caption {
+    padding: 50px 15px 80px;
+}
+      
+.biography-caption h2 {
+    font-size: 20px;
+}
+      
+.biography-caption h2 .job-title {
+    font-size: 17px;
+}
+      
+.biography-caption p {
+    font-size: 16px;
+}
 }
 footer {
     background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://images.squarespace-cdn.com/content/v1/5b5f36c7266c07f5f69b2e22/1534883574204-LMOZ3O7QHQDW2QFU4AE1/college-of-the-canyons.png?format=750w");
     background-repeat: no-repeat;
-    background-size: cover; /* image covers entire footer */
+    background-size: cover; 
     color: white;
     padding: 4rem 1rem;
 }
@@ -39,21 +182,8 @@ input, textarea {
 #nav-container{
     background-color: rgba(1, 27, 64, 1);
 }
-.biography-container > h2, .biography-container > h4 {
-    text-align: center;
+.logo {
+    width:120px;
+    cursor: pointer;
+    margin-bottom: 2px;
 }
-
-.biography-container > img {
-    display: block;
-    margin: auto;
-    border-radius: 50%;
-    object-fit: cover;
-    width: 300px;
-    height: 300px;
-}
-.biography-container{
-    padding: 1rem 4rem;
-
-
-}
-
