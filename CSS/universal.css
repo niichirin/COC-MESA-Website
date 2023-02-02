@@ -17,6 +17,14 @@
     box-sizing: border-box;
 }
 
+/* ||| Intersection API ||| */ 
+/* for people who don't want to look at animations */
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
 /* counteract margin and padding being CSS reset by * selector */
 li {
     margin-left: 40px;
