@@ -765,6 +765,7 @@
 
 #help-container {
     padding: 4rem 1rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -794,6 +795,7 @@
 @media only screen and (min-width: 600px) {
     #help-container {
         padding: 4rem 1rem;
+        margin-bottom: 2rem;
         flex-direction: row;
     }
 
