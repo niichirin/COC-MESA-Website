@@ -908,3 +908,25 @@
 #faq-email{
     padding: 2rem 0 4rem;
 }
+
+
+/* ||| resources.html ||| */
+#resource-container{
+    padding: 1rem 4rem;
+    margin-top: 0px;
+}
+#resource-title{
+    text-align: center;
+    color: var(--MESA-Red);
+    padding: 4rem 0 2rem;
+}
+.resource-heading{
+    padding-bottom:10px;
+    color:var(--COC-Blue);
+}
+.resource-section{
+    padding-top: 30px;
+}
+.resource-question{
+    padding-bottom: 20px;
+}
