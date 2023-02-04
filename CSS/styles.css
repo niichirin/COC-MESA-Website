@@ -943,8 +943,16 @@
 .collapsible:hover{
     background-color:rgba(255, 226, 18, 0.75);
 }
-.active{
-
+.collapsible:after{
+    content: '\002B';
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+.active:after{
+    content: '\2212';
 }
 .content{
     background-color: var(--COC-Gray);
@@ -953,7 +961,6 @@
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-
 .content p {
     padding: 18px;
 }
@@ -968,9 +975,9 @@
 }
 @media (min-width: 992px){
     .collapsible{
-        width: 50%;
+        width: 65%;
     }
     .content{
-        width: 50%;
+        width: 65%;
     }
 }
