@@ -961,7 +961,10 @@
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-.content p {
+.content p{
+    padding: 18px;
+}
+.content ul{
     padding: 18px;
 }
 
