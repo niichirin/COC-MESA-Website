@@ -24,10 +24,10 @@ body {
   }
   
 #Mission-container {
-    padding: 4rem 1rem;
-    margin-top: 0px;
-    height: 40%;
-    background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://b620782.smushcdn.com/620782/wp-content/uploads/2021/03/web-klassen-corp-036-850x458-1.jpg?lossy=1&strip=1&webp=1");
+    padding: 5rem 2rem;
+    margin-top: px;
+    height: 50%;
+    background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://images.squarespace-cdn.com/content/v1/5c083f8af79392b7ada6a7c4/1544490734097-FKPPSS9PM77I49M96GCM/COC%2B1.jpg?format=1500w");
     background-size: cover;
     color:  rgba(228, 228, 228, 1);
 }
@@ -35,11 +35,17 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+
 }
- 
+
+.slide-container element {
+    transition-duration: 5s;
+    width: 100px;
+    transition: width 1s;
+  }
+
 .biography {
     position: relative;
- 
     margin: 0 auto;
     background-color: #ffffff;
     overflow: hidden;
