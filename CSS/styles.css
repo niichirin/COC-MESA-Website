@@ -876,7 +876,7 @@
     padding-top: 30px;
 }
 .faq-question{
-    padding-bottom: 20px;
+    padding-bottom: 7px;
 }
 /* || REQUIREMENTS */
 #faq-require-container{
@@ -894,7 +894,8 @@
 }
 /* || MAP */
 #faq-map-img{
-    padding: 5px;
+    padding-left: 18px;
+    padding-bottom: 18px;
     height: 150px;
     width: 250px;
 }
@@ -925,9 +926,8 @@
     padding-top: 30px;
 }
 .resource-question{
-    padding-bottom: 5px;
+    padding-bottom: 7px;
 }
-
 
 /* || COLLAPSIBLE (for faq & resources) */
 .collapsible{
@@ -947,9 +947,8 @@
     content: '\002B';
     font-size: 40px;
     font-weight: bold;
-    color: white;
+    color: black;
     float: right;
-    margin-left: 5px;
 }
 .active:after{
     content: '\2212';
@@ -961,8 +960,11 @@
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-.content p, ul, a{
+.content p, ul{
     padding: 18px;
+}
+.button-text{
+    color: black;
 }
 
 @media (min-width: 769px){
