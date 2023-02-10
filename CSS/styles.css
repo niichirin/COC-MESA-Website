@@ -876,7 +876,7 @@
     padding-top: 30px;
 }
 .faq-question{
-    padding-bottom: 20px;
+    padding-bottom: 7px;
 }
 /* || REQUIREMENTS */
 #faq-require-container{
@@ -926,9 +926,8 @@
     padding-top: 30px;
 }
 .resource-question{
-    padding-bottom: 5px;
+    padding-bottom: 7px;
 }
-
 
 /* || COLLAPSIBLE (for faq & resources) */
 .collapsible{
