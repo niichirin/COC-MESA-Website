@@ -869,8 +869,8 @@
     padding: 4rem 0 2rem;
 }
 .faq-heading{
-    padding-bottom: 10px;
-    color: var(--COC-Blue);
+    padding-bottom:10px;
+    color:var(--COC-Blue);
 }
 .faq-section{
     padding-top: 30px;
@@ -878,6 +878,7 @@
 .faq-question{
     padding-bottom: 20px;
 }
+
 /* || REQUIREMENTS */
 #faq-require-container{
     padding: 5px;
@@ -888,99 +889,22 @@
 }
 .faq-require-section{
     padding-top: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
     flex-direction: column;
 }
+
 /* || MAP */
 #faq-map-img{
-    padding-left: 18px;
-    padding-bottom: 18px;
+    padding: 5px;
     height: 150px;
     width: 250px;
 }
 #faq-map-lnk > img:hover{
     opacity: 75%;
 }
+
 /* || EMAIL */
 #faq-email{
     padding: 2rem 0 4rem;
-}
-
-
-/* ||| resources.html ||| */
-#resource-container{
-    padding: 1rem 4rem;
-    margin-top: 0px;
-}
-#resource-title{
-    text-align: center;
-    color: var(--MESA-Red);
-    padding: 4rem 0 2rem;
-}
-.resource-heading{
-    padding-bottom: 10px;
-    color: var(--COC-Blue);
-}
-.resource-section{
-    padding-top: 30px;
-}
-.resource-question{
-    padding-bottom: 5px;
-}
-
-
-/* || COLLAPSIBLE (for faq & resources) */
-.collapsible{
-    background-color: var(--COC-Yellow);
-    padding: 20px;
-    border: 0px;
-    border-radius:8px;
-    width: 100%;
-    cursor: pointer;
-    text-align: left;
-    font-size: 18px;
-}
-.collapsible:hover{
-    background-color:rgba(255, 226, 18, 0.75);
-}
-.collapsible:after{
-    content: '\002B';
-    font-size: 40px;
-    font-weight: bold;
-    color: black;
-    float: right;
-}
-.active:after{
-    content: '\2212';
-}
-.content{
-    background-color: var(--COC-Gray);
-    border-radius: 8px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-.content p, ul{
-    padding: 18px;
-}
-.button-text{
-    color: black;
-}
-
-@media (min-width: 769px){
-    .collapsible{
-        width: 75%;
-    }
-    .content{
-        width: 75%;
-    }
-}
-@media (min-width: 992px){
-    .collapsible{
-        width: 65%;
-    }
-    .content{
-        width: 65%;
-    }
 }
