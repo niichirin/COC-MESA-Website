@@ -1,16 +1,8 @@
-:root {
-    font-family: Kievit, Helvetica, Arial, Lucida, sans-serif;
-    font-size: 18px;
-    --COC-Blue: rgba(1, 27, 64, 1);
-    --COC-Yellow: rgba(255, 226, 18, 1);
-    --COC-Gray: rgba(228, 228, 228, 1);
-    --MESA-Red: rgb(255, 140, 132);
-}  
-/*grid-contents/components*/
+/*||GRID*/
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: rgba(228, 228, 228, 1);
+    background-color: rgba(217, 217, 217, 1)
 }
 .grid-item1 {
     grid-column: 1 / -1;
@@ -24,6 +16,7 @@ body{
     align-items: center;
     background: rgba(1, 27, 64, 1);
 }
+/*||SLIDES */
 .slider{
     width: 800px;
     height: 500px;
@@ -48,7 +41,7 @@ body{
     height: 500px;
 }
 
-/*the manual naviagtion of the images*/
+/*||SLIDES MANUAL NAVIGATION*/
 .navigation-manual {
     position: absolute;
     width: 800px;
@@ -57,7 +50,7 @@ body{
     justify-content: center;
 }
 .manual-btn{
-    border: 2px solid rgba(255, 226, 18, 1);
+    border: 2px solid #FF6257;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -67,7 +60,7 @@ body{
     margin-right: 40px;
 }
 .manual-btn:hover{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .first{
     margin-left: 0;
@@ -119,7 +112,7 @@ body{
 }
 
 
-/*auto sliding of the images*/
+/*SLIDE AUTOMATIC NAVIGATION*/
 
 .navigation-auto{
 position: absolute;
@@ -129,7 +122,7 @@ justify-content: center;
 margin-top: 460px;
 }
 .navigation-auto div{
-    border: 2px solid rgba(255, 226, 18, 1);
+    border: 2px solid #FF6257;
     padding: 5px;
     border-radius: 10px;
     transition: 1s;
@@ -138,93 +131,83 @@ margin-top: 460px;
     margin-right: 40px;
 }
 #radio1:checked ~ .navigation-auto .auto-btn1{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn2{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn3{
-    background: rgba(255, 226, 18, 1) ;
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn4{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn5{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn6{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn7{
-    background: rgba(255, 226, 18, 1) ;
+    background: #FF6257
 }
 #radio1:checked ~ .navigation-auto .auto-btn8{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn9{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn10{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn11{
-    background: rgba(255, 226, 18, 1) ;
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn12{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn13{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn14{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn15{
-    background: rgba(255, 226, 18, 1) ;
+    background: #FF6257;
 }
 #radio1:checked ~ .navigation-auto .auto-btn16{
-    background: rgba(255, 226, 18, 1);
+    background: #FF6257;
 }
 
-/*Fixed side bar*/
-
+/*||SIDEBAR*/
 .sidebar {
-    height: 100%;
-    width: 0;
+    height: 200px;
+    width: 150px;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
+    padding-top: 40px;
     background-color: rgba(255, 226, 18, 1);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
     }
     
     .sidebar div {
-    padding: 8px 8px 8px 30px;
+    padding: 8px;
     font-size: 24px;
     display: block;
-    transition: 0.5s;
-    cursor: pointer;
+    }
+    .sidebar a{
+    color: rgba(1, 27, 64, 1);
+    transition: all 0.4s linear;
+    }
+    .sidebar  a:hover{
+        color: rgb(255, 140, 132);
     }
     
-    .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
+    .body-text {
+    margin-right: 150px;
+    font-size: 18px;
     }
-    
-    .openbtn {
-    font-size: 24px;
-    cursor: pointer;
-    background-color: rgba(255, 226, 18, 1);
-    }
-    
-    #main {
-    transition: margin-left .5s;
-    }
-    /*styling*/
+    /*||STYLING*/
     #mesa-heading{
         color: rgb(255, 140, 132);
     }
@@ -234,4 +217,83 @@ margin-top: 460px;
      #footer-heading{
         color: rgb(255, 140, 132);
     }
-   
+   .link--underline{
+    text-decoration: none;
+   }
+
+    #myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    #myImg:hover {opacity: 0.7;}
+
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        padding-top: 100px; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.9); 
+    }
+    
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+    
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+    
+    
+    .modal-content, #caption { 
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+    
+    @keyframes zoom {
+        from {transform:scale(0)} 
+        to {transform:scale(1)}
+    }
+    
+    
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    @media only screen and (max-width: 700px){
+        .modal-content {
+        width: 100%;
+        }
+    }
+
