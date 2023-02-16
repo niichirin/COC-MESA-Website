@@ -992,3 +992,101 @@
         width: 65%;
     }
 }
+
+
+/* ||| tutor.html ||| */
+#tutor-container{
+    padding: 1rem 2rem;
+    margin-top: 0px;
+}
+#tutor-title{
+    text-align: center;
+    color: var(--MESA-Red);
+    padding: 4rem 0 2rem;
+}
+#sections-contain{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+#pic-contain{
+    border: 2px solid black;
+    width:20%;
+}
+.pic-section{
+    text-align: center;
+    vertical-align: center;
+    border: 2px solid black;
+    margin: 1px;
+    /* row-gap: ; */
+    height: 175px;
+    padding: 10px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.tutor-img{
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    padding: 5px;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+    justify-content: center;
+}
+#bio-contain{
+    border: 2px solid black;
+    width: 35%;
+}
+.bio-section{
+    text-align:center;
+    border: 2px solid black;
+    margin: 1px;
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#schedule-contain{
+    border: 2px solid black;
+    width: 45%;
+}
+.schedule-section{
+    text-align:center;
+    border: 2px solid black;
+    margin: 1px;
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* @media (min-width: 769px){
+    #pic-contain{
+        width:25%
+    }
+    #bio-contain{
+        width:35%;
+    }
+    #schedule-contain{
+        width:45%;
+    }
+}
+@media (min-width: 992px){
+    #pic-contain{
+        width:20%;
+    }
+    #bio-contain{
+        width:35%
+    }
+    #schedule-contain{
+        width:45%
+    }
+} */
