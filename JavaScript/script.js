@@ -56,10 +56,12 @@ for(var i=0; i < coll.length; i++){
         var content = this.nextElementSibling;
         if(content.style.maxHeight){
             content.style.maxHeight = null;
-            document.getElementById(sign).innerHTML="+";
+            // document.getElementsByClassName("sign").innerHTML="+";
         } else{
             content.style.maxHeight = content.scrollHeight + "px";
-            //document.getElementById(sign).innerHTML="-";
+            
+            
+            // document.getElementsByClassName("sign").innerHTML="-";
 
             // var s = document.createElement("p")
             // var sign = document.createTextNode("-");
