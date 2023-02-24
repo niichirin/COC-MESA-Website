@@ -1024,6 +1024,7 @@
     width: 210px;
     border: 1px solid black;
     text-align: center;
+    padding: 10px;
 }
 .day{
     border: 1px solid black;
@@ -1070,6 +1071,13 @@
     align-items: stretch;
     justify-content: center;
     margin-top: 50px;
+}
+.sections-header{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    margin: 1px;
 }
 #pic-contain{
     border: 1px solid black;
