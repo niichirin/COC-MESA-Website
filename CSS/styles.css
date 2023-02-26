@@ -1157,23 +1157,29 @@
 }
 /* @media (min-width: 769px){
     #pic-contain{
-        width:25%
+        width:200px;
     }
     #bio-contain{
-        width:35%;
+        width:150px;
+    }
+    #subject-contain{
+        width:100px;
     }
     #schedule-contain{
-        width:45%;
-    }
-}
-@media (min-width: 992px){
-    #pic-contain{
-        width:20%;
-    }
-    #bio-contain{
-        width:35%
-    }
-    #schedule-contain{
-        width:45%
+        width:175px;
     }
 } */
+@media (min-width: 992px){
+    #pic-contain{
+        width:300px;
+    }
+    #bio-contain{
+        width:300px;
+    }
+    #subjects-contain{
+        width:250px;
+    }
+    #schedule-contain{
+        width:350px;
+    }
+}
