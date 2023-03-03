@@ -9,11 +9,30 @@
 </head>
 
 <body>
+    <a href="index.html">Home</a>
     <div id="primaryTopnav" class="topnav">
         <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
         <a href="index.html">Home</a>
-        <a href="join.html">Join</a>
-        <a href="about.html">About</a>
+        <div class="dropdown">
+            <button class="dropdown-btn">Join
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-links">
+                <a href="benefits-and-requirements.html">Benefits and Requirements</a>
+                <a href="form.html">Join Form</a>
+            </div>
+        </div>
+        <a href="skills-lab.html">Skills Lab</a>
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="location.href='about-MESA.html';">About
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-links">
+                <a href="about-MESA.html">About MESA</a>
+                <a href="meet-the-team.html">Meet the Team</a>
+            </div>
+        </div>
+        <a href="resources.html">Resources</a>
         <a href="events.html">Events</a>
         <div class="dropdown">
             <button class="dropdown-btn" onclick="location.href='help.html';">Help
@@ -28,6 +47,31 @@
         </div>
         <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
     </div>
+
+    <a href="skills-lab.html">Skills Lab</a>
+    <div class="dropdown">
+        <button class="dropdown-btn" onclick="location.href='about-MESA.html';">About
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-links">
+            <a href="about-MESA.html">About MESA</a>
+            <a href="meet-the-team.html">Meet the Team</a>
+        </div>
+    </div>
+    <a href="resources.html">Resources</a>
+    <a href="events.html">Events</a>
+    <div class="dropdown">
+        <button class="dropdown-btn" onclick="location.href='help.html';">Help
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-links">
+            <a href="counseling.html">Counseling</a>
+            <a href="tutoring.html">Tutoring</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
 
     <script src="JavaScript\script.js"></script>
 </body>
