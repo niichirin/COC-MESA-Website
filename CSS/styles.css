@@ -34,7 +34,6 @@
     - Create a new test file.
     - Once you are done with your changes, include them in your pull request
     - Someone else will attempt to merge the main styles.css file and your test file.
-
 */
 
 /* ||| root and all elements ||| */
@@ -45,7 +44,7 @@
     --MESA-Red: #FF6257;
 }  
 
-/* ||| index-lab.html ||| */
+/* ||| index.html ||| */
 /* || HEADLINE */
 #headline-container {
     padding: 4rem 1rem;
@@ -1177,7 +1176,7 @@ text-decoration: none;
     .content{
         width: 65%;
     }
-
+}
 /* ||| tutor.html ||| */
 #tutor-container{
     padding: 1rem 2rem;
