@@ -612,15 +612,7 @@
 .grid-item1 {
     grid-column: 1 / -1;
 }
-body{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    /*display: flex;*/
-    justify-content: center;
-    align-items: center;
-    background: rgba(1, 27, 64, 1);
-}
+
 /*|| SLIDES */
 .slider{
     width: 800px;
@@ -995,7 +987,6 @@ text-decoration: none;
     }
 }
 
-
 /* ||| help.html ||| */
 #help-heading {
     text-align: center;
@@ -1318,7 +1309,6 @@ text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 #subject-contain{
     border: 1px solid black;
