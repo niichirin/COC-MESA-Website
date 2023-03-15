@@ -7,13 +7,13 @@ const callback = entries => {
     entries.forEach( entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
-        }
+        } // show and dont hide it anymore
     })
 }
 const options = {
-    threshold: 0.25 // 50% of the element must be viewed to animate
+    // root:
+    // rootMargin:
+    threshold: 0.40 // 50% of the element must be viewed to animate
 }
 
 const observer = new IntersectionObserver(callback, options);

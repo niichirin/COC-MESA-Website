@@ -167,7 +167,7 @@
     width: 100%;
 }
 
-#about-container > img.hidden {
+/* #about-container > img.hidden {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(2rem);
@@ -179,7 +179,7 @@
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
-}
+} */
 
 @media only screen and (min-width: 769px) {
     #about-container > img {
@@ -193,7 +193,7 @@
     width: 100%;
 }
 
-#about-content.hidden {
+/* #about-content.hidden {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-2rem);
@@ -204,7 +204,7 @@
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
-}
+} */
 
 @media only screen and (min-width: 769px) {
     #about-content {
@@ -276,7 +276,7 @@
     transition: 0.25s ease-out;
 }
 
-.stat-square.hidden {
+/* .stat-square.hidden {
     opacity: 0;
     filter: blur(10px);
     transform: translateX(-3rem);
@@ -290,7 +290,7 @@
 
 .stat-square:nth-child(1) { transition: all 300ms ease-out }
 .stat-square:nth-child(2) { transition: all 600ms ease-out; }
-.stat-square:nth-child(3) { transition: all 900ms ease-out; }
+.stat-square:nth-child(3) { transition: all 900ms ease-out; } */
 
 .stat-square:hover {
     transform: translateX(-3px) translateY(-3px);
@@ -369,7 +369,7 @@
     height: 300px;
 }
 
-.service-square.hidden {
+/* .service-square.hidden {
     opacity: 0;
     transform: rotateY(90deg);
     transition: all 1s ease-out;
@@ -378,7 +378,7 @@
 .service-square.show {
     opacity: 1;
     transform: rotateY(0);
-}
+} */
 
 .service-square.primary {
     cursor: pointer; /* show that the button can be clicked */

@@ -53,6 +53,7 @@ li {
 
 /* fix bar to top and add background color */
 .topnav {
+    font-size: 0.7rem; /* topnav box */
     position: fixed;
     top: 0;
     width: 100%;
@@ -63,7 +64,7 @@ li {
 /* Prevent overlay with container/item after the topnav */
 /* NOTE: topnav must be the first container in the body tag for this to work */
 body:nth-child(2) {
-    margin-top: 61.2px;
+    margin-top: 42.84px;
 }
 
 /* must style primary links with > selector */
@@ -71,8 +72,7 @@ body:nth-child(2) {
     float: left;
     display: block;
     color: white;
-    padding: 18px;
-    font-size: 1rem;
+    padding: 0.7rem; /* topnav box */
     text-decoration: none;
     text-align: center;
     transition: 0.25s;
@@ -91,10 +91,9 @@ body:nth-child(2) {
 
 /* style dropdown menu and button */
 .dropdown .dropdown-btn {
-    font-size: 1rem;
     border: none;
     outline: none;
-    padding: 18px;
+    padding: 0.7rem; /* topnav box */
     background-color: inherit;
     font-family: inherit;
     color: white;
@@ -120,7 +119,7 @@ body:nth-child(2) {
     text-decoration: none;
     border-bottom: 1px solid black;
     float: none;
-    padding: 1rem;
+    padding: 0.7rem; /* topnav box */
     display: block;
     text-align: left;
     transition: 0.25s;
