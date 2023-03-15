@@ -1,3 +1,4 @@
+// || NAVIGATION BAR FUNCTIONS
 function openNavBar() {
     let navbar = document.getElementById("primaryTopnav");
     if (navbar.className === "topnav") {
@@ -6,6 +7,18 @@ function openNavBar() {
         navbar.className = "topnav";
     }
   }
+
+function displaceNavBar() {
+  // obtain navbar height
+  let navbar = document.querySelector("#primaryTopnav");
+  let navHeight = `${navbar.getBoundingClientRect().height}px`;
+
+  // displace element after navbar
+  let body = navbar.nextElementSibling;
+  body.style.marginTop = navHeight;
+}
+
+displaceNavBar();
 
 const skillsLabBtns = document.querySelectorAll('.lab-overview-btn')
 skillsLabBtns.forEach( button => {
@@ -106,4 +119,5 @@ function getDay(date) { // get day number from 0 (monday) to 6 (sunday)
   if (day == 0) day = 7; // make Sunday (0) the last day
   return day - 1;
 }
+
 createCalendar(calendar, 2012, 9);

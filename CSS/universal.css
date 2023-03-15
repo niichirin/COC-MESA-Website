@@ -50,7 +50,6 @@ li {
 }
 
 /* ||| NAVIGATION BAR ||| */
-
 /* fix bar to top and add background color */
 .topnav {
     font-size: 0.7rem; /* topnav box */
@@ -63,9 +62,6 @@ li {
 
 /* Prevent overlay with container/item after the topnav */
 /* NOTE: topnav must be the first container in the body tag for this to work */
-body:nth-child(2) {
-    margin-top: 42.84px;
-}
 
 /* must style primary links with > selector */
 .topnav > a {
