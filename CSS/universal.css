@@ -58,6 +58,7 @@ li {
     width: 100%;
     z-index: 3;
     background-color: var(--COC-Blue);
+    transition: all 0.25s ease-out;
 }
 
 /* Prevent overlay with container/item after the topnav */

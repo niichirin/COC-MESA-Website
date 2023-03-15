@@ -5,7 +5,7 @@ console.log("Loaded animate.js");
 const callback = entries => {
     // Runs when visibility of observed elements changes
     entries.forEach( entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !entry.target.classList.contains('show')) {
             entry.target.classList.add('show');
         } // show and dont hide it anymore
     })
