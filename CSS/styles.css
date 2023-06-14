@@ -48,7 +48,7 @@
 /* || HEADLINE */
 #headline-container {
     padding: 4rem 1rem;
-    text-align: justify;
+    text-align: left;
     background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
     background-size: cover;
     color: white;
@@ -60,7 +60,7 @@
 }
 
 #headline-container > p {
-    line-height: 1.4
+    line-height: 1.4;
 }
 
 @media only screen and (min-width: 480px) {
@@ -77,7 +77,7 @@
     }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     #headline-container {
         padding: 4rem;
     }
@@ -142,7 +142,7 @@
     }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     #about-container {
         flex-wrap: nowrap;
         padding: 4rem;
@@ -181,7 +181,7 @@
     transform: translateX(0);
 } */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     #about-container > img {
         order: 2;
         width: 50%;
@@ -206,7 +206,7 @@
     transform: translateX(0);
 } */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     #about-content {
         order: 1;
         width: 50%;
@@ -233,7 +233,7 @@
         padding: 4rem 2rem;
     }
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     #results-container {
         padding: 4rem 4rem;
     }
@@ -313,7 +313,7 @@
     font-size: 1.8rem;
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     #services-description {
         padding: 0 4rem;
         font-size: 1.2rem;
@@ -408,7 +408,7 @@
     }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     #service-square-container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, min-content);
@@ -453,7 +453,7 @@
     }   
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     #lab-overview-container {
         padding: 0 4rem 4rem;
     }   
@@ -515,7 +515,7 @@
     }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 768px) {
     #lab-overview-row {
         flex-direction: row;
         flex-wrap: wrap;
@@ -1161,7 +1161,7 @@ text-decoration: none;
     color: black;
 }
 
-@media (min-width: 769px){
+@media (min-width: 768px){
     .collapsible{
         width: 75%;
     }
@@ -1337,7 +1337,7 @@ text-decoration: none;
     align-items: center;
     padding: 15px;
 }
-/* @media (min-width: 769px){
+/* @media (min-width: 768px){
     #pic-contain{
         width:200px;
     }
@@ -1364,5 +1364,108 @@ text-decoration: none;
     }
     #schedule-contain {
         width:350px;
+    }
+}
+
+/* ||| form.html ||| */
+
+#join-pdf {
+    display: flex; /* align pdf in center */
+    flex-direction: column;
+}
+
+#join-pdf > h1 {
+    text-align: center;
+    padding: 2rem;
+}
+
+#join-pdf > object {
+    width: 90%;
+    height: 320px;
+    align-self: center; /* for pdf */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+#join-desc, 
+#join-req-header, 
+#join-req {
+    padding: 1rem;
+}
+
+#join-req {
+    margin-bottom: 4rem;
+}
+
+#join-req > h2 {
+    margin-bottom: 1rem;
+}
+
+#join-req ul {
+    padding: 0; /* removes indentation */
+}
+
+#join-req ul li:last-of-type {
+    margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 480px) {
+    #join-pdf > object {
+        width: 85%;
+        height: 320px;
+    }
+    
+    #join-desc, 
+    #join-req-header, 
+    #join-req {
+        padding: 1rem 2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #join-pdf > object {
+        width: 75%;
+        height: 480px;
+    }
+    
+    #join-desc, 
+    #join-req-header, 
+    #join-req {
+        padding: 1rem 4rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #join-pdf > object {
+        height: 600px;
+    }
+    
+    #join-req {
+        padding: 0;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        justify-content: center;
+        align-items: stretch;
+
+        gap: 1rem;
+    }
+
+    #fully-qualified-req, #friend-req {
+        padding: 1rem;
+        width: 45%;
+        border-style: solid;
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    #fully-qualified-req > h3, 
+    #friend-req > h3 {
+        text-align: center;
+        margin-bottom: 1rem;
     }
 }

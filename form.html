@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="CSS/styles.css">
     <title>Join MESA at COC!</title>
 </head>
+
 <body>
     <div id="primaryTopnav" class="topnav">
         <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
@@ -47,54 +49,77 @@
         <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
     </div>
 
-    <a href="#join-us">Click here to go to Join Us Form</a><br>
-    <a href="#skills-lab">Click here to go to Skills Lab Form </a>
-    <h1>Becoming a MESA Student</h1>
-    <p>MESA Applications are currently OPEN for Fully Qualifed students and Friends of MESA. We will close applications the 2nd week of Fall semester OR when we reach student capacity.
+    <div id="join-pdf">
+        <h1>MESA Application PDF</h1>
+        <object id="join-pdf" data="Assets/ApplicationMESA.pdf" type="application/pdf">
+            <p>Unable to display PDF file. <a href="Assets/ApplicationMESA.pdf">Download</a> instead.</p>
+        </object>
+    </div>
 
-        To be considered a member of the MESA program, you will need to complete a MESA Application and meet the MESA Student minimum requirements (found below). We receive many applications, especially during the start of the fall and spring terms, so please allow at least 2-3 weeks for processing. Incomplete applications will not be processed. If you are eligible to be become a MESA student you will be invited to meet with the MESA Program Director for an intake interview where your application will be reviewed and the MESA program and our services will be discussed.
-    </p>
-    <h1>Qualifications for Membership</h1>
-    <h2>Fully Qualified</h2>
-        <ul>
-            <li>STEM major (Calculus based)</li>
-            <li>Minimum 3 semesters remaining at COC</li>
-            <li>2.2 or higher GPA</li>
-            <li>Educationally disadvantaged (First generation college student)</li>
-            <li>Financial need - (receiving BOG fee waiver and/or grants)</li>
-            <li>Plans to transfer to a 4 year college</li>
-            <li>Be a U.S. Citizen, or resident</li>
-            <li>Either have completed or enrolled in Math 070</li>
-        </ul>
-    <h3>Semester Requirements:</h3>
-        <ul>
-            <li>GPA 2.2 or higher per semester</li>
-            <li>Attend at least 2 activities/workshops</li>
-            <li>30+ hours in MESA center</li>
-            <li>Complete Progress Report</li>
-        </ul>
-    <h3>Yearly Requirements:</h3>
-        <ul>
-           <li>Have an updated Educational Plan</li>
-           <li>Apply for at least one scholarship or summer REU</li>
-        </ul>
-    <h2>Freind of MESA</h2>
-        <ul>
-            <li>STEM major (Calculus based)</li>
-            <li>Minimum 3 semesters remaining at COC</li>
-            <li>Minimum 2.0 GPA</li>
-        </ul>
-    <h3>Semester Requirements:</h3>
-        <ul>
-            <li>Attend at least 1 activity /workshop</li>
-            <li>20+ hours in the center/semester</li>
-            <li>Minimum 2.0 semester GPA</li>
-        </ul>
-    <h4>Applications will be available only to entering COC freshmen, students with no more than 30 units completed and those who have at least 3 semesters remaining at COC before transferring.</h4>
+    <div id="join-desc">
+        <h2>Becoming a MESA Student</h2>
+        <p>
+            MESA Applications are currently OPEN for Fully Qualified students and Friends of MESA. We will close
+            applications the 2nd week of Fall semester OR when we reach student capacity.
 
-
-    <h1 id="join-us">MESA Community College Program (MCCP) Application</h1>
+            To be considered a member of the MESA program, you will need to complete a MESA Application and meet the
+            MESA Student minimum requirements (found below). We receive many applications, especially during the start
+            of the fall and spring terms, so please allow at least 2-3 weeks for processing. Incomplete applications
+            will not be processed. If you are eligible to be become a MESA student you will be invited to meet with the
+            MESA Program Director for an intake interview where your application will be reviewed and the MESA program
+            and our services will be discussed.
+        </p>
+        <br>
+        <h4>
+            Applications will be available only to entering COC freshmen, students with no more than 30 units completed
+            and those who have at least 3 semesters remaining at COC before transferring.
+        </h4>
+    </div>
+    <h2 id="join-req-header">Qualifications for Membership</h2>
+    <div id="join-req">
+        <div id="fully-qualified-req">
+            <h3>Fully Qualified</h3>
+            <ul>
+                <li>STEM major (Calculus based)</li>
+                <li>Minimum 3 semesters remaining at COC</li>
+                <li>2.2 or higher GPA</li>
+                <li>Educationally disadvantaged (First generation college student)</li>
+                <li>Financial need - (receiving BOG fee waiver and/or grants)</li>
+                <li>Plans to transfer to a 4 year college</li>
+                <li>Be a U.S. Citizen, or resident</li>
+                <li>Either have completed or enrolled in MATH-070</li>
+            </ul>
+            <h4>Semester Requirements:</h4>
+            <ul>
+                <li>GPA 2.2 or higher per semester</li>
+                <li>Attend at least 2 activities/workshops</li>
+                <li>30+ hours in MESA Center</li>
+                <li>Complete Progress Report</li>
+            </ul>
+            <h4>Yearly Requirements:</h4>
+            <ul>
+                <li>Have an updated Educational Plan</li>
+                <li>Apply for at least one scholarship or summer REU</li>
+            </ul>
+        </div>
+        <div id="friend-req">
+            <h3>Friend of MESA</h3>
+            <ul>
+                <li>STEM major (Calculus based)</li>
+                <li>Minimum 3 semesters remaining at COC</li>
+                <li>Minimum 2.0 GPA</li>
+            </ul>
+            <h4>Semester Requirements:</h4>
+            <ul>
+                <li>Attend at least 1 activity /workshop</li>
+                <li>20+ hours in the center/semester</li>
+                <li>Minimum 2.0 semester GPA</li>
+            </ul>
+        </div>
+    </div>
+    <!-- <h1 id="join-us">MESA Community College Program (MCCP) Application</h1>
     <p>Please Complete All Items</p>
+
     <form action="joinus.php" method="post">
         <h3>Student Info</h3>
         <label for="coc-id">CoC ID Number</label><br>
@@ -127,9 +152,7 @@
         <label for="state">ZIP</label><br>
         <input type="text" id="state" name="state"><br>
 
-        <!-- TO DO:
-            Use phone number specific inputs
-        -->
+        TO DO: Use phone number specific inputs
         <label for="homephone">Home Phone</label><br>
         <input type="text" id="homephone" name="homephone"><br>
 
@@ -137,18 +160,14 @@
         <input type="text" id="cellphone" name="cellphone"><br>
 
 
-        <!-- TO DO:
-            Use email specific inputs
-        -->
+        TO DO: Use email specific inputs
         <label for="p-email">Personal Email</label><br>
         <input type="email" id="pemail" name="pemail"><br>
 
         <label for="coc-email">COC Email</label><br>
         <input type="email" id="cocemail" name="cocemail"><br>
 
-        <!-- TO DO:
-            Use date-specific input
-        -->
+        TO DO: Use date-specific input
         <label for="bdate">Birth Date</label><br>
         <input type="date" id="bdate" name="bdate"><br>
 
@@ -169,10 +188,10 @@
         <label for="indian_native">American Indian/Alaskan Native Tribal Affiliation </label>
         <input type="checkbox" id="indian_native" name="indian_native"><br>
 
-        <!-- TO DO:
+        TO DO:
             If possible, do this:
             If "Yes" isn't selected, then gray out the field for specifying the language.
-        -->
+
         <p>Is any other language other than English spoken regularly in your home</p>
         <label>
             <input  type="radio" 
@@ -233,27 +252,26 @@
         </label>
 
         <h3>Academic Info</h3>
-        <!-- TO DO: 
+        
+        TO DO: 
             Instead of textboxes, we can try making a menu where you press a plus button to add a line for each class you input.
-         -->
+
         <label for="current_math_science">Current Science and Math classes</label><br>
         <input type="text" id="current_math_science" name="current_math_science"><br>
         
         <label for="complete_math_science">Completed Science and Math Classes</label><br>
         <input type="text" id="complete_math_science" name="complete_math_science"><br>
+        
+        TO DO: Use a dropdown for semester and a date-specfic input for year
 
-        <!-- TO DO: 
-            Use a dropdown for semester and a date-specfic input for year
-         -->
         <label for="college_enroll_date">When did you first enroll at this college (Semester/Year)</label><br>
         <input type="text" id="college_enroll_date" name="college_enroll_date"><br>
 
         <label for="counselor">Current College Counselor</label><br>
         <input type="text" id="counselor" name="counselor"><br>
         
-        <!-- TO DO:
-            Use dropdown instead of checkboxes
-        -->
+        TO DO: Use dropdown instead of checkboxes
+
         <p>Total Number of College Units Compeleted</p>
         <label for="0-29_unit">0-29</label><br>
         <input type="checkbox" id="0-29_unit" name="0-29_unit"><br>
@@ -287,9 +305,10 @@
         <input type="text" id="major" name="major"><br>
         <label for="gpa">Current College GPA</label><br>
         <input type="text" id="gpa" name="gpa"><br>
-        <!-- TO DO: 
+        
+        TO DO: 
             Because we don't have that many classes to select from, we could probably just use a dropdown menu
-         -->
+
         <label for="fmath_class">First College Math Class</label><br>
         <input type="text" id="fmath_class" name="fmath_class"><br>
 
@@ -302,9 +321,8 @@
         <label for="3college">Third Choice College(for transfer)</label><br>
         <input type="text" id="3college" name="3college"><br>
 
-        <!-- TO DO: 
-            Use a dropdown menu for semester and a date-specific input for year
-         -->
+        TO DO: Use a dropdown menu for semester and a date-specific input for year
+
         <label for="trans_date">Prospective Transfer Date(Semester/Year)</label><br>
         <input type="text" id="trans_date" name="trans_date"><br>
 
@@ -313,27 +331,27 @@
         <label for="HS">High School</label><br>
         <input type="text" id="HS" name="HS"><br>
 
-        <!-- TO DO: 
+        TO DO: 
             Ask for start date and end date (including present) using a date-specific menu.
-         -->
+
         <label for="HS_date">Date Attended</label><br>
         <input type="text" id="HS_date" name="HS_date"><br>
 
         <label for="College">College</label><br>
         <input type="text" id="College" name="College"><br>
 
-        <!-- TO DO: 
+        TO DO: 
             Ask for start date and end date (including present) using a date-specific menu.
-         -->
+        
         <label for="College_date">Date Attended</label><br>
         <input type="text" id="College_date" name="College_date"><br>
 
         <label for="2College">College</label><br>
         <input type="text" id="2College" name="2College"><br>
 
-        <!-- TO DO: 
+        TO DO: 
             Ask for start date and end date (including present) using a date-specific menu.
-         -->
+        
         <label for="2College_date">Date Attended</label><br>
         <input type="text" id="2College_date" name="2College_date"><br>
 
@@ -355,9 +373,8 @@
         <label for="other_needs">Excpetional Needs(specify)</label><br>
         <textarea id="other_needs" name="other_needs"></textarea><br>
 
-        <!-- TO DO: 
-            Ask for start date and end date (including present) using a date-specific menu.
-         -->
+        TO DO: Ask for start date and end date (including present) using a date-specific menu.
+
         <label for="employed">Are you employed?</label><br>
         <input  type="radio" 
                 id="employed" 
@@ -371,9 +388,9 @@
                 value="no">
                 No
                 <br>
-        <!-- TO DO: 
-            Just use a number input
-         -->
+        
+        TO DO: Just use a number input
+
         <label for="employed_hours">If yes, how many hours a week?</label><br>
         <input type="number" id="employed_hours" name="employed_hours"><br>
 
@@ -393,10 +410,10 @@
         <label for="tutoring">Are you interested in teaching math or science?</label><br>
         <input type="checkbox" id="tutoring" name="tutoring"><br>
 
-        <!-- TO DO:
+        TO DO:
             Use select element and option elements to make a dropdown menu
             https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ol_type
-        -->
+       
         <p>Highest level of education achieved by each of your parents/guardians(indicate by letter)</p>
         <label for="father_edu">Father</label><br>
         <input type="text" id="father_edu" name="father_edu"><br>
@@ -419,23 +436,23 @@
         <input type="text" id="other_par_edu" name="other_parent_edu"><br>
 
         <p>Type of work your parents or gaurdian have done over the past years or prior to retiring(indicate by letter)</p><br>
-        <!-- TO DO:
+
+        TO DO:
             Use select element and option elements to make a dropdown menu
             https://www.w3schools.com/tags/tag_select.asp
-        -->
+       
         <label for="father_work">Father</label><br>
         <input type="text" id="father_work" name="father_work"><br>
         
-        <!-- TO DO:
+        TO DO:
             Use select element and option elements to make a dropdown menu
             https://www.w3schools.com/tags/tag_select.asp
-        -->
+       
         <label for="mother_work">Mother</label><br>
         <input type="checkbox" id="mother_work"name="mother_work"><br>
 
-        <!-- TO DO:
-            Can use <ol type="A"> to make numbered list instead of using a bunch of <br> tags
-        -->
+        TO DO: Can use <ol type="A"> to make numbered list instead of using a bunch of <br> tags
+       
         <p>
             A. Never Employed <br>
             B. Farm Worker<br>
@@ -476,7 +493,8 @@ to use my photograph in MESA and college promotional materials.</p>
         </label>
 
         <input type="submit">
-    </form>
+    </form> -->
+
     <script src="JavaScript/script.js"></script>
 </body>
 <footer>
@@ -522,4 +540,5 @@ to use my photograph in MESA and college promotional materials.</p>
         </div>
     </div>
 </footer>
+
 </html>
