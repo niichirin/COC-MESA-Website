@@ -1,16 +1,926 @@
 <!--This is the main (index) page for all of COC MESA-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/universal.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <title>MESA at College of the Canyons</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--- <link rel="stylesheet" href="CSS/universal.css">
+                <link rel="stylesheet" href="CSS/styles.css">--->
+        <title>MESA at College of the Canyons</title>
 
+        <style>
+        /* styles.css */
+        /* ||| root and all elements ||| */:root
+        {
+            --COC-Blue: rgba(1, 27, 64, 1);
+            --COC-Yellow: rgba(255, 226, 18, 1);
+            --COC-Gray: rgba(217, 217, 217, 1);
+            --MESA-Red: #FF6257;
+        }
+
+        /* ||| index-lab.html ||| */
+        /* || HEADLINE */
+        #headline-container {
+            padding: 4rem 1rem;
+            text-align: justify;
+            background-image: linear-gradient(to bottom, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
+            background-size: cover;
+            color: white;
+        }
+
+        #headline-container > h1 {
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        #headline-container > p {
+            line-height: 1.4
+        }
+
+        @media only screen and(min-width: 480px) {
+            #headline-container {
+                padding: 4rem 2rem;
+            }
+
+            #headline-container > h1 {
+                font-size: 1.5rem;
+            }
+
+            #headline-container > p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media only screen and(min-width: 769px) {
+            #headline-container {
+                padding: 4rem;
+            }
+            #headline-container > h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media only screen and(min-width: 992px) {
+            #headline-container {
+                padding: 8rem;
+            }
+
+            #headline-container > h1 {
+                font-size: 2.2rem;
+            }
+
+            #headline-container > p {
+                line-height: 1.3;
+                font-size: 1.3rem;
+            }
+        }
+
+        @media only screen and(min-width: 1200px) {
+            #headline-container {
+                padding: 8rem 12rem;
+            }
+
+            #headline-container > h1 {
+                font-size: 2.8rem;
+            }
+
+            #headline-container > p {
+                line-height: 1.2;
+            }
+        }
+
+        .headline-text {
+            padding: 2rem 0;
+        }
+
+        #headline-container > button {
+            display: grid;
+            margin: auto;
+            width: 75%;
+        }
+
+        /* ABOUT */
+        #about-container {
+            padding: 4rem 1rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media only screen and(min-width: 481px) {
+            #about-container {
+                padding: 4rem 2rem;
+            }
+        }
+
+        @media only screen and(min-width: 769px) {
+            #about-container {
+                flex-wrap: nowrap;
+                padding: 4rem;
+            }
+        }
+
+        @media only screen and(min-width: 1025px) {
+            #about-container {
+                padding: 8rem;
+            }
+        }
+
+
+        @media only screen and(min-width: 1201px) {
+            #about-container {
+                padding: 8rem 12rem;
+            }
+        }
+
+        #about-container > img {
+            order: 1;
+            width: 100%;
+        }
+
+        #about-container > img.hidden {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(2rem);
+            transition: all 0.5s ease-out;
+            transition-delay: 500ms;
+        }
+
+        #about-container > img.show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+
+        @media only screen and(min-width: 769px) {
+            #about-container > img {
+                order: 2;
+                width: 50%;
+            }
+        }
+
+        #about-content {
+            order: 2;
+            width: 100%;
+        }
+
+        #about-content.hidden {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(-2rem);
+            transition: all 0.5s ease-out;
+        }
+
+        #about-content.show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+
+        @media only screen and(min-width: 769px) {
+            #about-content {
+                order: 1;
+                width: 50%;
+            }
+        }
+
+
+        #about-content > h1 {
+            text-align: left;
+        }
+
+        #about-content > p {
+            margin-bottom: 1rem;
+        }
+
+        /* || RESULTS */
+        #results-container {
+            padding: 4rem 1rem;
+            background-color: var(--MESA-Red);
+        }
+
+        @media only screen and(min-width: 480px) {
+            #results-container {
+                padding: 4rem 2rem;
+            }
+        }
+        @media only screen and(min-width: 769px) {
+            #results-container {
+                padding: 4rem;
+            }
+        }
+
+        @media only screen and(min-width: 992px) {
+            #results-container {
+                padding: 4rem 8rem;
+            }
+        }
+
+        @media only screen and(min-width: 1200px) {
+            #results-container {
+                padding: 4rem 12rem;
+            }
+        }
+
+        #results-container > h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        #results-section {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 1rem;
+        }
+
+        .stat-square {
+            background-color: white;
+            box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+
+            width: 100%;
+            padding: 2rem 1rem;
+            border-radius: 10px;
+
+            transition: 0.25s ease-out;
+        }
+
+        .stat-square.hidden {
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateX(-3rem);
+        }
+
+        .stat-square.show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+
+        .stat-square:nth-child(1) {
+            transition: all 300ms ease-out
+        }
+        .stat-square:nth-child(2) {
+            transition: all 600ms ease-out;
+        }
+        .stat-square:nth-child(3) {
+            transition: all 900ms ease-out;
+        }
+
+        .stat-square:hover {
+            transform: translateX(-3px) translateY(-3px);
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* || SERVICES */
+        #services-container {
+            padding: 4rem 1rem;
+        }
+
+        #services-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        #services-description > h1 {
+            font-size: 1.8rem;
+        }
+
+        @media only screen and(min-width: 769px) {
+            #services-description {
+                padding: 0 4rem;
+                font-size: 1.2rem;
+            }
+
+            #services-description > h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media only screen and(min-width: 992px) {
+            #services-description {
+                padding: 0 6rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media only screen and(min-width: 1200px) {
+            #services-container {
+                padding: 4rem;
+            }
+
+            #services-description {
+                padding: 0 8rem;
+                font-size: 1.3rem;
+            }
+        }
+
+        #service-square-container {
+            display: grid;
+            margin: auto;
+            justify-content: center;
+            gap: 0.5rem;
+
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(auto-fit, 300px);
+        }
+
+        .service-square {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 1rem;
+
+            font-size: 0.8em;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+
+            width: 100%;
+            height: 300px;
+        }
+
+        .service-square.hidden {
+            opacity: 0;
+            transform: rotateY(90deg);
+            transition: all 1s ease-out;
+        }
+
+        .service-square.show {
+            opacity: 1;
+            transform: rotateY(0);
+        }
+
+        .service-square.primary {
+            cursor: pointer; /* show that the button can be clicked */
+            color: black;
+            background-color: var(--COC-Yellow);
+        }
+
+        .service-square.secondary {
+            color: black;
+            background-color: var(--COC-Gray);
+        }
+
+        .service-square.primary:hover {
+            transform: translateX(-2px) translateY(-2px);
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.25);
+        }
+
+        /* service grid 1 */
+        @media only screen and(min-width: 480px) {
+            #service-square-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, min-content);
+            }
+            .service-square {
+                height: 250px;
+            }
+        }
+
+        @media only screen and(min-width: 769px) {
+            #service-square-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, min-content);
+            }
+            .service-square {
+                height: 300px;
+            }
+        }
+
+        @media only screen and(min-width: 992px) {
+            #service-square-container {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, min-content);
+            }
+
+            .service-square {
+                height: 400px;
+            }
+        }
+
+        .service-square > h3 {
+            line-height: 20px;
+            width: max-content; /* prevent multiline overflow for text */
+        }
+
+        .service-icon {
+            /* placeholder icon */
+            background-color: gray;
+            color: white;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        /* || SKILLS LAB */
+        #lab-overview-container {
+            padding: 0 1rem 4rem;
+        }
+
+        @media only screen and(min-width: 480px) {
+            #lab-overview-container {
+                padding: 0 2rem 4rem;
+            }
+        }
+
+        @media only screen and(min-width: 769px) {
+            #lab-overview-container {
+                padding: 0 4rem 4rem;
+            }
+        }
+
+        @media only screen and(min-width: 1200px) {
+            #lab-overview-container {
+                padding: 0 8rem 4rem;
+            }
+        }
+
+        #lab-overview-container > button {
+            margin-top: 1rem;
+        }
+
+        #lab-overview-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .lab-overview-btn {
+            font-size: 1rem;
+            background-color: var(--COC-Blue);
+
+            text-align: center;
+            color: white;
+
+            width: 25%;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+
+            cursor: pointer; /* show icon interactivity */
+
+            transition: 0.25s;
+            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+
+            overflow: scroll;
+        }
+
+        .lab-overview-btn:hover,
+        .lab-overview-btn.active {
+            background-color: #002860;
+            transform: translateY(3px);
+            box-shadow: 2px 5px 10px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* prevent single row of buttons on smaller viewports*/
+        @media only screen and(max-width: 480px) {
+            #lab-overview-row {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+            .lab-overview-btn {
+                width: 100%;
+            }
+        }
+
+        @media only screen and(max-width: 769px) {
+            #lab-overview-row {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .lab-overview-btn {
+                width: 40%;
+            }
+        }
+
+        .lab-overview-tab {
+            background-color: var(--COC-Gray);
+            margin-bottom: 0.5rem;
+            border: 1px var(--COC-Blue) solid;
+            border-radius: 10px;
+
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* display first tab by default */
+        /* this selector selects tabs that are not the first child of a parent element (div) */
+        .lab-overview-tab:not(:first-child) {
+            display: none;
+        }
+
+        .lab-overview-tab > div {
+            width: 100%; /* stretch full width of tab div */
+        }
+
+        .lab-overview-tab > div > h3 {
+            text-align: center;
+        }
+
+        .lab-overview-tab > div > button {
+            width: max-content;
+        }
+
+        /* select text content div */
+        .lab-overview-tab > div:first-child {
+            padding: 2rem 1rem;
+        }
+
+        .lab-overview-img {
+            background-color: gray;
+
+            width: 100%;
+            height: 400px;
+
+            object-fit: cover;
+            border-radius: 10px;
+
+            order: 2;
+        }
+
+        @media only screen and(min-width: 992px) {
+            .lab-overview-tab {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: stretch;
+            }
+
+            /* selects text content in tab */
+            .lab-overview-tab > div {
+                width: 50%;
+                padding: 1rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .lab-overview-tab > div > h3 {
+                text-align: left;
+            }
+
+            .lab-overview-img {
+                height: 500px;
+            }
+        }
+
+        /* ||| skills-lab.html ||| */
+        /* || squares */
+
+        #skills-lab-container {
+            padding: 2rem 1rem;
+            margin-top: 70px;
+
+            display: grid;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .skills-lab-square {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            border: 1px solid black;
+
+            box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        #biology-square {
+            background-color: lightgreen;
+        }
+
+        #engineering-square {
+            background-color: lightgoldenrodyellow;
+        }
+
+        #physics-square {
+            background-color: lightblue;
+        }
+
+        #coding-square {
+            background-color: #555;
+            color: white;
+            }/* universal.css */
+            /* nav-and-header.css will contain styles for components in ALL pages */
+
+            /* ||| Selects root (the whole HTML doc) ||| */:root
+            {
+                font-family: Helvetica, Arial, Lucida, sans-serif;
+                font-size: 18px;
+                --COC-Blue: rgba(1, 27, 64, 1);
+                --COC-Yellow: rgba(255, 226, 18, 1);
+                --COC-Gray: rgba(217, 217, 217, 1);
+                --MESA-Red: #FF6257;
+            }
+
+            * {
+                line-height: 1.4;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* ||| Intersection API ||| */
+            /* for people who don't want to look at animations */
+            @media(prefers-reduced-motion) {
+                .hidden {
+                    transition: none;
+                }
+            }
+
+            /* counteract margin and padding being CSS reset by * selector */
+            li {
+                margin-left: 40px;
+            }
+
+            /* primary buttons */
+            .primary-btn {
+                background-color: var(--COC-Yellow);
+                padding: 0.25rem 0.5rem;
+                margin: 1rem 0;
+                font-weight: 900;
+                font-size: 1rem;
+                border: 2px solid black;
+                border-radius: 10px;
+                box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.1);
+                transition: 0.15s;
+            }
+
+            .primary-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+                background-color: white;
+            }
+
+            /* ||| NAVIGATION BAR ||| */
+
+            /* fix bar to top and add background color */
+            .topnav {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 3;
+                background-color: var(--COC-Blue);
+            }
+
+            /* Prevent overlay with container/item after the topnav */
+            /* NOTE: topnav must be the first container in the body tag for this to work */
+            body:nth-child(2) {
+                margin-top: 61.2px;
+            }
+
+            /* must style primary links with > selector */
+            .topnav > a {
+                float: left;
+                display: block;
+                color: white;
+                padding: 18px;
+                font-size: 1rem;
+                text-decoration: none;
+                text-align: center;
+                transition: 0.25s;
+            }
+
+            /* turn open icon off on larger viewports */
+            .topnav .icon {
+                display: none;
+            }
+
+            /* position dropdown content */
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+
+            /* style dropdown menu and button */
+            .dropdown .dropdown-btn {
+                font-size: 1rem;
+                border: none;
+                outline: none;
+                padding: 18px;
+                background-color: inherit;
+                font-family: inherit;
+                color: white;
+                text-decoration: none;
+                transition: 0.25s;
+            }
+
+            /* style secondary dropdown link container */
+            .dropdown-links {
+                display: none; /* off by default */
+                position: absolute; /* not a part of primary navbar */
+                min-width: min-content;
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            /* style secondary links */
+            .dropdown-links > a {
+                background-color: white;
+                color: black;
+                text-decoration: none;
+                border-bottom: 1px solid black;
+                float: none;
+                padding: 1rem;
+                display: block;
+                text-align: left;
+                transition: 0.25s;
+            }
+
+            .dropdown:hover .dropdown-links {
+                display: block;
+            }
+
+            .topnav > a:hover,
+            .dropdown-btn:hover {
+                background-color: white;
+                color: var(--COC-Blue);
+            }
+
+            .dropdown-links > a:hover {
+                background-color: var(--COC-Gray);
+            }
+
+            /* mobile viewport shows menu w/ JavaScript */
+            @media only screen and(max-width: 600px) {
+                .topnav > a:not(:first-child),
+                .topnav .dropdown {
+                    display: none;
+                }
+
+                .topnav a.icon {
+                    float: right;
+                    display: block;
+                }
+
+                /* add RESPONSIVE class w/ JavaScript */
+                /* NOTE: all elements must be position: fixed to show */
+                .topnav.responsive {
+                    position: fixed;
+                }
+
+                .topnav.responsive a.icon {
+                    /* fix icon to top right corner when menu opens */
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                }
+
+                .topnav.responsive .dropdown,
+                .topnav.responsive .dropdown-btn {
+                    display: block;
+                    width: 100%;
+                    text-align: left;
+                }
+
+                .topnav.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
+
+                .topnav.responsive .dropdown {
+                    float: none;
+                }
+
+                .topnav.responsive .dropdown-links {
+                    width: 100%;
+                    position: fixed;
+                }
+            }
+
+            /* FOOTER */
+            footer {
+                background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
+                background-repeat: no-repeat;
+                background-size: cover; /* image covers entire footer */
+                color: white;
+                padding: 4rem 1rem;
+            }
+
+            footer > h1 {
+                text-align: center;
+            }
+
+            #footer-form {
+                display: grid;
+                gap: 0.5rem;
+            }
+
+            footer input {
+                padding: 0.25rem 0.5rem;
+                font-size: 1rem;
+                font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+                width: 100%;
+            }
+
+            footer textarea {
+                padding: 0.25rem 0.5rem;
+                font-size: 1rem;
+                font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+
+                resize: vertical;
+                width: 100%;
+                max-width: 100%;
+                height: 150px;
+                min-height: 100px;
+                max-height: 200px;
+            }
+
+            #footer-details > * > h3 {
+                margin-top: 0.5rem;
+                text-decoration: underline;
+            }
+
+            /* footer grid 1 */
+            @media only screen and(min-width: 480px) and(max-width: 769px) {
+                footer {
+                    padding: 4rem 2rem;
+                }
+
+                #footer-details {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, min-content);
+                }
+
+                #footer-address {
+                    grid-column: 1 / -1;
+                }
+
+                #footer-contact {
+                    text-align: right;
+                }
+            }
+
+            /* footer grid 2 */
+            /* prevent footer grid from shrinking too small on smaller viewports */
+            @media only screen and(min-width: 769px) {
+                footer {
+                    padding: 4rem;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, min-content);
+                    gap: 1rem;
+                }
+
+                footer > h1 {
+                    grid-column: 1 / -1;
+                }
+
+                #footer-form {
+                    grid-column: 1 / -2;
+
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: repeat(3, min-content);
+                }
+
+                #name-div {
+                    grid-column: 1 / 3;
+                    grid-row: 1 / 2;
+                }
+
+                #email-div {
+                    grid-column: 3 / -1;
+                    grid-row: 1 / 2;
+                }
+
+                #subject-div {
+                    grid-column: 1 / -1;
+                }
+
+                #message-div {
+                    grid-column: 1 / -1;
+                }
+
+                #footer-details {
+                    text-align: right;
+                    grid-column: 3 / -1;
+                }
+            }
+    </style>
+</head>
 <body>
-    <div id="primaryTopnav" class="topnav">
+    <div
+        id="primaryTopnav" class="topnav">
         <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
         <a href="index.html">Home</a>
         <div class="dropdown">
@@ -120,10 +1030,18 @@
         <button class="primary-btn" onclick="location.href='skills-lab.html';">Learn More</button>
         <!-- open/close button id corresponds with tab id -->
         <div id="lab-overview-row">
-            <div class="lab-overview-btn active"><p>Biology/Chemistry</p></div>
-            <div class="lab-overview-btn"><p>Engineering</p></div>
-            <div class="lab-overview-btn"><p>Physics</p></div>
-            <div class="lab-overview-btn"><p>Coding</p></div>
+            <div class="lab-overview-btn active">
+                <p>Biology/Chemistry</p>
+            </div>
+            <div class="lab-overview-btn">
+                <p>Engineering</p>
+            </div>
+            <div class="lab-overview-btn">
+                <p>Physics</p>
+            </div>
+            <div class="lab-overview-btn">
+                <p>Coding</p>
+            </div>
         </div>
         <div>
             <div id="biology-tab" class="lab-overview-tab">
@@ -161,10 +1079,81 @@
         </div>
         <!-- TO DO: Add placeholder pictures inside tabs, have one open by default  -->
     </div>
-    <script src="JavaScript\script.js"></script>
-    <script defer src="JavaScript\animate.js"></script>
-</body>
+    <!--- <script src="JavaScript\script.js"></script>
+    <script defer src="JavaScript\animate.js"></script> --->
+    <script>
+        // animate.js
+        // IntersectionObserver API
+        // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+        console.log("Loaded animate.js");
 
+        const callback = entries => { // Runs when visibility of observed elements changes
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            })
+        }
+        const options = {
+            threshold: 0.25 // 50% of the element must be viewed to animate
+        }
+
+        const observer = new IntersectionObserver(callback, options);
+
+        const hiddenElements = document.querySelectorAll('.hidden') // Obtain hidden elements
+        hiddenElements.forEach((element) => observer.observe(element)) // Observe visibility of hidden elements
+    </script>
+    <script>
+        // script.js
+        function openNavBar() {
+            let navbar = document.getElementById("primaryTopnav");
+            if (navbar.className === "topnav") {
+                navbar.className += " responsive";
+            } else {
+                navbar.className = "topnav";
+            }
+        }
+
+        const skillsLabBtns = document.querySelectorAll('.lab-overview-btn')
+        skillsLabBtns.forEach(button => {
+            button.addEventListener("click", openLab);
+        })
+
+        function openLab(event) {
+            skillsLabBtns.forEach(button => button.classList.remove('active')); // Deactivate all buttons
+            const pressedBtn = event.target; // Obtain button element
+            pressedBtn.classList.add('active')
+            // Add active styles to pressedBtn
+
+            // Assign button text to corresponding tab id
+            const tabChoice = pressedBtn.textContent;
+            let newTab = '';
+            switch (tabChoice) {
+                case 'Biology/Chemistry': newTab = 'biology-tab';
+                    break;
+                case 'Engineering': newTab = 'engineering-tab';
+                    break;
+                case 'Physics': newTab = 'physics-tab';
+                    break;
+                case 'Coding': newTab = 'coding-tab';
+                    break;
+            }
+
+            // Get all tabs
+            const allTabs = document.querySelectorAll('.lab-overview-tab');
+            // Loop through tabs
+            allTabs.forEach(tab => {
+                if (tab.id == newTab) {
+                    tab.style.display = 'flex';
+                } else {
+                    tab.style.display = 'none';
+                }
+            })
+        }
+    </script>
+</body>
 <footer>
     <h1 id="footer-heading">MESA at College of the Canyons</h1>
     <form id="footer-form">
