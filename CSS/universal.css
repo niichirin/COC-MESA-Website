@@ -100,6 +100,8 @@ body:nth-child(2) {
     color: white;
     text-decoration: none;
     transition: 0.25s;
+
+    cursor: pointer;
 }
 
 /* style secondary dropdown link container */
@@ -161,12 +163,6 @@ body:nth-child(2) {
         right: 0;
     }
 
-    .topnav.responsive .dropdown, .topnav.responsive .dropdown-btn {
-        display: block;
-        width: 100%;
-        text-align: left;
-    }
-
     .topnav.responsive a {
         float: none;
         display: block;
@@ -178,8 +174,13 @@ body:nth-child(2) {
     }
 
     .topnav.responsive .dropdown-links {
+        position: relative;
+    }
+
+    .topnav.responsive .dropdown, .topnav.responsive .dropdown-btn {
+        display: block;
         width: 100%;
-        position: fixed;
+        text-align: left;
     }
 }
 

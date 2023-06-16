@@ -393,6 +393,7 @@
 }
 
 .service-square.primary:hover {
+    transition: 0.25s;
     transform: translateX(-2px) translateY(-2px);
     box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.25);
 }
@@ -833,6 +834,11 @@
 
     width: 100%;
     height: 250px;
+    padding: 1rem;
+}
+
+.help-square > h2 {
+    text-align: center;
 }
 
 @media only screen and (min-width: 480px) {
@@ -869,8 +875,8 @@
     padding: 4rem 0 2rem;
 }
 .faq-heading{
-    padding-bottom: 10px;
-    color: var(--COC-Blue);
+    padding-bottom:10px;
+    color:var(--COC-Blue);
 }
 .faq-section{
     padding-top: 30px;
@@ -878,6 +884,7 @@
 .faq-question{
     padding-bottom: 7px;
 }
+
 /* || REQUIREMENTS */
 #faq-require-container{
     padding: 5px;
@@ -888,25 +895,24 @@
 }
 .faq-require-section{
     padding-top: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
     flex-direction: column;
 }
+
 /* || MAP */
 #faq-map-img{
-    padding-left: 18px;
-    padding-bottom: 18px;
+    padding: 5px;
     height: 150px;
     width: 250px;
 }
 #faq-map-lnk > img:hover{
     opacity: 75%;
 }
+
 /* || EMAIL */
 #faq-email{
     padding: 2rem 0 4rem;
-}
-
 
 /* ||| resources.html ||| */
 #resource-container{
@@ -991,8 +997,6 @@
     .content{
         width: 65%;
     }
-}
-
 
 /* ||| tutor.html ||| */
 #tutor-container{
