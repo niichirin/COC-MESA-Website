@@ -1,112 +1,467 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/universal.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <title>MESA at College of the Canyons</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/universal.css">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <title>MESA at College of the Canyons</title>
+        <style>
+            /* ||| help.html ||| */
+            #help-heading {
+                text-align: center;
+                padding: 4rem 1rem 0;
+                color: var(--MESA-Red);
+                font-size: 1.8rem;
+            }
 
-<body>
-    <div id="primaryTopnav" class="topnav">
-        <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <button class="dropdown-btn">Join
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-links">
-                <a href="benefits-and-requirements.html">Benefits and Requirements</a>
-                <a href="form.html">Join Form</a>
+            #help-container {
+                padding: 4rem 1rem;
+                margin-bottom: 2rem;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .help-square {
+                background-color: var(--COC-Yellow);
+                border-radius: 10px;
+                box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.2);
+
+                width: 100%;
+                height: 250px;
+                padding: 1rem;
+            }
+
+            .help-square > h2 {
+                text-align: center;
+            }
+
+            @media only screen and(min-width: 480px) {
+                #help-heading {
+                    font-size: 2rem;
+                }
+                #help-container {
+                    padding: 4rem;
+                }
+            }
+
+            @media only screen and(min-width: 600px) {
+                #help-container {
+                    padding: 4rem 1rem;
+                    margin-bottom: 2rem;
+                    flex-direction: row;
+                }
+
+                .help-square {
+                    width: 33%;
+                    height: 300px;
+                }
+                }/* universal.css */
+                /* nav-and-header.css will contain styles for components in ALL pages */
+
+                /* ||| Selects root (the whole HTML doc) ||| */:root
+                {
+                    font-family: Helvetica, Arial, Lucida, sans-serif;
+                    font-size: 18px;
+                    --COC-Blue: rgba(1, 27, 64, 1);
+                    --COC-Yellow: rgba(255, 226, 18, 1);
+                    --COC-Gray: rgba(217, 217, 217, 1);
+                    --MESA-Red: #FF6257;
+                }
+
+                * {
+                    line-height: 1.4;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+                /* ||| Intersection API ||| */
+                /* for people who don't want to look at animations */
+                @media(prefers-reduced-motion) {
+                    .hidden {
+                        transition: none;
+                    }
+                }
+
+                /* counteract margin and padding being CSS reset by * selector */
+                li {
+                    margin-left: 40px;
+                }
+
+                /* primary buttons */
+                .primary-btn {
+                    background-color: var(--COC-Yellow);
+                    padding: 0.25rem 0.5rem;
+                    margin: 1rem 0;
+                    font-weight: 900;
+                    font-size: 1rem;
+                    border: 2px solid black;
+                    border-radius: 10px;
+                    box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.1);
+                    transition: 0.15s;
+                }
+
+                .primary-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+                    background-color: white;
+                }
+
+                /* ||| NAVIGATION BAR ||| */
+
+                /* fix bar to top and add background color */
+                .topnav {
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    z-index: 3;
+                    background-color: var(--COC-Blue);
+                }
+
+                /* Prevent overlay with container/item after the topnav */
+                /* NOTE: topnav must be the first container in the body tag for this to work */
+                body:nth-child(2) {
+                    margin-top: 61.2px;
+                }
+
+                /* must style primary links with > selector */
+                .topnav > a {
+                    float: left;
+                    display: block;
+                    color: white;
+                    padding: 18px;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    text-align: center;
+                    transition: 0.25s;
+                }
+
+                /* turn open icon off on larger viewports */
+                .topnav .icon {
+                    display: none;
+                }
+
+                /* position dropdown content */
+                .dropdown {
+                    float: left;
+                    overflow: hidden;
+                }
+
+                /* style dropdown menu and button */
+                .dropdown .dropdown-btn {
+                    font-size: 1rem;
+                    border: none;
+                    outline: none;
+                    padding: 18px;
+                    background-color: inherit;
+                    font-family: inherit;
+                    color: white;
+                    text-decoration: none;
+                    transition: 0.25s;
+
+                    cursor: pointer;
+                }
+
+                /* style secondary dropdown link container */
+                .dropdown-links {
+                    display: none; /* off by default */
+                    position: absolute; /* not a part of primary navbar */
+                    min-width: min-content;
+                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+                }
+
+                /* style secondary links */
+                .dropdown-links > a {
+                    background-color: white;
+                    color: black;
+                    text-decoration: none;
+                    border-bottom: 1px solid black;
+                    float: none;
+                    padding: 1rem;
+                    display: block;
+                    text-align: left;
+                    transition: 0.25s;
+                }
+
+                .dropdown:hover .dropdown-links {
+                    display: block;
+                }
+
+                .topnav > a:hover,
+                .dropdown-btn:hover {
+                    background-color: white;
+                    color: var(--COC-Blue);
+                }
+
+                .dropdown-links > a:hover {
+                    background-color: var(--COC-Gray);
+                }
+
+                /* mobile viewport shows menu w/ JavaScript */
+                @media only screen and(max-width: 600px) {
+                    .topnav > a:not(:first-child),
+                    .topnav .dropdown {
+                        display: none;
+                    }
+
+                    .topnav a.icon {
+                        float: right;
+                        display: block;
+                    }
+
+                    /* add RESPONSIVE class w/ JavaScript */
+                    /* NOTE: all elements must be position: fixed to show */
+                    .topnav.responsive {
+                        position: fixed;
+                    }
+
+                    .topnav.responsive a.icon {
+                        /* fix icon to top right corner when menu opens */
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                    }
+
+                    .topnav.responsive a {
+                        float: none;
+                        display: block;
+                        text-align: left;
+                    }
+
+                    .topnav.responsive .dropdown {
+                        float: none;
+                    }
+
+                    .topnav.responsive .dropdown-links {
+                        position: relative;
+                    }
+
+                    .topnav.responsive .dropdown,
+                    .topnav.responsive .dropdown-btn {
+                        display: block;
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+
+                /* FOOTER */
+                footer {
+                    background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
+                    background-repeat: no-repeat;
+                    background-size: cover; /* image covers entire footer */
+                    color: white;
+                    padding: 4rem 1rem;
+                }
+
+                footer > h1 {
+                    text-align: center;
+                }
+
+                #footer-form {
+                    display: grid;
+                    gap: 0.5rem;
+                }
+
+                footer input {
+                    padding: 0.25rem 0.5rem;
+                    font-size: 1rem;
+                    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+                    width: 100%;
+                }
+
+                footer textarea {
+                    padding: 0.25rem 0.5rem;
+                    font-size: 1rem;
+                    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+
+                    resize: vertical;
+                    width: 100%;
+                    max-width: 100%;
+                    height: 150px;
+                    min-height: 100px;
+                    max-height: 200px;
+                }
+
+                #footer-details > * > h3 {
+                    margin-top: 0.5rem;
+                    text-decoration: underline;
+                }
+
+                /* footer grid 1 */
+                @media only screen and(min-width: 480px) and(max-width: 769px) {
+                    footer {
+                        padding: 4rem 2rem;
+                    }
+
+                    #footer-details {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(2, min-content);
+                    }
+
+                    #footer-address {
+                        grid-column: 1 / -1;
+                    }
+
+                    #footer-contact {
+                        text-align: right;
+                    }
+                }
+
+                /* footer grid 2 */
+                /* prevent footer grid from shrinking too small on smaller viewports */
+                @media only screen and(min-width: 769px) {
+                    footer {
+                        padding: 4rem;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: repeat(2, min-content);
+                        gap: 1rem;
+                    }
+
+                    footer > h1 {
+                        grid-column: 1 / -1;
+                    }
+
+                    #footer-form {
+                        grid-column: 1 / -2;
+
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-template-rows: repeat(3, min-content);
+                    }
+
+                    #name-div {
+                        grid-column: 1 / 3;
+                        grid-row: 1 / 2;
+                    }
+
+                    #email-div {
+                        grid-column: 3 / -1;
+                        grid-row: 1 / 2;
+                    }
+
+                    #subject-div {
+                        grid-column: 1 / -1;
+                    }
+
+                    #message-div {
+                        grid-column: 1 / -1;
+                    }
+
+                    #footer-details {
+                        text-align: right;
+                        grid-column: 3 / -1;
+                    }
+                }
+        </style>
+    </head>
+
+    <body>
+        <div
+            id="primaryTopnav" class="topnav">
+            <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropdown-btn">Join
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-links">
+                    <a href="benefits-and-requirements.html">Benefits and Requirements</a>
+                    <a href="form.html">Join Form</a>
+                </div>
+            </div>
+            <a href="skills-lab.html">Skills Lab</a>
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="location.href='about-MESA.html';">About
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-links">
+                    <a href="about-MESA.html">About MESA</a>
+                    <a href="meet-the-team.html">Meet the Team</a>
+                </div>
+            </div>
+            <a href="resources.html">Resources</a>
+            <a href="events.html">Events</a>
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="location.href='help.html';">Help
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-links">
+                    <a href="counseling.html">Counseling</a>
+                    <a href="tutoring.html">Tutoring</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
+        </div>
+
+        <h1 id="help-heading">MESA Help Page</h1>
+        <div id="help-container">
+            <div class="help-square primary" onclick="location.href='counseling.html';">
+                <h2>Counseling</h2>
+                <div class="help-icon">icon placeholder</div>
+            </div>
+            <div class="help-square primary" onclick="location.href='tutoring.html';">
+                <h2>Tutoring</h2>
+                <div class="help-icon">icon placeholder</div>
+            </div>
+            <div class="help-square primary" onclick="location.href='faq.html';">
+                <h2>FAQ</h2>
+                <div class="help-icon">icon placeholder</div>
+            </div>
+
+        </div>
+        <script src="JavaScript\script.js"></script>
+    </body>
+
+    <footer>
+        <h1 id="footer-heading">MESA at College of the Canyons</h1>
+        <form id="footer-form">
+            <div id="name-div">
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" required>
+                <br>
+            </div>
+            <div id="email-div">
+                <label for="email">Email</label><br>
+                <input type="text" id="email" name="email" required>
+                <br>
+            </div>
+            <div id="subject-div">
+                <label for="subject">Subject</label><br>
+                <input type="text" id="subject" name="subject" required>
+                <br>
+            </div>
+            <div id="message-div">
+                <label for="message">Message</label><br>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Send Message" class="primary-btn">
+        </form>
+        <div id="footer-details">
+            <div id="footer-address">
+                <h3>Address:</h3>
+                <p>26455 Rockwell Canyon Rd, Santa Clarita, CA 91355</p>
+                <p>Aliso Lab 114</p>
+            </div>
+            <div id="footer-hours">
+                <h3>Winter Hours:</h3>
+                <p>M-Th, 9am-5pm</p>
+                <p>F, 9am-12pm</p>
+            </div>
+            <div id="footer-contact">
+                <h3>Contact Us:</h3>
+                <p>661.362.3448 Phone</p>
+                <p>661.362.5077 Fax</p>
+                <p>mesadepartment@canyons.edu</p>
             </div>
         </div>
-        <a href="skills-lab.html">Skills Lab</a>
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="location.href='about-MESA.html';">About
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-links">
-                <a href="about-MESA.html">About MESA</a>
-                <a href="meet-the-team.html">Meet the Team</a>
-            </div>
-        </div>
-        <a href="resources.html">Resources</a>
-        <a href="events.html">Events</a>
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="location.href='help.html';">Help
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-links">
-                <a href="counseling.html">Counseling</a>
-                <a href="tutoring.html">Tutoring</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
-    </div>
-
-    <h1 id="help-heading">MESA Help Page</h1>
-    <div id="help-container">
-        <div class="help-square primary" onclick="location.href='counseling.html';">
-            <h2>Counseling</h2>
-            <div class="help-icon">icon placeholder</div>
-        </div>
-        <div class="help-square primary" onclick="location.href='tutoring.html';">
-            <h2>Tutoring</h2>
-            <div class="help-icon">icon placeholder</div>
-        </div>
-        <div class="help-square primary" onclick="location.href='faq.html';">
-            <h2>FAQ</h2>
-            <div class="help-icon">icon placeholder</div>
-        </div>
-
-    </div>
-    <script src="JavaScript\script.js"></script>
-</body>
-
-<footer>
-    <h1 id="footer-heading">MESA at College of the Canyons</h1>
-    <form id="footer-form">
-        <div id="name-div">
-            <label for="name">Name</label><br>
-            <input type="text" id="name" name="name" required>
-            <br>
-        </div>
-        <div id="email-div">
-            <label for="email">Email</label><br>
-            <input type="text" id="email" name="email" required>
-            <br>
-        </div>
-        <div id="subject-div">
-            <label for="subject">Subject</label><br>
-            <input type="text" id="subject" name="subject" required>
-            <br>
-        </div>
-        <div id="message-div">
-            <label for="message">Message</label><br>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-        </div>
-        <input type="submit" value="Send Message" class="primary-btn">
-    </form>
-    <div id="footer-details">
-        <div id="footer-address">
-            <h3>Address:</h3>
-            <p>26455 Rockwell Canyon Rd, Santa Clarita, CA 91355</p>
-            <p>Aliso Lab 114</p>
-        </div>
-        <div id="footer-hours">
-            <h3>Winter Hours:</h3>
-            <p>M-Th, 9am-5pm</p>
-            <p>F, 9am-12pm</p>
-        </div>
-        <div id="footer-contact">
-            <h3>Contact Us:</h3>
-            <p>661.362.3448 Phone</p>
-            <p>661.362.5077 Fax</p>
-            <p>mesadepartment@canyons.edu</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 </html>
