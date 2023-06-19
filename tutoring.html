@@ -1,48 +1,525 @@
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/universal.css">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <title>MESA at College of the Canyons</title>
+        <style>
+            /* ||| tutor.html ||| */
+            #tutor-container {
+                padding: 1rem 2rem;
+                margin-top: 0;
+            }
+            #tutor-title {
+                text-align: center;
+                color: var(--MESA-Red);
+                padding: 4rem 0 2rem;
+            }
+            #calendar {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: stretch;
+                border: 1px solid black;
+                justify-content: center;
+                width: 1274px;
+            }
+            #calendar-day {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: stretch;
+                border: 1px solid black;
+            }
+            .day-header {
+                width: 210px;
+                border: 1px solid black;
+                text-align: center;
+                padding: 10px;
+            }
+            .day {
+                border: 1px solid black;
+                padding: 10px;
+                font-size: 15px;
+            }
+            .discord {
+                background-color: rgba(1, 27, 64, 0.15);
+            }
+            .mesa {
+                background-color: rgb(255, 140, 132, 0.25);
+            }
+            #calendar-key {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: stretch;
+                padding: 20px;
+            }
+            .legend {
+                font-size: 15px;
+                padding: 0 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .mesa-color {
+                padding: 10px;
+                width: 10px;
+                height: 10px;
+                background-color: rgb(255, 140, 132, 0.25);
+                border: 1px solid black;
+            }
+            .discord-color {
+                padding: 10px;
+                background-color: rgba(1, 27, 64, 0.15);
+                border: 1px solid black;
+            }
+            #sections-contain {
+                padding: 5px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: stretch;
+                justify-content: center;
+                margin-top: 50px;
+            }
+            .sections-header {
+                border: 1px solid black;
+                text-align: center;
+                padding: 10px;
+                font-size: 20px;
+                margin: 1px;
+            }
+            #pic-contain {
+                border: 1px solid black;
+                width: 300px;
+            }
+            .pic-section {
+                text-align: center;
+                border: 1px solid black;
+                margin: 1px;
+                /* row-gap: ; */
+                height: 200px;
+                padding: 7px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                float: center;
+                display: block;
+            }
+            .tutor-img {
+                /* display: inline-block; */
+                width: 120px;
+                height: 120px;
+                object-fit: cover;
+                padding: 5px;
+                margin-top: 5px;
+                margin-bottom: 8px;
+                background-color: #ffffff;
+                border: 1px solid #efefef;
+                border-radius: 50%;
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+                display: inline-block;
+                justify-content: center;
+                align-items: center;
+            }
+            #bio-contain {
+                border: 1px solid black;
+                width: 350px;
+            }
+            .bio-section {
+                text-align: center;
+                border: 1px solid black;
+                margin: 1px;
+                padding: 10px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/universal.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <title>MESA at College of the Canyons</title>
-</head>
+            }
+            #subject-contain {
+                border: 1px solid black;
+                width: 250px;
+            }
+            .subject-section {
+                text-align: center;
+                border: 1px solid black;
+                margin: 1px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 15px;
+            }
+            #schedule-contain {
+                border: 1px solid black;
+                width: 350px;
+            }
+            .schedule-section {
+                /* text-align:center; */
+                border: 1px solid black;
+                margin: 1px;
+                height: 200px;
+                display: flex;
+                /* justify-content: center; */
+                align-items: center;
+                padding: 15px;
+            }
+            /* @media (min-width: 769px){
+    #pic-contain{
+        width:200px;
+    }
+    #bio-contain{
+        width:150px;
+    }
+    #subject-contain{
+        width:100px;
+    }
+    #schedule-contain{
+        width:175px;
+    }
+} */
+            @media(min-width: 992px) {
+                #pic-contain {
+                    width: 300px;
+                }
+                #bio-contain {
+                    width: 300px;
+                }
+                #subjects-contain {
+                    width: 250px;
+                }
+                #schedule-contain {
+                    width: 350px;
+                }
+                }/**/
+                
+                
+                /* universal.css */
+                /* nav-and-header.css will contain styles for components in ALL pages */
 
-<body>
-    <div id="primaryTopnav" class="topnav">
-        <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <button class="dropdown-btn">Join
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-links">
-                <a href="benefits-and-requirements.html">Benefits and Requirements</a>
-                <a href="form.html">Join Form</a>
-            </div>
-        </div>
-        <a href="skills-lab.html">Skills Lab</a>
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="location.href='about-MESA.html';">About
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-links">
-                <a href="about-MESA.html">About MESA</a>
-                <a href="meet-the-team.html">Meet the Team</a>
-            </div>
-        </div>
-        <a href="resources.html">Resources</a>
-        <a href="events.html">Events</a>
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="location.href='help.html';">Help
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-links">
-                <a href="counseling.html">Counseling</a>
-                <a href="tutoring.html">Tutoring</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html">Contact</a>
+                /* ||| Selects root (the whole HTML doc) ||| */:root
+                {
+                    font-family: Helvetica, Arial, Lucida, sans-serif;
+                    font-size: 18px;
+                    --COC-Blue: rgba(1, 27, 64, 1);
+                    --COC-Yellow: rgba(255, 226, 18, 1);
+                    --COC-Gray: rgba(217, 217, 217, 1);
+                    --MESA-Red: #FF6257;
+                }
+
+                * {
+                    line-height: 1.4;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+                /* ||| Intersection API ||| */
+                /* for people who don't want to look at animations */
+                @media(prefers-reduced-motion) {
+                    .hidden {
+                        transition: none;
+                    }
+                }
+
+                /* counteract margin and padding being CSS reset by * selector */
+                li {
+                    margin-left: 40px;
+                }
+
+                /* primary buttons */
+                .primary-btn {
+                    background-color: var(--COC-Yellow);
+                    padding: 0.25rem 0.5rem;
+                    margin: 1rem 0;
+                    font-weight: 900;
+                    font-size: 1rem;
+                    border: 2px solid black;
+                    border-radius: 10px;
+                    box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.1);
+                    transition: 0.15s;
+                }
+
+                .primary-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+                    background-color: white;
+                }
+
+                /* ||| NAVIGATION BAR ||| */
+
+                /* fix bar to top and add background color */
+                .topnav {
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    z-index: 3;
+                    background-color: var(--COC-Blue);
+                }
+
+                /* Prevent overlay with container/item after the topnav */
+                /* NOTE: topnav must be the first container in the body tag for this to work */
+                body:nth-child(2) {
+                    margin-top: 61.2px;
+                }
+
+                /* must style primary links with > selector */
+                .topnav > a {
+                    float: left;
+                    display: block;
+                    color: white;
+                    padding: 18px;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    text-align: center;
+                    transition: 0.25s;
+                }
+
+                /* turn open icon off on larger viewports */
+                .topnav .icon {
+                    display: none;
+                }
+
+                /* position dropdown content */
+                .dropdown {
+                    float: left;
+                    overflow: hidden;
+                }
+
+                /* style dropdown menu and button */
+                .dropdown .dropdown-btn {
+                    font-size: 1rem;
+                    border: none;
+                    outline: none;
+                    padding: 18px;
+                    background-color: inherit;
+                    font-family: inherit;
+                    color: white;
+                    text-decoration: none;
+                    transition: 0.25s;
+
+                    cursor: pointer;
+                }
+
+                /* style secondary dropdown link container */
+                .dropdown-links {
+                    display: none; /* off by default */
+                    position: absolute; /* not a part of primary navbar */
+                    min-width: min-content;
+                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+                }
+
+                /* style secondary links */
+                .dropdown-links > a {
+                    background-color: white;
+                    color: black;
+                    text-decoration: none;
+                    border-bottom: 1px solid black;
+                    float: none;
+                    padding: 1rem;
+                    display: block;
+                    text-align: left;
+                    transition: 0.25s;
+                }
+
+                .dropdown:hover .dropdown-links {
+                    display: block;
+                }
+
+                .topnav > a:hover,
+                .dropdown-btn:hover {
+                    background-color: white;
+                    color: var(--COC-Blue);
+                }
+
+                .dropdown-links > a:hover {
+                    background-color: var(--COC-Gray);
+                }
+
+                /* mobile viewport shows menu w/ JavaScript */
+                @media only screen and(max-width: 600px) {
+                    .topnav > a:not(:first-child),
+                    .topnav .dropdown {
+                        display: none;
+                    }
+
+                    .topnav a.icon {
+                        float: right;
+                        display: block;
+                    }
+
+                    /* add RESPONSIVE class w/ JavaScript */
+                    /* NOTE: all elements must be position: fixed to show */
+                    .topnav.responsive {
+                        position: fixed;
+                    }
+
+                    .topnav.responsive a.icon {
+                        /* fix icon to top right corner when menu opens */
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                    }
+
+                    .topnav.responsive a {
+                        float: none;
+                        display: block;
+                        text-align: left;
+                    }
+
+                    .topnav.responsive .dropdown {
+                        float: none;
+                    }
+
+                    .topnav.responsive .dropdown-links {
+                        position: relative;
+                    }
+
+                    .topnav.responsive .dropdown,
+                    .topnav.responsive .dropdown-btn {
+                        display: block;
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+
+                /* FOOTER */
+                footer {
+                    background-image: linear-gradient(to top, var(--COC-Blue) 0%, rgba(1, 27, 64, 0) 200%), url("https://media.istockphoto.com/id/818087910/photo/multi-ethnic-group-of-students-studying-outdoors.jpg?s=612x612&w=0&k=20&c=cXO32DQmlBLvTsbqGaJDkaA90hfM-tVlejSDrKmTulY=");
+                    background-repeat: no-repeat;
+                    background-size: cover; /* image covers entire footer */
+                    color: white;
+                    padding: 4rem 1rem;
+                }
+
+                footer > h1 {
+                    text-align: center;
+                }
+
+                #footer-form {
+                    display: grid;
+                    gap: 0.5rem;
+                }
+
+                footer input {
+                    padding: 0.25rem 0.5rem;
+                    font-size: 1rem;
+                    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+                    width: 100%;
+                }
+
+                footer textarea {
+                    padding: 0.25rem 0.5rem;
+                    font-size: 1rem;
+                    font-family: 'Kievit', 'Helvetica', 'Arial', 'Lucida', 'sans-serif';
+
+                    resize: vertical;
+                    width: 100%;
+                    max-width: 100%;
+                    height: 150px;
+                    min-height: 100px;
+                    max-height: 200px;
+                }
+
+                #footer-details > * > h3 {
+                    margin-top: 0.5rem;
+                    text-decoration: underline;
+                }
+
+                /* footer grid 1 */
+                @media only screen and(min-width: 480px) and(max-width: 769px) {
+                    footer {
+                        padding: 4rem 2rem;
+                    }
+
+                    #footer-details {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(2, min-content);
+                    }
+
+                    #footer-address {
+                        grid-column: 1 / -1;
+                    }
+
+                    #footer-contact {
+                        text-align: right;
+                    }
+                }
+
+                /* footer grid 2 */
+                /* prevent footer grid from shrinking too small on smaller viewports */
+                @media only screen and(min-width: 769px) {
+                    footer {
+                        padding: 4rem;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: repeat(2, min-content);
+                        gap: 1rem;
+                    }
+
+                    footer > h1 {
+                        grid-column: 1 / -1;
+                    }
+
+                    #footer-form {
+                        grid-column: 1 / -2;
+
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-template-rows: repeat(3, min-content);
+                    }
+
+                    #name-div {
+                        grid-column: 1 / 3;
+                        grid-row: 1 / 2;
+                    }
+
+                    #email-div {
+                        grid-column: 3 / -1;
+                        grid-row: 1 / 2;
+                    }
+
+                    #subject-div {
+                        grid-column: 1 / -1;
+                    }
+
+                    #message-div {
+                        grid-column: 1 / -1;
+                    }
+
+                    #footer-details {
+                        text-align: right;
+                        grid-column: 3 / -1;
+                    }
+                }
+        </style>
+    </head>
+
+    <body>
+        <div
+            id="primaryTopnav" class="topnav">
+            <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
+            <a href="index.html">Home</a>
+            <a href="join.html">Join</a>
+            <a href="about.html">About</a>
+            <a href="events.html">Events</a>
+            <a href="resources.html">Resources</a>
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="location.href='help.html';">Help
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-links">
+                    <a href="counseling.html">Counseling</a>
+                    <a href="tutoring.html">Tutoring</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </div>
             </div>
             <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
         </div>
@@ -393,7 +870,7 @@
                                 6pm-9pm</p>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <div id="calendar-day">
@@ -430,7 +907,7 @@
                     </div>
                     <div class="pic-section">
                         <p>Aliza Arfan</p>
-                        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="tutor-img">
+                        <img src="https://i.ibb.co/LQT3NJg/tutor-aliza-arfan.jpg" alt="tutor-aliza-arfan" class="tutor-img">
                         <p>
                             aarfan1@my.canyons.edu
                         </p>
@@ -462,7 +939,7 @@
                     </div>
                     <div class="pic-section">
                         <p>Emily Rossiter</p>
-                        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="tutor-img">
+                        <img src="https://i.ibb.co/yRFv0rH/tutor-emily-rossiter-copy.jpg" alt="tutor-emily-rossiter-copy" class="tutor-img">
                         <p>eprossiter@my.canyons.edu</p>
                     </div>
                     <div class="pic-section">
@@ -472,22 +949,22 @@
                     </div>
                     <div class="pic-section">
                         <p>Eyan Documet</p>
-                        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="tutor-img">
+                        <img src="https://i.ibb.co/g7dmbyk/tutor-eyan-documet.jpg" alt="tutor-eyan-documet" class="tutor-img">
                         <p>erdocumet@my.canyons.edu</p>
                     </div>
                     <div class="pic-section">
                         <p>Jesse Cruz</p>
-                        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="tutor-img">
+                        <img src="https://i.ibb.co/m98SwQy/tutor-jesse-cruz.jpg" alt="tutor-jesse-cruz" class="tutor-img">
                         <p>Jesus.cruz@canyons.edu</p>
                     </div>
                     <div class="pic-section">
                         <p>Liam Norman</p>
-                        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="tutor-img">
+                        <img src="https://i.ibb.co/31WtyMZ/tutor-liam-norman.jpg" alt="tutor-liam-norman" class="tutor-img">
                         <p>liamnorman363@gmail.com</p>
                     </div>
                     <div class="pic-section">
                         <p>Noah Tobinsky</p>
-                        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="tutor-img">
+                        <img src="https://i.ibb.co/h8rnrQQ/tutor-noah-tobinsky-copy.jpg" alt="tutor-noah-tobinsky-copy" class="tutor-img">
                         <p>natobinsky@my.canyons.edu</p>
                     </div>
                     <div class="pic-section">
@@ -507,7 +984,7 @@
                     </div>
                     <div class="pic-section">
                         <p>Vatche Patrikyan</p>
-                        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="tutor-img">
+                        <img src="https://i.ibb.co/6vh8f0k/tutor-vatche-patrikyan.jpg" alt="tutor-vatche-patrikyan" class="tutor-img">
                         <p>vpatrikyan@my.canyons.edu</p>
                     </div>
                 </div>
@@ -518,52 +995,53 @@
                         <h4>Bio</h4>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>I am a pre-medical student here at COC and pursuing an associates in biology. I began attending COC and became a member of MESA in 2021, and I began working as a tutor in 2022. My dream school is USC.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Bio not provided.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Bio not provided.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Bio not provided.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Bio not provided.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Bio not provided.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>I'm currently attend UC Berkeley and double majoring in Physics and Astrophysics. After switching majors, I graduated from COC a second time with Associate's in Physics, Engineering, and Math in 2022.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Bio not provided.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Eyan Documet is a Mechanical Engineering major with an interest in robotics and mechatronics. He has been tutoring at the COC MESA center since the Spring of 2022.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>I have been a part of MESA for the past 5 years. I graduated already with a B.S. in Chemistry. I am a pre-med student and currently studying for the MCAT. My Dream school is Keck School of Medicine of USC.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>My major is computer science. I hope to transfer to Berkeley to study Electrical Engineering Computer Science. I enrolled at COC in 2019 but became a full-time student in the fall of 2021. I joined MESA in the fall of 2022.
+                        </p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>I am a Computer Science Major at California Polytechnic State University, San Luis Obispo and a Computer Science alumni from College of the Canyons. I have been in MESA since August of 2021 as a member and a tutor.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Bio not provided.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Bio not provided.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Bio not provided.</p>
                     </div>
                     <div class="bio-section">
-                        <p>text</p>
+                        <p>Hi my name is Vatche Patrikyan. This is my first year at College of the Canyons majoring in electrical engineering and business administration. My dream transfer school is UCLA. </p>
                     </div>
                 </div>
 
@@ -740,8 +1218,8 @@
                     </div>
                     <div class="schedule-section">
                         <p>MW 9:30am - 11am / 1pm - 3:30pm (MESA Center)
-                        <br>
-                        T 12pm - 6pm (Discord)
+                            <br>
+                            T 12pm - 6pm (Discord)
                         </p>
                     </div>
                     <div class="schedule-section">
@@ -775,48 +1253,42 @@
                     </div>
                 </div>
             </div>
-</body>
-<footer>
-      <h1 id="footer-heading">MESA at College of the Canyons</h1>
-      <form id="footer-form">
-          <div id="name-div">
-              <label for="name">Name</label><br>
-              <input type="text" id="name" name="name" required>
-              <br>
-          </div>
-          <div id="email-div">
-              <label for="email">Email</label><br>
-              <input type="text" id="email" name="email" required>
-              <br>
-          </div>
-          <div id="subject-div">
-              <label for="subject">Subject</label><br>
-              <input type="text" id="subject" name="subject" required>
-              <br>
-          </div>
-          <div id="message-div">
-              <label for="message">Message</label><br>
-              <textarea name="message" id="message" cols="30" rows="10"></textarea>
-          </div>
-          <input type="submit" value="Send Message" class="primary-btn">
-      </form>
-      <div id="footer-details">
-          <div id="footer-address">
-              <h3>Address:</h3>
-              <p>26455 Rockwell Canyon Rd, Santa Clarita, CA 91355</p>
-              <p>Aliso Lab 114</p>
-          </div>
-          <div id="footer-hours">
-              <h3>Winter Hours:</h3>
-              <p>M-Th, 9am-5pm</p>
-              <p>F, 9am-12pm</p>
-          </div>
-          <div id="footer-contact">
-              <h3>Contact Us:</h3>
-              <p>661.362.3448 Phone</p>
-              <p>661.362.5077 Fax</p>
-              <p>mesadepartment@canyons.edu</p>
-          </div>
-      </div>
-</footer>
-</html>
+        </body>
+    </body>
+</html></div></body><footer><h1 id="footer-heading">MESA at College of the Canyons</h1><form id="footer-form">
+<div id="name-div">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" required>
+    <br>
+</div>
+<div id="email-div">
+    <label for="email">Email</label><br>
+    <input type="text" id="email" name="email" required>
+    <br>
+</div>
+<div id="subject-div">
+    <label for="subject">Subject</label><br>
+    <input type="text" id="subject" name="subject" required>
+    <br>
+</div>
+<div id="message-div">
+    <label for="message">Message</label><br>
+    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+</div>
+<input type="submit" value="Send Message" class="primary-btn"></form><div id="footer-details">
+<div id="footer-address">
+    <h3>Address:</h3>
+    <p>26455 Rockwell Canyon Rd, Santa Clarita, CA 91355</p>
+    <p>Aliso Lab 114</p>
+</div>
+<div id="footer-hours">
+    <h3>Winter Hours:</h3>
+    <p>M-Th, 9am-5pm</p>
+    <p>F, 9am-12pm</p>
+</div>
+<div id="footer-contact">
+    <h3>Contact Us:</h3>
+    <p>661.362.3448 Phone</p>
+    <p>661.362.5077 Fax</p>
+    <p>mesadepartment@canyons.edu</p>
+</div></div></footer></html>
