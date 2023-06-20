@@ -18,5 +18,5 @@ const options = {
 
 const observer = new IntersectionObserver(callback, options);
 
-const hiddenElements = document.querySelectorAll('.hidden') // Obtain hidden elements
-hiddenElements.forEach((element) =>  observer.observe(element)) // Observe visibility of hidden elements
+const hiddenElements = document.querySelectorAll('.hidden'); // Obtain hidden elements
+hiddenElements.forEach((element) =>  observer.observe(element)); // Observe visibility of hidden elements

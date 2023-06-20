@@ -115,17 +115,19 @@
     </div>
 
     <div id="lab-overview-container">
-        <h2>MESA Skills Lab</h2>
-        <p>Learn practical skills with other STEM students.</p>
-        <button class="primary-btn" onclick="location.href='skills-lab.html';">Learn More</button>
+        <div class="hidden">
+            <h2>MESA Skills Lab</h2>
+            <p>Learn practical skills with other STEM students.</p>
+            <button class="primary-btn" onclick="location.href='skills-lab.html';">Learn More</button>
+        </div>
         <!-- open/close button id corresponds with tab id -->
-        <div id="lab-overview-row">
+        <div id="lab-overview-row" class="hidden">
             <div class="lab-overview-btn active"><p>Biology/Chemistry</p></div>
             <div class="lab-overview-btn"><p>Engineering</p></div>
             <div class="lab-overview-btn"><p>Physics</p></div>
             <div class="lab-overview-btn"><p>Coding</p></div>
         </div>
-        <div>
+        <div class="hidden">
             <div id="biology-tab" class="lab-overview-tab">
                 <div>
                     <h3>Biology Skills Lab</h3>
