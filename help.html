@@ -19,8 +19,8 @@
                 padding: 4rem 1rem;
                 margin-bottom: 2rem;
                 display: flex;
-                flex-direction: column;
                 flex-wrap: nowrap;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 gap: 1rem;
@@ -31,25 +31,45 @@
                 border-radius: 10px;
                 box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.2);
 
-                width: 100%;
+                width: 75%;
                 height: 250px;
                 padding: 1rem;
+                cursor: pointer;
             }
 
             .help-square > h2 {
                 text-align: center;
             }
 
-            @media only screen and(min-width: 480px) {
+            .help-square:hover {
+                background-color: rgba(255, 226, 18, 0.75);
+            }
+
+            .help-icon > img {
+                width: 50%;
+                height: 80%;
+                padding-top: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @media only screen and(min-width: 769px) {
                 #help-heading {
                     font-size: 2rem;
                 }
                 #help-container {
                     padding: 4rem;
                 }
+                .help-icon > img {
+                    width: 45%;
+                    height: 80%;
+                }
             }
 
-            @media only screen and(min-width: 600px) {
+            @media only screen and(min-width: 992px) {
                 #help-container {
                     padding: 4rem 1rem;
                     margin-bottom: 2rem;
@@ -60,7 +80,14 @@
                     width: 33%;
                     height: 300px;
                 }
-                }/* universal.css */
+
+                .help-icon > img {
+                    width: 75%;
+                    height: 80%;
+                }
+            }
+            /* */
+                /* universal.css */
                 /* nav-and-header.css will contain styles for components in ALL pages */
 
                 /* ||| Selects root (the whole HTML doc) ||| */:root
@@ -406,15 +433,15 @@
         <div id="help-container">
             <div class="help-square primary" onclick="location.href='counseling.html';">
                 <h2>Counseling</h2>
-                <div class="help-icon">icon placeholder</div>
+                <div class="help-icon"><img src="https://i.ibb.co/GCXdsX2/couns1-copy4.jpg" alt="couns1-copy4"></div>
             </div>
             <div class="help-square primary" onclick="location.href='tutoring.html';">
                 <h2>Tutoring</h2>
-                <div class="help-icon">icon placeholder</div>
+                <div class="help-icon"><img src="https://i.ibb.co/NyJyKsV/tutor.jpg" alt="tutor"></div>
             </div>
             <div class="help-square primary" onclick="location.href='faq.html';">
                 <h2>FAQ</h2>
-                <div class="help-icon">icon placeholder</div>
+                <div class="help-icon"><img src="https://i.ibb.co/pnpnDz0/fired-lmao.jpg" alt="fired-lmao"></div>
             </div>
 
         </div>
