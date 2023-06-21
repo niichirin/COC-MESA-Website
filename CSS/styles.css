@@ -820,8 +820,8 @@
     padding: 4rem 1rem;
     margin-bottom: 2rem;
     display: flex;
-    flex-direction: column;
     flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -832,25 +832,45 @@
     border-radius: 10px;
     box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.2);
 
-    width: 100%;
+    width: 75%;
     height: 250px;
     padding: 1rem;
+    cursor: pointer;
 }
 
 .help-square > h2 {
     text-align: center;
 }
 
-@media only screen and (min-width: 480px) {
+.help-square:hover{
+    background-color:rgba(255, 226, 18, 0.75);
+}
+
+.help-icon > img{
+    width: 50%;
+    height: 80%;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 769px) {
     #help-heading {
-        font-size: 2rem;
+        font-size: 2rem; 
     }
     #help-container {
         padding: 4rem 4rem;
     }
+    .help-icon > img{
+        width: 45%;
+        height: 80%;
+    }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 992px) {
     #help-container {
         padding: 4rem 1rem;
         margin-bottom: 2rem;
@@ -860,6 +880,11 @@
     .help-square {
         width: 33%;
         height: 300px;
+    }
+
+    .help-icon > img{
+        width: 75%;
+        height: 80%;
     }
 }
 
@@ -895,14 +920,14 @@
 }
 .faq-require-section{
     padding-top: 5px;
-    padding-right: 30px;
-    padding-left: 30px;
     flex-direction: column;
+    width: 100%;
 }
 
 /* || MAP */
 #faq-map-img{
     padding: 5px;
+    padding-left: 15px;
     height: 150px;
     width: 250px;
 }
@@ -913,7 +938,7 @@
 /* || EMAIL */
 #faq-email{
     padding: 2rem 0 4rem;
-
+}
 /* ||| resources.html ||| */
 #resource-container{
     padding: 1rem 4rem;
@@ -989,6 +1014,9 @@
     .content{
         width: 75%;
     }
+    .faq-require-section{
+        width: 100%;
+    }
 }
 @media (min-width: 992px){
     .collapsible{
@@ -997,6 +1025,10 @@
     .content{
         width: 65%;
     }
+    .faq-require-section{
+        width: 50%;
+    }
+}
 
 /* ||| tutor.html ||| */
 #tutor-container{
@@ -1125,6 +1157,7 @@
     text-align:center;
     border: 1px solid black;
     margin: 1px;
+    padding: 10px;
     height: 200px;
     display: flex;
     justify-content: center;
@@ -1185,5 +1218,80 @@
     }
     #schedule-contain{
         width:350px;
+    }
+}
+
+
+/* ||| counseling.html ||| */
+#couns-container{
+    padding: 1rem 2rem;
+    margin-top: 0px;
+    bottom: 10rem;
+    
+}
+#couns-title{
+    text-align: center;
+    color: var(--MESA-Red);
+    padding: 4rem 0 2rem;
+}
+#couns-main{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+}
+.couns-img {
+    /* display: inline-block; */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+.couns-section{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.couns-name{
+    color: var(--COC-Blue);
+    font-size: 27px;
+    padding: 8px;
+    padding-bottom: 12px;
+}
+.couns-email{
+    padding-bottom: 7px;
+}
+.couns-link{
+    padding: 45px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 769px){
+    #couns-main{
+        flex-direction: row;
+    }
+}
+@media (min-width: 992px){
+    #couns-main{
+        flex-direction: row;
     }
 }
