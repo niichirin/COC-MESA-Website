@@ -1,369 +1,351 @@
 <!--This is the main (index) page for all of COC MESA-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/universal.css">
-    <link rel="stylesheet" href="CSS/skillslab.css">
-    <title>MESA at College of the Canyons</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/universal.css">
+        <link rel="stylesheet" href="CSS/skillslab.css">
+        <title>MESA at College of the Canyons</title>
+    </head>
 
-<body>
-    <div id="primaryTopnav" class="topnav">
-        <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <button class="dropdown-btn">Join
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-links">
-                <a href="benefits-and-requirements.html">Benefits and Requirements</a>
-                <a href="form.html">Join Form</a>
+    <body>
+        <div
+            id="primaryTopnav" class="topnav">
+            <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropdown-btn">Join
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-links">
+                    <a href="benefits-and-requirements.html">Benefits and Requirements</a>
+                </div>
             </div>
-        </div>
-        <a href="skills-lab.html">Skills Lab</a>
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="location.href='about-MESA.html';">About
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-links">
-                <a href="about-MESA.html">About MESA</a>
-                <a href="meet-the-team.html">Meet the Team</a>
+            <a href="skills-lab.html">Skills Lab</a>
+            <a href="resources.html">Resources</a>
+            <a href="about-MESA.html">About</a>
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="location.href='help.html';">Help
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-links">
+                    <a href="counseling.html">Counseling</a>
+                    <a href="tutoring.html">Tutoring</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
             </div>
+            <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
         </div>
-        <a href="resources.html">Resources</a>
-        <a href="events.html">Events</a>
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="location.href='help.html';">Help
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-links">
-                <a href="counseling.html">Counseling</a>
-                <a href="tutoring.html">Tutoring</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html">Contact</a>
-            </div>
+
+        <div id="skills-lab-container">
+            <div id="biology-square" class="skills-lab-square"></div>
+            <div id="engineering-square" class="skills-lab-square"></div>
+            <div id="physics-square" class="skills-lab-square"></div>
+            <div id="coding-square" class="skills-lab-square"></div>
         </div>
-        <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
+        <script src="JavaScript\script.js"></script>
+    </body>
+
+    <div class="sidebar">
+
+        <div>
+            <a class="link--underline" href="#Biology/Chemistry">Biology/Chemistry</a>
+        </div>
+        <div>
+            <a class="link--underline" href="#Physcis/Math">Physcis/Math</a>
+        </div>
+        <div>
+            <a class="link--underline" href="#Engineering">Engineering</a>
+        </div>
+        <div>
+            <a class="link--underline" href="#Coding">Coding</a>
+        </div>
     </div>
 
-    <div id="skills-lab-container">
-        <div id="biology-square" class="skills-lab-square">
-            
-        </div>
-        <div id="engineering-square" class="skills-lab-square">
-            
-        </div>
-        <div id="physics-square" class="skills-lab-square">
-            
-        </div>
-        <div id="coding-square" class="skills-lab-square">
-            
-        </div>
-    </div>
-    <script src="JavaScript\script.js"></script>
-</body>
-
-<div class="sidebar">
-      
-    <div><a class="link--underline"href="#Biology/Chemistry">Biology/Chemistry</a></div>
-    <div><a class="link--underline"href="#Physcis/Math">Physcis/Math</a></div>
-    <div><a class="link--underline"href="#Engineering">Engineering</a></div>
-    <div><a class="link--underline"href="#Coding">Coding</a></div>
-    </div>
-  
-    
-    
 
     <div id="mesa-heading">
-    <h1>MESA Skills Lab</h1>
-      </div>
+        <h1>MESA Skills Lab</h1>
     </div>
+</html></div><script>
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
 
-    <script>
-      function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-      }
-      
-      function closeNav() {
-      document.getElementById("mySidebar").style.width = "0";
-      document.getElementById("main").style.marginLeft= "0";
-      }
-      </script>
-  <div class="grid-container">
-      <div class="grid-item1"> 
-        <h2 id="Biology/Chemistry">Biology/Chemistry</h2>
-        
-     
-      <div class="slider">
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}</script><div class="grid-container">
+<div class="grid-item1">
+    <h2 id="Biology/Chemistry">Biology/Chemistry</h2>
+
+
+    <div class="slider">
         <div class="slides">
-            
+
             <input type="radio" name="radio-btn" id="radio1">
             <input type="radio" name="radio-btn" id="radio2">
             <input type="radio" name="radio-btn" id="radio3">
             <input type="radio" name="radio-btn" id="radio4">
-       
+
 
             <div class="slide first">
-                <img src="Assets/img1.jpg" alt="">
-            </div>
+                <img src="Assets/img1.jpg" alt=""></div>
 
             <div class="slide">
-                <img src="Assets/img2.jpeg" alt="">
-            </div>
+                <img src="Assets/img2.jpeg" alt=""></div>
 
             <div class="slide">
-                <img src="Assets/img3.jpeg" alt="">
-            </div>
+                <img src="Assets/img3.jpeg" alt=""></div>
 
             <div class="slide">
-                <img src="Assets/img4.jpeg" alt="">
-            </div>
+                <img src="Assets/img4.jpeg" alt=""></div>
 
             <div class="navigation-auto">
                 <div class="auto-btn1"></div>
                 <div class="auto-btn2"></div>
                 <div class="auto-btn3"></div>
                 <div class="auto-btn4"></div>
-            </div>            
-
             </div>
 
-            <div class="navigation-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-            </div>
+        </div>
+
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
 
     </div>
 
-    <script type="text/javascript"> 
-    var counter =1;
-    setInterval(function(){
-      document.getElementById('radio' + counter).checked=true;
-        counter++;
-        if(counter>4){
-            counter =1;
-        }
-    },5000);
+    <script type="text/javascript">
+        var counter = 1;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+        }, 5000);
     </script>
-  
-        <ul> <li> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et animi optio neque nobis quae ea asperiores esse dolor maxime perspiciatis! Quidem consectetur numquam sit eveniet tempora provident voluptatibus totam nam?</li>
+
+    <ul>
+        <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et animi optio neque nobis quae ea asperiores esse dolor maxime perspiciatis! Quidem consectetur numquam sit eveniet tempora provident voluptatibus totam nam?</li>
         <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique itaque amet illum quo asperiores. Ducimus adipisci error cumque nostrum recusandae odit, soluta, praesentium mollitia architecto aut beatae perferendis cupiditate. Illum.</li>
-      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus et voluptatibus placeat totam nesciunt impedit obcaecati harum, nisi velit vero necessitatibus eaque hic neque vel dolorum fugiat fuga at modi! </li>
-      </ul> 
-      </div>
-      <div class="grid-item2"> 
-        <h3>Description</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deserunt unde pariatur molestiae voluptate quasi et cumque officia labore nihil maxime cupiditate voluptatibus accusamus sequi, aliquam expedita ut adipisci dolorum.lorm Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo unde laboriosam, perferendis quidem culpa, atque quibusdam perspiciatis corporis velit consequatur dolorem nostrum nihil dolor, officia quod quisquam quasi blanditiis autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, placeat optio, voluptates dicta consequatur consequuntur molestias nostrum doloremque tempore architecto, voluptas molestiae. Aliquid neque ducimus, quidem enim unde voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, veniam non eum, architecto mollitia quaerat, aperiam placeat deserunt unde magni et aspernatur eaque id illum cupiditate ab! Nesciunt, cupiditate tempora!  </p>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus et voluptatibus placeat totam nesciunt impedit obcaecati harum, nisi velit vero necessitatibus eaque hic neque vel dolorum fugiat fuga at modi!
+        </li>
+    </ul>
+</div>
+<div class="grid-item2">
+    <h3>Description</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deserunt unde pariatur molestiae voluptate quasi et cumque officia labore nihil maxime cupiditate voluptatibus accusamus sequi, aliquam expedita ut adipisci dolorum.lorm Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo unde laboriosam, perferendis quidem culpa, atque quibusdam perspiciatis corporis velit consequatur dolorem nostrum nihil dolor, officia quod quisquam quasi blanditiis autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, placeat optio, voluptates dicta consequatur consequuntur molestias nostrum doloremque tempore architecto, voluptas molestiae. Aliquid neque ducimus, quidem enim unde voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, veniam non eum, architecto mollitia quaerat, aperiam placeat deserunt unde magni et aspernatur eaque id illum cupiditate ab! Nesciunt, cupiditate tempora!
+    </p>
 
 
+</div>
+<div class="grid-item3">
+    <h3>
+        <span>
+            <i>Contact</i>
+        </span>
+    </h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptates distinctio tenetur nihil officiis unde numquam, quam, soluta ad et quasi aspernatur dolorum non voluptatibus quia dolor laudantium, fugit ipsam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis obcaecati placeat quod dolorem rem hic, quam fugiat corrupti consequatur incidunt neque sapiente impedit ullam, quae sed omnis numquam aut? Consequuntur?
+    </p>
+</div></div><div class="grid-container">
+<div class="grid-item1">
+    <h2 id="Physcis/Math">Physics/Math</h2>
 
-
-      </div>
-      <div class="grid-item3">
-        <h3><span><i>Contact</i></span></h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptates distinctio tenetur nihil officiis unde numquam, quam, soluta ad et quasi aspernatur dolorum non voluptatibus quia dolor laudantium, fugit ipsam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis obcaecati placeat quod dolorem rem hic, quam fugiat corrupti consequatur incidunt neque sapiente impedit ullam, quae sed omnis numquam aut? Consequuntur? </p>
-      </div>
-
-  </div>
-    <div class="grid-container">
-      <div class="grid-item1"> 
-        <h2 id="Physcis/Math">Physics/Math</h2>
-      
-      <div class="slider">
+    <div class="slider">
         <div class="slides">
-            
+
             <input type="radio" name="radio-btn" id="radio5">
             <input type="radio" name="radio-btn" id="radio6">
             <input type="radio" name="radio-btn" id="radio7">
             <input type="radio" name="radio-btn" id="radio8">
-      
+
 
             <div class="slide first">
-                <img src="Assets/img1.jpg" alt="">
-            </div>
+                <img src="Assets/img1.jpg" alt=""></div>
 
             <div class="slide">
-                <img src="Assets/img2.jpeg" alt="">
-            </div>
+                <img src="Assets/img2.jpeg" alt=""></div>
 
             <div class="slide">
-                <img src="Assets/img3.jpeg" alt="">
-            </div>
+                <img src="Assets/img3.jpeg" alt=""></div>
 
             <div class="slide">
-                <img src="Assets/img4.jpeg" alt="">
-            </div>
+                <img src="Assets/img4.jpeg" alt=""></div>
 
             <div class="navigation-auto">
                 <div class="auto-btn5"></div>
                 <div class="auto-btn6"></div>
                 <div class="auto-btn7"></div>
                 <div class="auto-btn8"></div>
-            </div>            
-
             </div>
 
-            <div class="navigation-manual">
-                <label for="radio5" class="manual-btn"></label>
-                <label for="radio6" class="manual-btn"></label>
-                <label for="radio7" class="manual-btn"></label>
-                <label for="radio8" class="manual-btn"></label>
-            </div>
+        </div>
+
+        <div class="navigation-manual">
+            <label for="radio5" class="manual-btn"></label>
+            <label for="radio6" class="manual-btn"></label>
+            <label for="radio7" class="manual-btn"></label>
+            <label for="radio8" class="manual-btn"></label>
+        </div>
 
     </div>
 
-    <script type="text/javascript"> 
-    var counter =1;
-    setInterval(function(){
-      document.getElementById('radio' + counter).checked=true;
-        counter++;
-        if(counter>4){
-            counter =1;
-        }
-    },5000);
+    <script type="text/javascript">
+        var counter = 1;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+        }, 5000);
     </script>
 
-      <ul> <li> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et animi optio neque nobis quae ea asperiores esse dolor maxime perspiciatis! Quidem consectetur numquam sit eveniet tempora provident voluptatibus totam nam?</li>
+    <ul>
+        <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et animi optio neque nobis quae ea asperiores esse dolor maxime perspiciatis! Quidem consectetur numquam sit eveniet tempora provident voluptatibus totam nam?</li>
         <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique itaque amet illum quo asperiores. Ducimus adipisci error cumque nostrum recusandae odit, soluta, praesentium mollitia architecto aut beatae perferendis cupiditate. Illum.</li>
-      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus et voluptatibus placeat totam nesciunt impedit obcaecati harum, nisi velit vero necessitatibus eaque hic neque vel dolorum fugiat fuga at modi! </li>
-      </ul> 
-      
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus et voluptatibus placeat totam nesciunt impedit obcaecati harum, nisi velit vero necessitatibus eaque hic neque vel dolorum fugiat fuga at modi!
+        </li>
+    </ul>
 
-      </div>
-      <div class="grid-item2"> 
-        <h3>Description</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deserunt unde pariatur molestiae voluptate quasi et cumque officia labore nihil maxime cupiditate voluptatibus accusamus sequi, aliquam expedita ut adipisci dolorum.lorm Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo unde laboriosam, perferendis quidem culpa, atque quibusdam perspiciatis corporis velit consequatur dolorem nostrum nihil dolor, officia quod quisquam quasi blanditiis autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, placeat optio, voluptates dicta consequatur consequuntur molestias nostrum doloremque tempore architecto, voluptas molestiae. Aliquid neque ducimus, quidem enim unde voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, veniam non eum, architecto mollitia quaerat, aperiam placeat deserunt unde magni et aspernatur eaque id illum cupiditate ab! Nesciunt, cupiditate tempora!  </p>
-
-
-
-
-      </div>
-      <div class="grid-item3">
-        <h3><span><i>Contact</i></span></h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptates distinctio tenetur nihil officiis unde numquam, quam, soluta ad et quasi aspernatur dolorum non voluptatibus quia dolor laudantium, fugit ipsam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis obcaecati placeat quod dolorem rem hic, quam fugiat corrupti consequatur incidunt neque sapiente impedit ullam, quae sed omnis numquam aut? Consequuntur? </p>
-      </div>
-
-  </div>
-  <div class="grid-container">
-    <div class="grid-item1"> 
-      <h2 id="Engineering">Engineering</h2>
-
-  
-    <div class="slider">
-      <div class="slides">
-          
-          <input type="radio" name="radio-btn" id="radio9">
-          <input type="radio" name="radio-btn" id="radio10">
-          <input type="radio" name="radio-btn" id="radio11">
-          <input type="radio" name="radio-btn" id="radio12">
-    
-
-          <div class="slide first">
-              <img src="Assets/img1.jpg" alt="">
-          </div>
-
-          <div class="slide">
-              <img src="Assets/img2.jpeg" alt="">
-          </div>
-
-          <div class="slide">
-              <img src="Assets/img3.jpeg" alt="">
-          </div>
-
-          <div class="slide">
-              <img src="Assets/img4.jpeg" alt="">
-          </div>
-
-          <div class="navigation-auto">
-              <div class="auto-btn9"></div>
-              <div class="auto-btn10"></div>
-              <div class="auto-btn11"></div>
-              <div class="auto-btn12"></div>
-          </div>            
-
-          </div>
-
-          <div class="navigation-manual">
-              <label for="radio9" class="manual-btn"></label>
-              <label for="radio10" class="manual-btn"></label>
-              <label for="radio11" class="manual-btn"></label>
-              <label for="radio12" class="manual-btn"></label>
-          </div>
-
-  </div>
-
-  <script type="text/javascript"> 
-  var counter =1;
-  setInterval(function(){
-    document.getElementById('radio' + counter).checked=true;
-      counter++;
-      if(counter>4){
-          counter =1;
-      }
-  },5000);
-  </script>
-
-  <ul> <li> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et animi optio neque nobis quae ea asperiores esse dolor maxime perspiciatis! Quidem consectetur numquam sit eveniet tempora provident voluptatibus totam nam?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique itaque amet illum quo asperiores. Ducimus adipisci error cumque nostrum recusandae odit, soluta, praesentium mollitia architecto aut beatae perferendis cupiditate. Illum.</li>
-  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus et voluptatibus placeat totam nesciunt impedit obcaecati harum, nisi velit vero necessitatibus eaque hic neque vel dolorum fugiat fuga at modi! </li>
-  </ul> 
-
-    </div>
-    <div class="grid-item2"> 
-      <h3>Description</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deserunt unde pariatur molestiae voluptate quasi et cumque officia labore nihil maxime cupiditate voluptatibus accusamus sequi, aliquam expedita ut adipisci dolorum.lorm Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo unde laboriosam, perferendis quidem culpa, atque quibusdam perspiciatis corporis velit consequatur dolorem nostrum nihil dolor, officia quod quisquam quasi blanditiis autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, placeat optio, voluptates dicta consequatur consequuntur molestias nostrum doloremque tempore architecto, voluptas molestiae. Aliquid neque ducimus, quidem enim unde voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, veniam non eum, architecto mollitia quaerat, aperiam placeat deserunt unde magni et aspernatur eaque id illum cupiditate ab! Nesciunt, cupiditate tempora!  </p>
-
-
-
-
-    </div>
-    <div class="grid-item3">
-      <h3><span><i>Contact</i></span></h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptates distinctio tenetur nihil officiis unde numquam, quam, soluta ad et quasi aspernatur dolorum non voluptatibus quia dolor laudantium, fugit ipsam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis obcaecati placeat quod dolorem rem hic, quam fugiat corrupti consequatur incidunt neque sapiente impedit ullam, quae sed omnis numquam aut? Consequuntur? </p>
-    </div>
 
 </div>
-<div class="grid-container">
-  <div class="grid-item1"> 
-    <h2 id="Coding"> Coding </h2>
-    
+<div class="grid-item2">
+    <h3>Description</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deserunt unde pariatur molestiae voluptate quasi et cumque officia labore nihil maxime cupiditate voluptatibus accusamus sequi, aliquam expedita ut adipisci dolorum.lorm Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo unde laboriosam, perferendis quidem culpa, atque quibusdam perspiciatis corporis velit consequatur dolorem nostrum nihil dolor, officia quod quisquam quasi blanditiis autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, placeat optio, voluptates dicta consequatur consequuntur molestias nostrum doloremque tempore architecto, voluptas molestiae. Aliquid neque ducimus, quidem enim unde voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, veniam non eum, architecto mollitia quaerat, aperiam placeat deserunt unde magni et aspernatur eaque id illum cupiditate ab! Nesciunt, cupiditate tempora!
+    </p>
 
-  <div class="slider">
-    <div class="slides">
-        
-        <input type="radio" name="radio-btn" id="radio13">
-        <input type="radio" name="radio-btn" id="radio14">
-        <input type="radio" name="radio-btn" id="radio15">
-        <input type="radio" name="radio-btn" id="radio16">
-  
 
-        <div class="slide first">
-            <img src="Assets/img1.jpg" alt="">
+</div>
+<div class="grid-item3">
+    <h3>
+        <span>
+            <i>Contact</i>
+        </span>
+    </h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptates distinctio tenetur nihil officiis unde numquam, quam, soluta ad et quasi aspernatur dolorum non voluptatibus quia dolor laudantium, fugit ipsam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis obcaecati placeat quod dolorem rem hic, quam fugiat corrupti consequatur incidunt neque sapiente impedit ullam, quae sed omnis numquam aut? Consequuntur?
+    </p>
+</div></div><div class="grid-container">
+<div class="grid-item1">
+    <h2 id="Engineering">Engineering</h2>
+
+
+    <div class="slider">
+        <div class="slides">
+
+            <input type="radio" name="radio-btn" id="radio9">
+            <input type="radio" name="radio-btn" id="radio10">
+            <input type="radio" name="radio-btn" id="radio11">
+            <input type="radio" name="radio-btn" id="radio12">
+
+
+            <div class="slide first">
+                <img src="Assets/img1.jpg" alt=""></div>
+
+            <div class="slide">
+                <img src="Assets/img2.jpeg" alt=""></div>
+
+            <div class="slide">
+                <img src="Assets/img3.jpeg" alt=""></div>
+
+            <div class="slide">
+                <img src="Assets/img4.jpeg" alt=""></div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn9"></div>
+                <div class="auto-btn10"></div>
+                <div class="auto-btn11"></div>
+                <div class="auto-btn12"></div>
+            </div>
+
         </div>
 
-        <div class="slide">
-            <img src="Assets/img2.jpeg" alt="">
+        <div class="navigation-manual">
+            <label for="radio9" class="manual-btn"></label>
+            <label for="radio10" class="manual-btn"></label>
+            <label for="radio11" class="manual-btn"></label>
+            <label for="radio12" class="manual-btn"></label>
         </div>
 
-        <div class="slide">
-            <img src="Assets/img3.jpeg" alt="">
-        </div>
+    </div>
 
-        <div class="slide">
-            <img src="Assets/img4.jpeg" alt="">
-        </div>
+    <script type="text/javascript">
+        var counter = 1;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+        }, 5000);
+    </script>
 
-        <div class="navigation-auto">
-            <div class="auto-btn13"></div>
-            <div class="auto-btn14"></div>
-            <div class="auto-btn15"></div>
-            <div class="auto-btn16"></div>
-        </div>            
+    <ul>
+        <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et animi optio neque nobis quae ea asperiores esse dolor maxime perspiciatis! Quidem consectetur numquam sit eveniet tempora provident voluptatibus totam nam?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique itaque amet illum quo asperiores. Ducimus adipisci error cumque nostrum recusandae odit, soluta, praesentium mollitia architecto aut beatae perferendis cupiditate. Illum.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus et voluptatibus placeat totam nesciunt impedit obcaecati harum, nisi velit vero necessitatibus eaque hic neque vel dolorum fugiat fuga at modi!
+        </li>
+    </ul>
+
+</div>
+<div class="grid-item2">
+    <h3>Description</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deserunt unde pariatur molestiae voluptate quasi et cumque officia labore nihil maxime cupiditate voluptatibus accusamus sequi, aliquam expedita ut adipisci dolorum.lorm Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo unde laboriosam, perferendis quidem culpa, atque quibusdam perspiciatis corporis velit consequatur dolorem nostrum nihil dolor, officia quod quisquam quasi blanditiis autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, placeat optio, voluptates dicta consequatur consequuntur molestias nostrum doloremque tempore architecto, voluptas molestiae. Aliquid neque ducimus, quidem enim unde voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, veniam non eum, architecto mollitia quaerat, aperiam placeat deserunt unde magni et aspernatur eaque id illum cupiditate ab! Nesciunt, cupiditate tempora!
+    </p>
+
+
+</div>
+<div class="grid-item3">
+    <h3>
+        <span>
+            <i>Contact</i>
+        </span>
+    </h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptates distinctio tenetur nihil officiis unde numquam, quam, soluta ad et quasi aspernatur dolorum non voluptatibus quia dolor laudantium, fugit ipsam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis obcaecati placeat quod dolorem rem hic, quam fugiat corrupti consequatur incidunt neque sapiente impedit ullam, quae sed omnis numquam aut? Consequuntur?
+    </p>
+</div></div><div class="grid-container">
+<div class="grid-item1">
+    <h2 id="Coding">
+        Coding
+    </h2>
+
+
+    <div class="slider">
+        <div class="slides">
+
+            <input type="radio" name="radio-btn" id="radio13">
+            <input type="radio" name="radio-btn" id="radio14">
+            <input type="radio" name="radio-btn" id="radio15">
+            <input type="radio" name="radio-btn" id="radio16">
+
+
+            <div class="slide first">
+                <img src="Assets/img1.jpg" alt=""></div>
+
+            <div class="slide">
+                <img src="Assets/img2.jpeg" alt=""></div>
+
+            <div class="slide">
+                <img src="Assets/img3.jpeg" alt=""></div>
+
+            <div class="slide">
+                <img src="Assets/img4.jpeg" alt=""></div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn13"></div>
+                <div class="auto-btn14"></div>
+                <div class="auto-btn15"></div>
+                <div class="auto-btn16"></div>
+            </div>
 
         </div>
 
@@ -374,81 +356,83 @@
             <label for="radio16" class="manual-btn"></label>
         </div>
 
-</div>
-
-<script type="text/javascript"> 
-var counter =1;
-setInterval(function(){
-  document.getElementById('radio' + counter).checked=true;
-    counter++;
-    if(counter>4){
-        counter =1;
-    }
-},5000);
-</script>
-
-  <ul> <li> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et animi optio neque nobis quae ea asperiores esse dolor maxime perspiciatis! Quidem consectetur numquam sit eveniet tempora provident voluptatibus totam nam?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique itaque amet illum quo asperiores. Ducimus adipisci error cumque nostrum recusandae odit, soluta, praesentium mollitia architecto aut beatae perferendis cupiditate. Illum.</li>
-  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus et voluptatibus placeat totam nesciunt impedit obcaecati harum, nisi velit vero necessitatibus eaque hic neque vel dolorum fugiat fuga at modi! </li>
-  </ul> 
-  
-
-  </div>
-  <div class="grid-item2"> 
-    <h3>Description</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deserunt unde pariatur molestiae voluptate quasi et cumque officia labore nihil maxime cupiditate voluptatibus accusamus sequi, aliquam expedita ut adipisci dolorum.lorm Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo unde laboriosam, perferendis quidem culpa, atque quibusdam perspiciatis corporis velit consequatur dolorem nostrum nihil dolor, officia quod quisquam quasi blanditiis autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, placeat optio, voluptates dicta consequatur consequuntur molestias nostrum doloremque tempore architecto, voluptas molestiae. Aliquid neque ducimus, quidem enim unde voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, veniam non eum, architecto mollitia quaerat, aperiam placeat deserunt unde magni et aspernatur eaque id illum cupiditate ab! Nesciunt, cupiditate tempora!  </p>
-
-
-
-
-  </div>
-  <div class="grid-item3">
-    <h3><span><i>Contact</i></span></h3>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptates distinctio tenetur nihil officiis unde numquam, quam, soluta ad et quasi aspernatur dolorum non voluptatibus quia dolor laudantium, fugit ipsam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis obcaecati placeat quod dolorem rem hic, quam fugiat corrupti consequatur incidunt neque sapiente impedit ullam, quae sed omnis numquam aut? Consequuntur? </p>
-  </div>
-
-</div>
-<footer>
-    <h1 id="footer-heading">MESA at College of the Canyons</h1>
-    <form id="footer-form">
-        <div id="name-div">
-            <label for="name">Name</label><br>
-            <input type="text" id="name" name="name" required>
-            <br>
-        </div>
-        <div id="email-div">
-            <label for="email">Email</label><br>
-            <input type="text" id="email" name="email" required>
-            <br>
-        </div>
-        <div id="subject-div">
-            <label for="subject">Subject</label><br>
-            <input type="text" id="subject" name="subject" required>
-            <br>
-        </div>
-        <div id="message-div">
-            <label for="message">Message</label><br>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-        </div>
-        <input type="submit" value="Send Message" class="primary-btn">
-    </form>
-    <div id="footer-details">
-        <div id="footer-address">
-            <h3>Address:</h3>
-            <p>26455 Rockwell Canyon Rd, Santa Clarita, CA 91355</p>
-            <p>Aliso Lab 114</p>
-        </div>
-        <div id="footer-hours">
-            <h3>Winter Hours:</h3>
-            <p>M-Th, 9am-5pm</p>
-            <p>F, 9am-12pm</p>
-        </div>
-        <div id="footer-contact">
-            <h3>Contact Us:</h3>
-            <p>661.362.3448 Phone</p>
-            <p>661.362.5077 Fax</p>
-            <p>mesadepartment@canyons.edu</p>
-        </div>
     </div>
-</footer>
-</html>
+
+    <script type="text/javascript">
+        var counter = 1;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+        }, 5000);
+    </script>
+
+    <ul>
+        <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et animi optio neque nobis quae ea asperiores esse dolor maxime perspiciatis! Quidem consectetur numquam sit eveniet tempora provident voluptatibus totam nam?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique itaque amet illum quo asperiores. Ducimus adipisci error cumque nostrum recusandae odit, soluta, praesentium mollitia architecto aut beatae perferendis cupiditate. Illum.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus et voluptatibus placeat totam nesciunt impedit obcaecati harum, nisi velit vero necessitatibus eaque hic neque vel dolorum fugiat fuga at modi!
+        </li>
+    </ul>
+
+
+</div>
+<div class="grid-item2">
+    <h3>Description</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deserunt unde pariatur molestiae voluptate quasi et cumque officia labore nihil maxime cupiditate voluptatibus accusamus sequi, aliquam expedita ut adipisci dolorum.lorm Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo unde laboriosam, perferendis quidem culpa, atque quibusdam perspiciatis corporis velit consequatur dolorem nostrum nihil dolor, officia quod quisquam quasi blanditiis autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, placeat optio, voluptates dicta consequatur consequuntur molestias nostrum doloremque tempore architecto, voluptas molestiae. Aliquid neque ducimus, quidem enim unde voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, veniam non eum, architecto mollitia quaerat, aperiam placeat deserunt unde magni et aspernatur eaque id illum cupiditate ab! Nesciunt, cupiditate tempora!
+    </p>
+
+
+</div>
+<div class="grid-item3">
+    <h3>
+        <span>
+            <i>Contact</i>
+        </span>
+    </h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptates distinctio tenetur nihil officiis unde numquam, quam, soluta ad et quasi aspernatur dolorum non voluptatibus quia dolor laudantium, fugit ipsam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis obcaecati placeat quod dolorem rem hic, quam fugiat corrupti consequatur incidunt neque sapiente impedit ullam, quae sed omnis numquam aut? Consequuntur?
+    </p>
+</div></div><footer>
+<h1 id="footer-heading">MESA at College of the Canyons</h1>
+<form id="footer-form">
+    <div id="name-div">
+        <label for="name">Name</label>
+        <br>
+        <input type="text" id="name" name="name" required="required">
+        <br></div>
+    <div id="email-div">
+        <label for="email">Email</label>
+        <br>
+        <input type="text" id="email" name="email" required="required">
+        <br></div>
+    <div id="subject-div">
+        <label for="subject">Subject</label>
+        <br>
+        <input type="text" id="subject" name="subject" required="required">
+        <br></div>
+    <div id="message-div">
+        <label for="message">Message</label>
+        <br>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+    </div>
+    <input type="submit" value="Send Message" class="primary-btn"></form>
+<div id="footer-details">
+    <div id="footer-address">
+        <h3>Address:</h3>
+        <p>26455 Rockwell Canyon Rd, Santa Clarita, CA 91355</p>
+        <p>Aliso Lab 114</p>
+    </div>
+    <div id="footer-hours">
+        <h3>Winter Hours:</h3>
+        <p>M-Th, 9am-5pm</p>
+        <p>F, 9am-12pm</p>
+    </div>
+    <div id="footer-contact">
+        <h3>Contact Us:</h3>
+        <p>661.362.3448 Phone</p>
+        <p>661.362.5077 Fax</p>
+        <p>mesadepartment@canyons.edu</p>
+    </div>
+</div></footer></html>

@@ -401,10 +401,17 @@
             id="primaryTopnav" class="topnav">
             <!-- <img id="nav-logo" src="Assets/Images/MESA-Logo-HD.png" alt=""> -->
             <a href="index.html">Home</a>
-            <a href="join.html">Join</a>
-            <a href="about.html">About</a>
-            <a href="events.html">Events</a>
+            <div class="dropdown">
+                <button class="dropdown-btn">Join
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-links">
+                    <a href="benefits-and-requirements.html">Benefits and Requirements</a>
+                </div>
+            </div>
+            <a href="skills-lab.html">Skills Lab</a>
             <a href="resources.html">Resources</a>
+            <a href="about-MESA.html">About</a>
             <div class="dropdown">
                 <button class="dropdown-btn" onclick="location.href='help.html';">Help
                     <i class="fa fa-caret-down"></i>
@@ -413,7 +420,6 @@
                     <a href="counseling.html">Counseling</a>
                     <a href="tutoring.html">Tutoring</a>
                     <a href="faq.html">FAQ</a>
-                    <a href="contact.html">Contact</a>
                 </div>
             </div>
             <a href="javascript:void(0);" class="icon" onclick="openNavBar()">&#9776;</a>
@@ -619,26 +625,26 @@
         <h1 id="footer-heading">MESA at College of the Canyons</h1>
         <form id="footer-form">
             <div id="name-div">
-                <label for="name">Name</label><br>
-                <input type="text" id="name" name="name" required>
+                <label for="name">Name</label>
                 <br>
-            </div>
+                <input type="text" id="name" name="name" required="required">
+                <br></div>
             <div id="email-div">
-                <label for="email">Email</label><br>
-                <input type="text" id="email" name="email" required>
+                <label for="email">Email</label>
                 <br>
-            </div>
+                <input type="text" id="email" name="email" required="required">
+                <br></div>
             <div id="subject-div">
-                <label for="subject">Subject</label><br>
-                <input type="text" id="subject" name="subject" required>
+                <label for="subject">Subject</label>
                 <br>
-            </div>
+                <input type="text" id="subject" name="subject" required="required">
+                <br></div>
             <div id="message-div">
-                <label for="message">Message</label><br>
+                <label for="message">Message</label>
+                <br>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
             </div>
-            <input type="submit" value="Send Message" class="primary-btn">
-        </form>
+            <input type="submit" value="Send Message" class="primary-btn"></form>
         <div id="footer-details">
             <div id="footer-address">
                 <h3>Address:</h3>
