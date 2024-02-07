@@ -1,4 +1,6 @@
 /old
+/database
 .DS_Store
 node_modules
 .env
+.xlsx
