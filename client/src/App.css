@@ -5,17 +5,57 @@
 }
 
 /* React Components */
-.TutorList {
+.AddTutorBtn {
+  background-color: white;
+  color: black;
+
+  padding: 0.5rem 1rem;
+
+  text-align: center;
+
+  transition: 0.15s;
+}
+.AddTutorBtn:hover {
+  background-color: lightgray;
+  transform: translate(-1px, -1px);
+}
+
+.SearchTutorBar {
+  background-color: white;
+  color: black;
+
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+}
+
+.TutorsList {
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 1rem;
+
+  transition: 0.15s;
 }
 
 .TutorCard {
-  background: linear-gradient(180deg, white, rgb(188, 188, 188));
+  background-color: rgb(186, 186, 186);
   color: black;
 
   padding: 1rem 2rem;
-  margin: 1rem 0;
   border-radius: 10px;
+
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+  transition: 0.15s;
+}
+.TutorCard:hover {
+  background-color: lightgray;
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
 }

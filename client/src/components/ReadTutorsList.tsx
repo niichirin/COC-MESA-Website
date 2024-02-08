@@ -14,7 +14,10 @@ interface Tutor {
 const ReadTutorsList = () => {
     
     const [loading, setLoading] = useState(false);
+    const [search, setSearch] = useState("");
     const [tutors, setTutors] = useState<{ [key: string]: Tutor }>({});
+
+    const navigate = useNavigate();
     
     useEffect(() => {
         setLoading(true);
@@ -24,6 +27,30 @@ const ReadTutorsList = () => {
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
     }, []);
+
+    const handleSearchChange = (e: any) => {
+        setSearch(e.target.value);
+    }
+
+    const handleAddClick = (e: any) => {
+        navigate("/create-tutor");
+    }
+
+    const renderTutor = (key: string) => {
+        let tutor: Tutor = tutors[key];
+        if (tutor.name.includes(search)) {
+            return (    
+                <div 
+                    key={tutor.tutor_id} 
+                    className="TutorCard"
+                >
+                    <TutorCard 
+                        tutor={tutor}
+                    />
+                </div>
+            )
+        }
+    }
 
     if (loading) {
         return (
@@ -35,28 +62,28 @@ const ReadTutorsList = () => {
 
     return (
         <div>
-            <div className="TutorsList">
-                {Object.keys(tutors).map((key) => {
-                    let tutor: Tutor = tutors[key];
-                    return (
-                        <div 
-                            key={tutor.tutor_id} 
-                            className="TutorCard"
-                        >
-                            <TutorCard 
-                                tutor={tutor}
-                            />
-                        </div>
-                    )
-                })}
-            </div>
-            <div>
-                <Link
-                    to={`/create-tutor`}
-                    className="AddTutorBtn"
+            <h1>Tutors</h1>
+            <div style={{ marginBottom: "1rem"}}>
+                <button 
+                    className="AddTutorBtn" 
+                    onClick={handleAddClick}
                 >
                     Add Tutor
-                </Link>
+                </button>
+                <label>
+                    <input
+                        className="SearchTutorBar"
+                        type="text"
+                        placeholder="Search Tutor"
+                        onChange={handleSearchChange}
+                    >
+                    </input>
+                </label>
+            </div>
+            <div className="TutorsList">
+                {Object.keys(tutors).map((key) => {
+                    return renderTutor(key)
+                })}
             </div>
         </div>
     )

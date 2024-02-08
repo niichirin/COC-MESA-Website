@@ -47,7 +47,10 @@ const ReadTutor = () => {
                 <p><b>Email: </b><u><a href={`mailto:${tutor.email}`}>{tutor.email}</a></u></p>
             </div>
             <button 
-                style={{backgroundColor:"darkred"}}
+                style={{
+                    marginTop: "1rem",
+                    backgroundColor:"darkred"
+                }}
                 onClick={onDelete}
             >
                 Delete
