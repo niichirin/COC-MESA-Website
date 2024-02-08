@@ -2,10 +2,11 @@
 
 const express = require(`express`);
 const router = express.Router();
+const { pool } = require(`../../config/db.js`)
 
 const getTutors = (req, res) => {
     pool.query(
-        `SELECT * FROM tutors ORDER BY id ASC`, 
+        `SELECT * FROM tutors ORDER BY tutor_id ASC`, 
         (error, results) => {
             if (error) throw error;
             res.status(200).json(results.rows)
