@@ -14,6 +14,7 @@ const ReadTutor = () => {
 
     const [tutor, setTutor] = useState<Tutor>();
     const { id } = useParams();
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -24,6 +25,15 @@ const ReadTutor = () => {
             .catch((error) => console.error('Error reading tutor: ', error))
             .finally(() => setLoading(false))
     }, []);
+
+    const onDelete = () => {
+        setLoading(true);
+        axios
+            .delete(`http://localhost:8082/api/tutoring/tutor/${id}`)
+            .then((res) => navigate('/'))
+            .catch((error) => console.error('Error deleting tutor: ', error))
+            .finally(() => setLoading(false));
+    }
 
     if (loading) return <div>Loading...</div>;
     if (tutor == null) return <div>No tutor with {id} found!</div>;
@@ -36,6 +46,12 @@ const ReadTutor = () => {
                 <h3>{tutor.name}</h3>
                 <p><b>Email: </b><u><a href={`mailto:${tutor.email}`}>{tutor.email}</a></u></p>
             </div>
+            <button 
+                style={{backgroundColor:"darkred"}}
+                onClick={onDelete}
+            >
+                Delete
+            </button>
         </div>
     )
 }

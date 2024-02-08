@@ -42,7 +42,7 @@ const updateTutorById = (req, res) => {
     const id = parseInt(req.params.id);
     const { name, email } = req.body;
     pool.query(
-        `UPDATE tutors SET name=$1, email=$2 WHERE id=$3`,
+        `UPDATE tutors SET name=$1, email=$2 WHERE tutor_id=$3`,
         [name, email, id],
         (error, results) => {
             if (error) throw error;
@@ -54,7 +54,7 @@ const updateTutorById = (req, res) => {
 const deleteTutorById = (req, res) => {
     const id = parseInt(req.params.id);
     pool.query(
-        `DELETE FROM tutors WHERE id = $1`,
+        `DELETE FROM tutors WHERE tutor_id = $1`,
         [id],
         (error, results) => {
             if (error) throw error;
@@ -65,7 +65,7 @@ const deleteTutorById = (req, res) => {
 
 const getCourses = (req, res) => {
     pool.query(
-        `SELECT * FROM courses ORDER BY id ASC`, 
+        `SELECT * FROM courses ORDER BY course_id ASC`, 
         (error, results) => {
             if (error) throw error;
             res.status(200).json(results.rows)
@@ -101,7 +101,7 @@ const updateCourseById = (req, res) => {
     const id = parseInt(req.params.id);
     const { name, subject, number } = req.body;
     pool.query(
-        `UPDATE courses SET name=$1, subject=$2, number=$3 WHERE id=$4`,
+        `UPDATE courses SET name=$1, subject=$2, number=$3 WHERE course_id=$4`,
         [name, subject, number, id],
         (error, results) => {
             if (error) throw error;
@@ -113,7 +113,7 @@ const updateCourseById = (req, res) => {
 const deleteCourseById = (req, res) => {
     const id = parseInt(req.params.id);
     pool.query(
-        `DELETE FROM courses WHERE id=$1`,
+        `DELETE FROM courses WHERE course_id=$1`,
         [id],
         (error, results) => {
             if (error) throw error;
