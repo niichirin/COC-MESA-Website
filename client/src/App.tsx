@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   { path: "/", element: <ReadTutorsList /> },
   { path: "/create-tutor", element: <CreateTutor /> },
   { path: "/read-tutor/:id", element: <ReadTutor /> },
-  { path: "/update-book/:id", element: <UpdateTutor/> },
+  { path: "/update-tutor/:id", element: <UpdateTutor/> },
 ]);
 
 function App() {
