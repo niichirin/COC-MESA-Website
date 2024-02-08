@@ -4,8 +4,9 @@ import React from "react";
 
 const ReadTutor = () => {
     return (
-        <>
-        </>
+        <div>
+            <p>Read Tutor</p>
+        </div>
     )
 }
 
