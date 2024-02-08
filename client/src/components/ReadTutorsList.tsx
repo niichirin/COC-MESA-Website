@@ -14,7 +14,7 @@ interface Tutor {
 const ReadTutorsList = () => {
     
     const [loading, setLoading] = useState(false);
-    const [tutors, setTutors] = useState({});
+    const [tutors, setTutors] = useState<{ [key: string]: Tutor }>({});
 
     useEffect(() => {
         setLoading(true);
@@ -47,14 +47,14 @@ const ReadTutorsList = () => {
                     </div>
                 })}
             </div>
-            {/* <div>
+            <div>
                 <Link
                     to={`/create-tutor`}
                     className="AddTutorBtn"
                 >
                     Add Tutor
                 </Link>
-            </div> */}
+            </div>
         </div>
     )
 }
