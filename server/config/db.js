@@ -4,17 +4,17 @@ const { Pool } = require('pg');
 
 require('dotenv').config();
 
-const db = new Pool({
-    user: DB_USER,
-    host: DB_HOST,
+const pool = new Pool({
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
     database: `coc_mesa_tutoring`,
-    password: DB_PASSWORD,
-    port: DB_PORT
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT
 });
 
 const connectDB = async () => {
     try {
-        await db.connect();
+        await pool.connect();
         console.log("Connected to PostgreSQL");
     } catch (err) {
         console.error(err.message);
@@ -22,4 +22,4 @@ const connectDB = async () => {
     }
 }
 
-module.exports = connectDB;
+module.exports = { connectDB, pool };
