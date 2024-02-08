@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import BackToTutors from "./BackToTutors";
+
 // reads tutor by ID from DB
 
 interface Tutor {
@@ -13,9 +15,10 @@ interface Tutor {
 const ReadTutor = () => {
 
     const [tutor, setTutor] = useState<Tutor>();
+    const [loading, setLoading] = useState(false);
+
     const { id } = useParams();
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true);
@@ -26,7 +29,11 @@ const ReadTutor = () => {
             .finally(() => setLoading(false))
     }, []);
 
-    const onDelete = () => {
+    const handleUpdateClick = () => {
+        navigate(`/update-tutor/${id}`)
+    }
+
+    const handleDeleteClick = () => {
         setLoading(true);
         axios
             .delete(`http://localhost:8082/api/tutoring/tutor/${id}`)
@@ -40,18 +47,21 @@ const ReadTutor = () => {
 
     return (
         <div>
-            <Link to="/">Back to all tutors</Link>
             <h2 style={{textAlign: "center"}}>Tutor Information</h2>
+            <BackToTutors />
             <div className="TutorCard">
                 <h3>{tutor.name}</h3>
                 <p><b>Email: </b><u><a href={`mailto:${tutor.email}`}>{tutor.email}</a></u></p>
             </div>
             <button 
-                style={{
-                    marginTop: "1rem",
-                    backgroundColor:"darkred"
-                }}
-                onClick={onDelete}
+                onClick={handleUpdateClick}
+            >
+                Update
+            </button>
+            <button 
+                style={{ marginLeft: "0.5rem"}}
+                className="DeleteTutorBtn"
+                onClick={handleDeleteClick}
             >
                 Delete
             </button>

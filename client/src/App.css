@@ -59,3 +59,16 @@
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
 }
+
+.BackToTutorsBtn {
+  color: white;
+  
+  margin-bottom: 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.DeleteTutorBtn {
+  margin-top: 1rem;
+  background-color:darkred;
+}

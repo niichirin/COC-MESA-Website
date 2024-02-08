@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
+import BackToTutors from './BackToTutors';
+
 const CreateTutor = () => {
     
     const [name, setName] = useState('');
@@ -29,7 +31,7 @@ const CreateTutor = () => {
 
     return (
         <div>
-            <Link to="/">Back to Tutors</Link>
+            <BackToTutors />
             <h2 style={{textAlign:"center"}}>Create Tutor</h2>
             {loading && <div>Loading...</div>}
             {errorMessage && <div style={{color:"red"}}>{errorMessage}</div>}
