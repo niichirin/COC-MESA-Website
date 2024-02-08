@@ -1,20 +1,16 @@
 import React from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../App.css";
-import axios from "axios";
-
 
 interface TutorCardProps {
-    id: number,
-    name: string,
-    email: string
+    tutor: { tutor_id: number, name: string, email: string }
 }
 
-const TutorCard: React.FC<TutorCardProps> = ({ id, name, email}) => {
+const TutorCard: React.FC<TutorCardProps> = ({ tutor }) => {
     return (
         <>
-            <h3>{name}</h3>
-            <p><b>Email: </b><u><a href={`mailto:${email}`}>{email}</a></u></p>
+            <h3><Link to={`/read-tutor/${tutor.tutor_id}`}>{tutor.name}</Link></h3>
+            <p><b>Email: </b><u><a href={`mailto:${tutor.email}`}>{tutor.email}</a></u></p>
         </>
     )
 }

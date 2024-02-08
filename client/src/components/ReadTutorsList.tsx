@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import TutorCard from "./TutorCard.tsx"
@@ -15,7 +15,7 @@ const ReadTutorsList = () => {
     
     const [loading, setLoading] = useState(false);
     const [tutors, setTutors] = useState<{ [key: string]: Tutor }>({});
-
+    
     useEffect(() => {
         setLoading(true);
         axios
@@ -38,13 +38,16 @@ const ReadTutorsList = () => {
             <div className="TutorsList">
                 {Object.keys(tutors).map((key) => {
                     let tutor: Tutor = tutors[key];
-                    return <div key={tutor.tutor_id} className="TutorCard">
-                        <TutorCard 
-                            id={tutor.tutor_id}
-                            name={tutor.name}
-                            email={tutor.email}
-                        />
-                    </div>
+                    return (
+                        <div 
+                            key={tutor.tutor_id} 
+                            className="TutorCard"
+                        >
+                            <TutorCard 
+                                tutor={tutor}
+                            />
+                        </div>
+                    )
                 })}
             </div>
             <div>
@@ -57,6 +60,7 @@ const ReadTutorsList = () => {
             </div>
         </div>
     )
+    
 }
 
 export default ReadTutorsList;

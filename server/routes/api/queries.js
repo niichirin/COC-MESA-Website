@@ -21,7 +21,7 @@ const getTutorById = (req, res) => {
         [id], 
         (error, results) => {
             if (error) throw error;
-            res.status(200).json(results.rows);
+            res.status(200).json(results.rows[0]);
         }
     );
 }
@@ -80,7 +80,7 @@ const getCourseById = (req, res) => {
         [id], 
         (error, results) => {
             if (error) throw error;
-            res.status(200).json(results.rows);
+            res.status(200).json(results.rows[0]);
         }
     );
 }

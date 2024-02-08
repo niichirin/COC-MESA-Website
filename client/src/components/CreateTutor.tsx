@@ -10,7 +10,7 @@ const CreateTutor = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: any) => {
         setLoading(true);
         e.preventDefault();
         try {
