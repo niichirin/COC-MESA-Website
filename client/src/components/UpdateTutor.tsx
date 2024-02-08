@@ -4,8 +4,9 @@ import React from "react";
 
 const UpdateTutor = () => {
     return (
-        <>
-        </>
+        <div>
+            <p>Update Tutor</p>
+        </div>
     )
 }
 
