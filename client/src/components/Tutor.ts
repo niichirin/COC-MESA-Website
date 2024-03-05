@@ -1,4 +1,5 @@
 interface Course {
+    course_id: number;
     subject: string; // MATH
     number: number; // 215
     name: string; // Differential Equations
@@ -11,8 +12,9 @@ interface Day {
 }
 
 interface Tutor {
+    tutor_id: number;
     name: string; // John Doe
-    courses: Course[]
+    courses: Course[];
     schedule: {
         mon: Day[],
         tue: Day[],
@@ -21,5 +23,5 @@ interface Tutor {
         fri: Day[],
         sat: Day[],
         sun: Day[], 
-    }
+    };
 }

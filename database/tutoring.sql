@@ -56,6 +56,7 @@ CREATE TABLE tutors (
   email VARCHAR(50) NOT NULL,
   schedule JSONB
 );
+
 CREATE TABLE courses (
   course_id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
