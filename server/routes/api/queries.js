@@ -122,9 +122,20 @@ const deleteCourseById = (req, res) => {
     );
 }
 
-// TO-DO: Set up tutors_courses queries
-
-// TO-DO; Set up schedule queries
+const getTutorCoursesByTutorId = (req, res) => {
+    const tutor_id = parseInt(req.params.id);
+    pool.query(
+        `SELECT c.*
+        FROM tutors_courses tc
+        JOIN courses c ON tc.course_id = c.course_id
+        WHERE tc.tutor_id=$1`,
+        [tutor_id],
+        (error, results) => {
+            if (error) throw error;
+            res.status(200).json(results.rows);
+        }
+    )
+}
 
 router.get(`/tutor`, getTutors);
 router.get(`/tutor/:id`, getTutorById);
@@ -132,10 +143,12 @@ router.post(`/tutor/`, createTutor);
 router.put(`/tutor/:id`, updateTutorById);
 router.delete(`/tutor/:id`, deleteTutorById);
 
-router.get(`/course`, getCourses);
+router.get(`/courses`, getCourses);
 router.get(`/course/:id`, getCourseById);
 router.post(`/course/`, createCourse);
 router.put(`/course/:id`, updateCourseById);
 router.delete(`/course/:id`, deleteCourseById);
+
+router.get('/tutor/course/:id', getTutorCoursesByTutorId);
 
 module.exports = router;    
