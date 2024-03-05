@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import {useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import TutorCard from "./TutorCard.tsx"
@@ -37,21 +37,21 @@ const ReadTutorsList = () => {
         navigate("/create-tutor");
     }
 
-    const renderTutor = (key: string) => {
-        let tutor: Tutor = tutors[key];
-        if (tutor.name.toLowerCase().includes(search)) {
-            return (    
-                <div 
-                    key={tutor.tutor_id} 
-                    className="TutorCard"
-                >
-                    <TutorCard 
-                        tutor={tutor}
-                    />
-                </div>
-            )
-        }
-    }
+    // re-use this memoized component until the search input changes
+    // this prevents re-renders on every refresh
+    const renderedTutors = useMemo(() => {
+        return Object.keys(tutors).map((key) => {
+            const tutor: Tutor = tutors[key];
+            if (tutor.name.toLowerCase().includes(search.toLowerCase())) {
+                return (    
+                    <div key={tutor.tutor_id} className="TutorCard">
+                        <TutorCard tutor={tutor} />
+                    </div>
+                );
+            }
+            return null;
+        });
+    }, [tutors, search]);
 
     if (loading) {
         return (
@@ -82,9 +82,10 @@ const ReadTutorsList = () => {
                 </label>
             </div>
             <div className="TutorsList">
-                {Object.keys(tutors).map((key) => {
+                {/* {Object.keys(tutors).map((key) => {
                     return renderTutor(key)
-                })}
+                })} */}
+                {renderedTutors}
             </div>
         </div>
     )
