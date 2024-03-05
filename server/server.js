@@ -1,8 +1,8 @@
 // Entry point of API server.
-const express = require("express"); // API framework
-const { connectDB } = require("./config/db"); // PostgreSQL db
+const express = require("express");
+const { connectDB } = require("./config/db");
 const routes = require("./routes/api/queries"); // API endpoints
-const cors = require("cors");
+const cors = require("cors"); // bypass browser security
 const bodyParser = require("body-parser"); // JSON
 
 const app = express();
