@@ -12,14 +12,28 @@ interface Tutor {
     email: string 
 }
 
+interface Course {
+    course_id: number,
+    name: string,
+    subject: string,
+    number: number
+}
+
 const ReadTutor = () => {
 
     const [tutor, setTutor] = useState<Tutor>();
+    const [courses, setCourses] = useState<{ [key: string]: Course }>({});
     const [loading, setLoading] = useState(false);
 
     const { id } = useParams();
     const navigate = useNavigate();
 
+    // TO-DO: After obtaining tutor info, obtain the courses they teach
+    /* 
+    1. Fetch tutor data
+    2. Using tutor_id, find the course_id's associated with it (find which courses they tutor)
+    3. Using course_id, find the classes by name or subject-number (join tutors_courses with courses and extract subject-number)
+    */
     useEffect(() => {
         setLoading(true);
         axios

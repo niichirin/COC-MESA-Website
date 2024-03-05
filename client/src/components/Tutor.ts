@@ -1,0 +1,25 @@
+interface Course {
+    subject: string; // MATH
+    number: number; // 215
+    name: string; // Differential Equations
+}
+
+interface Day {
+    start: string;
+    end: string;
+    online?: boolean;
+}
+
+interface Tutor {
+    name: string; // John Doe
+    courses: Course[]
+    schedule: {
+        mon: Day[],
+        tue: Day[],
+        wed: Day[],
+        thu: Day[],
+        fri: Day[],
+        sat: Day[],
+        sun: Day[], 
+    }
+}

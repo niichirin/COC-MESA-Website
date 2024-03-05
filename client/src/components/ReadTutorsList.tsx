@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import TutorCard from "./TutorCard.tsx"
+
 // reads ALL tutors in DB
 
 interface Tutor {
@@ -38,7 +39,7 @@ const ReadTutorsList = () => {
 
     const renderTutor = (key: string) => {
         let tutor: Tutor = tutors[key];
-        if (tutor.name.includes(search)) {
+        if (tutor.name.toLowerCase().includes(search)) {
             return (    
                 <div 
                     key={tutor.tutor_id} 
