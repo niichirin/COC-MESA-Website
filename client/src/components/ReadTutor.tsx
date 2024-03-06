@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -58,50 +58,8 @@ const ReadTutor = () => {
             .finally(() => setLoading(false));
     }
 
-    const renderedCourses = useMemo(() => {
-        return Object.keys(courses).reduce((accum: string, key: string, index: number) => {
-            let currStr = "";
-            if (courses[key].number == 0) {
-                // this tutor teaches all of a subject
-                switch(courses[key].subject) {
-                    case "MATH": 
-                        currStr = "All Math";
-                        break;
-                    case "PHYSIC": 
-                        currStr = "All Physics";
-                        break;
-                    case "CMPSCI":
-                        currStr = "All CS";
-                        break;
-                    case "ENGR":
-                        currStr = "All Engineering";
-                        break;
-                    case "BIOSCI":
-                        currStr = "All Biology";
-                        break;
-                    case "CHEM":
-                        currStr = "All Chemistry";
-                        break;
-                    case "ENGL":
-                        currStr = "All English";
-                        break;
-                }
-            } else {
-                // this tutor teaches this specific course
-                currStr += courses[key].subject + '-' + courses[key].number;
-            }
-            // end of list
-            if (index + 1 != Object.keys(courses).length){
-                currStr += ", ";
-            }
-            // concatenate 
-            return accum + currStr;
-        }, "");
-    }, [courses, id]);
-
     if (loading) return <div>Loading...</div>;
     if (tutor == null) return <div>No tutor with {id} found!</div>;
-
       
     return (
         <div>
