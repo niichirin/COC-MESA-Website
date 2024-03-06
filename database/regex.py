@@ -2,7 +2,7 @@ import re
 import json
 
 # Sample data
-data = """MW 10:00 AM - 4:00 PM, 4:00pm - 5pm at CCC MESA/TTh 2:00 PM - 7:00 PM at Valencia MESA
+data = """MW 12:00 AM - 4:00 PM, 12:00pm - 5pm at CCC MESA/TTh 2:00 PM - 7:00 PM at Valencia MESA
 TWTh 4:00 am - 7:00 PM on Discord/Sa 11:00 AM - 3:00 PM on Discord
 MW 5pm - 7:30 pm/TThSu 5:00pm-9:00PM all hours on Discord"""
 
@@ -37,13 +37,69 @@ def break_days(dayStr):
             i += 1
     return dayArr
 
+# converts formats #XM, #:## XM, #:##XM, ##:## XM, ##:##XM 
+# assumes format always has AM or PM
+def convert_to_sql_time(time_str):
+
+    time_parts = []
+    hours = ""
+    minutes = ""
+    am_pm = ""
+
+    # split time string 
+    if ":" in time_str:
+        # minutes exists
+        time_parts = re.split(':', time_str)
+        hours = time_parts[0]
+        minutes = re.search(r'\d{2}', time_parts[1]).group()
+        am_pm = re.search(r'[AaPp][Mm]', time_parts[1]).group().upper()
+    else:
+        # minutes does NOT exist in string
+        hours = re.search(r'\d{1,2}', time_str).group()
+        minutes = "00"
+        am_pm = re.search(r'[AaPp][Mm]', time_str).group().upper()
+
+    # convert to military time with am_pm
+    hours = str((int(hours)) % 12)
+    if am_pm == "PM": hours = str(int(hours) + 12)
+    
+    # format as SQL time
+    sql_time = f"{hours.zfill(2)}:{minutes.zfill(2)}:00"
+    return sql_time
+
+# def convert_to_sql_time(time_str):
+    # # split string into parts
+    # time_parts = re.split(':| ', time_str)
+    # print(time_str)
+    # print(len(time_parts))
+    # hours = time_parts[0]
+    # second_part = time_parts[1]
+    # am_pm = ""
+    
+    # if len(second_part) > 2:
+    #     # minutes and am/pm have no whitespace, 2nd index out of bounds
+    #     minutes = second_part[0:2]
+    #     am_pm = second_part[2:4]
+    # else:
+    #     # minutes and am/pm are spaced out, 2nd index exists
+    #     minutes = time_parts[1]
+    #     am_pm = time_parts[2]
+    
+    # # convert hours to 24-hour format if PM
+    # if am_pm == 'PM':
+    #     hours = str(int(hours) + 12)
+    
+    # # formatt as SQL time
+    # sql_time = f"{hours.zfill(2)}:{minutes.zfill(2)}:00"
+    # return sql_time
+
 def break_times(inputTimes):
     newTimes = []
     for time in inputTimes:
         split = time.split('-')
         newTimes.append({
-            "start": split[0].strip(),
-            "end": split[1].strip()
+            "start": convert_to_sql_time(split[0].strip()),
+            "end": convert_to_sql_time(split[1].strip())
         })
     return newTimes
 
