@@ -1,3 +1,5 @@
+// template of PSQL database
+
 interface Course {
     course_id: number;
     subject: string; // MATH
@@ -8,7 +10,7 @@ interface Course {
 interface Day {
     start: string;
     end: string;
-    online?: boolean;
+    location: string;
 }
 
 interface Tutor {
