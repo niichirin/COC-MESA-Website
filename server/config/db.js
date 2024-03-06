@@ -6,9 +6,9 @@ require('dotenv').config();
 
 const pool = new Pool({
     user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: `coc_mesa_tutoring`,
     password: process.env.DB_PASSWORD,
+    database: `coc_mesa`,
+    host: process.env.DB_HOST,
     port: process.env.DB_PORT
 });
 
