@@ -67,32 +67,7 @@ def convert_to_sql_time(time_str):
     sql_time = f"{hours.zfill(2)}:{minutes.zfill(2)}:00"
     return sql_time
 
-# def convert_to_sql_time(time_str):
-    # # split string into parts
-    # time_parts = re.split(':| ', time_str)
-    # print(time_str)
-    # print(len(time_parts))
-    # hours = time_parts[0]
-    # second_part = time_parts[1]
-    # am_pm = ""
-    
-    # if len(second_part) > 2:
-    #     # minutes and am/pm have no whitespace, 2nd index out of bounds
-    #     minutes = second_part[0:2]
-    #     am_pm = second_part[2:4]
-    # else:
-    #     # minutes and am/pm are spaced out, 2nd index exists
-    #     minutes = time_parts[1]
-    #     am_pm = time_parts[2]
-    
-    # # convert hours to 24-hour format if PM
-    # if am_pm == 'PM':
-    #     hours = str(int(hours) + 12)
-    
-    # # formatt as SQL time
-    # sql_time = f"{hours.zfill(2)}:{minutes.zfill(2)}:00"
-    # return sql_time
-
+# break time strings into start and end tuples
 def break_times(inputTimes):
     newTimes = []
     for time in inputTimes:
@@ -112,7 +87,7 @@ for schedule in all_schedules:
     location = location.group() if location else None
 
     # initialize schedule
-    scheduleObj = {
+    scheduleDict = {
         "mon": [],
         "tue": [],
         "wed": [],
@@ -135,15 +110,72 @@ for schedule in all_schedules:
     for day in days:
         # insert all details by day
         for details in detailsArr:
-            if day == "M": scheduleObj["mon"].append(details)
-            if day == "T": scheduleObj["tue"].append(details)
-            if day == "W": scheduleObj["wed"].append(details)
-            if day == "Th": scheduleObj["thu"].append(details)
-            if day == "F": scheduleObj["fri"].append(details)
-            if day == "Sa": scheduleObj["sat"].append(details)
-            if day == "Su": scheduleObj["sun"].append(details)
+            if day == "M": scheduleDict["mon"].append(details)
+            if day == "T": scheduleDict["tue"].append(details)
+            if day == "W": scheduleDict["wed"].append(details)
+            if day == "Th": scheduleDict["thu"].append(details)
+            if day == "F": scheduleDict["fri"].append(details)
+            if day == "Sa": scheduleDict["sat"].append(details)
+            if day == "Su": scheduleDict["sun"].append(details)
 
-    scheduleJSON = json.dumps(scheduleObj)
+    scheduleJSON = json.dumps(scheduleDict)
     print(schedule)
     print(scheduleJSON)
     print()
+
+# def convert_schedule_to_JSON(input_schedule):
+#     # matches days by substring composed from set {M,T,W,Th,F,Sa,Su}
+#     day_pattern = r'\b(?:M|T|W|Th|F|Sa|Su)+\b'
+
+#     # matches times by substring xx:xx xM - xx:xx xM
+#     time_pattern = r'\d{1,2}(?::\d{2})?\s*[AaPp][Mm]\s*-\s*\d{1,2}(?::\d{2})?\s*[AaPp][Mm]' 
+
+#     # matches locations by keyword
+#     location_pattern = r'''(?:Online|Discord|Valencia|Canyon Country|CCC)'''
+
+#     # splits full schedule by / (same tutor) or \n (different tutor)
+#     all_schedules = re.split(r'(?:/|\n)', input_schedule)
+
+#     for schedule in all_schedules:
+#         # obtain days, times, and location in schedule string
+#         days = break_days(re.match(day_pattern, schedule).group())
+#         times = break_times(re.findall(time_pattern, schedule))
+#         location = re.search(location_pattern, schedule)
+#         location = location.group() if location else None
+
+#         # initialize schedule
+#         scheduleDict = {
+#             "mon": [],
+#             "tue": [],
+#             "wed": [],
+#             "thu": [],
+#             "fri": [],
+#             "sat": [],
+#             "sun": []
+#         }   
+
+#         # create object with start, end, and location
+#         detailsArr = []
+#         for time in times:
+#             detailsArr.append({
+#                 "start": time["start"],
+#                 "end": time["end"],
+#                 "location": location
+#             })
+            
+#         # iterate through days in schedule
+#         for day in days:
+#             # insert all details by day
+#             for details in detailsArr:
+#                 if day == "M": scheduleDict["mon"].append(details)
+#                 if day == "T": scheduleDict["tue"].append(details)
+#                 if day == "W": scheduleDict["wed"].append(details)
+#                 if day == "Th": scheduleDict["thu"].append(details)
+#                 if day == "F": scheduleDict["fri"].append(details)
+#                 if day == "Sa": scheduleDict["sat"].append(details)
+#                 if day == "Su": scheduleDict["sun"].append(details)
+
+#         scheduleJSON = json.dumps(scheduleDict)
+#         return scheduleJSON
+        
+
