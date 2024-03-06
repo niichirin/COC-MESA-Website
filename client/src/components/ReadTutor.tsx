@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import BackToTutors from "./BackToTutors";
+import TutorCoursesList from "./TutorCoursesList";
+import TutorScheduleList from "./TutorScheduleList";
 
 // reads tutor by ID from DB
 
@@ -10,6 +12,7 @@ interface Tutor {
     tutor_id: number, 
     name: string, 
     email: string 
+    schedule: any
 }
 
 interface Course {
@@ -28,17 +31,11 @@ const ReadTutor = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    // TO-DO: After obtaining tutor info, obtain the courses they teach
-    /* 
-    1. Fetch tutor data
-    2. Using tutor_id, find the course_id's associated with it (find which courses they tutor)
-    3. Using course_id, find the classes by name or subject-number (join tutors_courses with courses and extract subject-number)
-    */
     useEffect(() => {
         setLoading(true);
         axios
             .get(`http://localhost:8082/api/tutoring/tutor/${id}`)
-            .then((res) => setTutor(res.data))
+            .then((res) => {setTutor(res.data); console.log(res.data)})
             .catch((error) => console.error('Error reading tutor: ', error))
             .finally(() => setLoading(false))
         axios
@@ -46,7 +43,7 @@ const ReadTutor = () => {
             .then((res) => setCourses(res.data))
             .catch((error) => console.error('Error reading tutor courses: ', error))
             .finally(() => setLoading(false))
-    }, []);
+    }, [id]);
 
     const handleUpdateClick = () => {
         navigate(`/update-tutor/${id}`)
@@ -100,19 +97,21 @@ const ReadTutor = () => {
             // concatenate 
             return accum + currStr;
         }, "");
-    }, [courses]);
+    }, [courses, id]);
 
     if (loading) return <div>Loading...</div>;
     if (tutor == null) return <div>No tutor with {id} found!</div>;
 
+      
     return (
         <div>
             <h2 style={{textAlign: "center"}}>Tutor Information</h2>
             <BackToTutors />
             <div className="TutorCard">
-                <h3>{tutor.name}</h3>
+                <h2>{tutor.name}</h2>
                 <p><b>Email: </b><u><a href={`mailto:${tutor.email}`}>{tutor.email}</a></u></p>
-                <p><b>Courses: </b>{renderedCourses}</p>
+                <TutorCoursesList courses={courses}/>
+                <TutorScheduleList tutor={tutor}/>
             </div>
             <button 
                 onClick={handleUpdateClick}
@@ -130,4 +129,4 @@ const ReadTutor = () => {
     )
 }
 
-export default React.memo(ReadTutor);
+export default ReadTutor;
