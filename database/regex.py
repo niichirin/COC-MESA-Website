@@ -4,7 +4,7 @@ import json
 # Sample data
 data = """MW 10:00 AM - 4:00 PM, 4:00pm - 5pm at CCC MESA/TTh 2:00 PM - 7:00 PM at Valencia MESA
 TWTh 4:00 am - 7:00 PM on Discord/Sa 11:00 AM - 3:00 PM on Discord
-MW 5pm - 7:30 pm/TTh 5:00pm-9:00PM all hours on Discord"""
+MW 5pm - 7:30 pm/TThSu 5:00pm-9:00PM all hours on Discord"""
 
 # matches days by substring composed from set {M,T,W,Th,F,Sa,Su}
 day_pattern = r'\b[M|T|W|Th|F|Sa|Su]+\b'
@@ -25,6 +25,13 @@ def break_days(dayStr):
         if dayStr[i] == 'T' and i + 1 < len(dayStr) and dayStr[i + 1] == 'h':
             dayArr.append('Th')
             i += 2  # Skip the 'h'
+        elif dayStr[i] == 'S':
+            if dayStr[i + 1] == 'a':
+                dayArr.append('Sa')
+                i += 2 # Skip the 'a'
+            elif dayStr[i + 1] == 'u':
+                dayArr.append('Su')
+                i += 2 # Skip the 'u'
         else:
             dayArr.append(dayStr[i])
             i += 1
@@ -81,15 +88,6 @@ for schedule in all_schedules:
             if day == "Su": scheduleObj["sun"].append(details)
 
     scheduleJSON = json.dumps(scheduleObj)
+    print(schedule)
     print(scheduleJSON)
     print()
-
-    
-
-### TO-DO: INSERT EXCEL INTO PSQL
-# for each row, separate all schedules by delimiter /
-# for each schedule
-    # match days with MTWThFSaSu
-    # match times with format xx:xx xM - xx:xx xM
-    # match locations by keywords
-    # for each day matched, insert time and location into right place
