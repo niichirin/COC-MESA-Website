@@ -43,7 +43,7 @@
 }
 
 .TutorCard {
-  background-color: rgb(186, 186, 186);
+  background-color: rgb(200, 200, 200);
   color: black;
 
   padding: 1rem 2rem;
@@ -56,7 +56,7 @@
   transition: 0.15s;
 }
 .TutorCard:hover {
-  background-color: lightgray;
+  background-color: rgb(228, 228, 228);
   transform: translate(-3px, -3px);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
