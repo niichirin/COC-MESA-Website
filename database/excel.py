@@ -110,12 +110,12 @@ def convert_to_sql_time(time_str):
         time_parts = re.split(':', time_str)
         hours = time_parts[0]
         minutes = re.search(r'\d{2}', time_parts[1]).group()
-        am_pm = re.search(r'[AaPp][Mm]', time_parts[1]).group().upper()
+        am_pm = re.search(r'[AaPp][Mm]', time_parts[1], re.IGNORECASE).group().upper()
     else:
         # minutes does NOT exist in string
         hours = re.search(r'\d{1,2}', time_str).group()
         minutes = "00"
-        am_pm = re.search(r'[AaPp][Mm]', time_str).group().upper()
+        am_pm = re.search(r'[AaPp][Mm]', time_str, re.IGNORECASE).group().upper()
 
     # convert to military time with am_pm
     hours = str((int(hours)) % 12)
@@ -165,9 +165,9 @@ def convert_schedule_to_JSON(input_schedule):
 
         print(schedule)
 
-        days = break_days(re.match(day_pattern, schedule).group())
-        times = break_times(re.findall(time_pattern, schedule))
-        location = re.search(location_pattern, schedule)
+        days = break_days(re.match(day_pattern, schedule, re.IGNORECASE).group())
+        times = break_times(re.findall(time_pattern, schedule, re.IGNORECASE))
+        location = re.search(location_pattern, schedule, re.IGNORECASE)
         location = location.group() if location else None
 
         # create object with start, end, and location
