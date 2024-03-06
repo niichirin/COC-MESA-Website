@@ -2,6 +2,9 @@ import os
 import pandas as pd
 import psycopg2
 
+import re
+import json
+
 from dotenv import load_dotenv
 from psycopg2 import sql
 from sqlalchemy import create_engine
@@ -52,9 +55,9 @@ print("Connected to PostgreSQL database")
 cursor = db.cursor()
 
 # deletes table
+cursor.execute("DELETE FROM tutors_courses")
 cursor.execute("DELETE FROM tutors")
 cursor.execute("DELETE FROM courses")
-cursor.execute("DELETE FROM tutors_courses")
 print("Deleted all entries")
 
 # resets primary key sequence
@@ -66,6 +69,148 @@ print("Reset primary key sequence")
 # commits changes
 db.commit()
 print("Committed changes")
+
+# create sql engine with connection to db
+conn_string = f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
+engine = create_engine(conn_string)
+print("Created SQLEngine with connection string " + conn_string)
+
+# helper method to break day substrings constructed from set {M, T, W, Th, F, Sa, Su}
+def break_days(dayStr):
+    dayArr = []
+    i = 0
+    while i < len(dayStr):
+        if dayStr[i] == 'T' and i + 1 < len(dayStr) and dayStr[i + 1] == 'h':
+            dayArr.append('Th')
+            i += 2  # Skip the 'h'
+        elif dayStr[i] == 'S':
+            if dayStr[i + 1] == 'a':
+                dayArr.append('Sa')
+                i += 2 # Skip the 'a'
+            elif dayStr[i + 1] == 'u':
+                dayArr.append('Su')
+                i += 2 # Skip the 'u'
+        else:
+            dayArr.append(dayStr[i])
+            i += 1
+    return dayArr
+
+# helper method to convert time formats #XM, #:## XM, #:##XM, ##:## XM, ##:##XM 
+# assumes format always has AM or PM
+def convert_to_sql_time(time_str):
+
+    time_parts = []
+    hours = ""
+    minutes = ""
+    am_pm = ""
+
+    # split time string 
+    if ":" in time_str:
+        # minutes exists
+        time_parts = re.split(':', time_str)
+        hours = time_parts[0]
+        minutes = re.search(r'\d{2}', time_parts[1]).group()
+        am_pm = re.search(r'[AaPp][Mm]', time_parts[1]).group().upper()
+    else:
+        # minutes does NOT exist in string
+        hours = re.search(r'\d{1,2}', time_str).group()
+        minutes = "00"
+        am_pm = re.search(r'[AaPp][Mm]', time_str).group().upper()
+
+    # convert to military time with am_pm
+    hours = str((int(hours)) % 12)
+    if am_pm == "PM": hours = str(int(hours) + 12)
+    
+    # format as SQL time
+    sql_time = f"{hours.zfill(2)}:{minutes.zfill(2)}:00"
+    return sql_time
+
+# helper method to break time strings into start and end pairs
+def break_times(inputTimes):
+    newTimes = []
+    for time in inputTimes:
+        split = time.split('-')
+        newTimes.append({
+            "start": convert_to_sql_time(split[0].strip()),
+            "end": convert_to_sql_time(split[1].strip())
+        })
+    return newTimes
+
+# convert schedule from excel row to JSON
+def convert_schedule_to_JSON(input_schedule):
+    # matches days by substring composed from set {M,T,W,Th,F,Sa,Su}
+    day_pattern = r'\b[M|T|W|Th|F|Sa|Su]+\b'
+
+    # matches times by substring xx:xx xM - xx:xx xM
+    time_pattern = r'\d{1,2}(?::\d{2})?\s*[AaPp][Mm]\s*-\s*\d{1,2}(?::\d{2})?\s*[AaPp][Mm]' 
+
+    # matches locations by keyword
+    location_pattern = r'''(?:Online|Discord|Valencia|Canyon Country|CCC)'''
+
+    # splits full schedule by / (same tutor) or \n (different tutor)
+    all_schedules = re.split(r'(?:\s*/\s*|\n)', input_schedule)
+
+    # initialize schedule
+    scheduleDict = {
+        "mon": [],
+        "tue": [],
+        "wed": [],
+        "thu": [],
+        "fri": [],
+        "sat": [],
+        "sun": []
+    }   
+
+    for schedule in all_schedules:
+
+        print(schedule)
+
+        days = break_days(re.match(day_pattern, schedule).group())
+        times = break_times(re.findall(time_pattern, schedule))
+        location = re.search(location_pattern, schedule)
+        location = location.group() if location else None
+
+        # create object with start, end, and location
+        detailsArr = []
+        for time in times:
+            detailsArr.append({
+                "start": time["start"],
+                "end": time["end"],
+                "location": location
+            })
+            
+        # iterate through days in schedule
+        for day in days:
+            # insert all details by day
+            for details in detailsArr:
+                if day == "M": scheduleDict["mon"].append(details)
+                if day == "T": scheduleDict["tue"].append(details)
+                if day == "W": scheduleDict["wed"].append(details)
+                if day == "Th": scheduleDict["thu"].append(details)
+                if day == "F": scheduleDict["fri"].append(details)
+                if day == "Sa": scheduleDict["sat"].append(details)
+                if day == "Su": scheduleDict["sun"].append(details)
+
+    scheduleJSON = json.dumps(scheduleDict)
+    return scheduleJSON
+        
+# append new tutors data into database
+# tutors_df.to_sql('tutors', engine, if_exists='append', index=False)
+# print("Appended tutors data")
+for index, row in tutors_df.iterrows():
+
+    name = row['tutor_name'].strip()
+    email = row['tutor_email'].strip()
+    print(name)
+    print(email)
+    schedule = convert_schedule_to_JSON(row['schedule'].strip())
+    cursor.execute("INSERT INTO tutors(name, email, schedule) VALUES(%s, %s, %s)", [name, email, schedule])
+    db.commit()
+print("Appended tutors data")
+
+# append new courses data into database
+courses_df.to_sql('courses', engine, if_exists='append', index=False)
+print("Appended courses data")
 
 # function to obtain tutor id by name
 def getTutorIdByName(tutor_name):
@@ -86,21 +231,8 @@ def getCourseIdByClass(course_subject, course_number):
         return course_id
     else:
         return None
-
-# create sql engine with connection to db
-conn_string = f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
-engine = create_engine(conn_string)
-print("Created SQLEngine with connection string " + conn_string)
-
-# append new tutors data into database
-tutors_df.to_sql('tutors', engine, if_exists='append', index=False)
-print("Appended tutors data")
-
-# append new courses data into database
-courses_df.to_sql('courses', engine, if_exists='append', index=False)
-print("Appended courses data")
-
-# TO-DO: Fix tutor_id and course_id returning null for some reason
+        
+# relate tutors and courses
 for index, row in tutors_courses_df.iterrows():
     # obtain excel data
     tutor_name = row['tutor_name'].strip()
@@ -114,8 +246,9 @@ for index, row in tutors_courses_df.iterrows():
     # insert IDs into tutors_courses
     cursor.execute("INSERT INTO tutors_courses(tutor_id, course_id) VALUES (%s, %s)", (tutor_id, course_id))
     db.commit()
-
 print("Appended tutors_courses data")
+
+# insert schedule JSON
 
 # commit
 db.commit()
