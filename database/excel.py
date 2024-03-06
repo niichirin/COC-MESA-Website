@@ -163,8 +163,6 @@ def convert_schedule_to_JSON(input_schedule):
 
     for schedule in all_schedules:
 
-        print(schedule)
-
         days = break_days(re.match(day_pattern, schedule, re.IGNORECASE).group())
         times = break_times(re.findall(time_pattern, schedule, re.IGNORECASE))
         location = re.search(location_pattern, schedule, re.IGNORECASE)
@@ -198,11 +196,8 @@ def convert_schedule_to_JSON(input_schedule):
 # tutors_df.to_sql('tutors', engine, if_exists='append', index=False)
 # print("Appended tutors data")
 for index, row in tutors_df.iterrows():
-
     name = row['tutor_name'].strip()
     email = row['tutor_email'].strip()
-    print(name)
-    print(email)
     schedule = convert_schedule_to_JSON(row['schedule'].strip())
     cursor.execute("INSERT INTO tutors(name, email, schedule) VALUES(%s, %s, %s)", [name, email, schedule])
     db.commit()
