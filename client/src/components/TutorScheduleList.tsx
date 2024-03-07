@@ -24,7 +24,7 @@ const TutorScheduleList: React.FC<TutorScheduleListProps> = ({ tutor }) => {
     const convertSQLtime = (sqlTime: string) : string => {
 
         // split time into hours, minutes, and seconds
-        const [hours, minutes, seconds] = sqlTime.split(':').map(Number);
+        const [hours, minutes] = sqlTime.split(':').map(Number);
 
         // determine AM or Pm
         const meridian = hours >= 12 ? 'PM' : 'AM';
