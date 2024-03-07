@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
 
 interface TutorCardProps {
     tutor: { tutor_id: number, name: string, email: string }
