@@ -6,21 +6,9 @@ import BackToTutors from "./BackToTutors";
 import TutorCoursesList from "./TutorCoursesList";
 import TutorScheduleList from "./TutorScheduleList";
 
+import { Tutor, Course } from "./Interfaces.ts";
+
 // reads tutor by ID from DB
-
-interface Tutor {
-    tutor_id: number, 
-    name: string, 
-    email: string 
-    schedule: any
-}
-
-interface Course {
-    course_id: number,
-    name: string,
-    subject: string,
-    number: number
-}
 
 const ReadTutor = () => {
 
@@ -33,18 +21,17 @@ const ReadTutor = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios
-            .get(`http://localhost:8082/api/tutoring/tutor/${id}`)
-            .then((res) => {setTutor(res.data); console.log(res.data)})
-            .catch((error) => console.error('Error reading tutor: ', error))
-            .finally(() => setLoading(false))
-        axios
-            .get(`http://localhost:8082/api/tutoring/tutor/course/${id}`)
-            .then((res) => setCourses(res.data))
-            .catch((error) => console.error('Error reading tutor courses: ', error))
-            .finally(() => setLoading(false))
+        Promise.all([
+            axios.get(`http://localhost:8082/api/tutoring/tutor/${id}`),
+            axios.get(`http://localhost:8082/api/tutoring/tutor/course/${id}`)
+        ])
+        .then(([tutorRes, coursesRes]) => {
+            setTutor(tutorRes.data)
+            setCourses(coursesRes.data)
+        })
+        .catch((error) => console.error('Error reading tutor: ', error))
+        .finally(() => setLoading(false))
     }, [id]);
-
     const handleUpdateClick = () => {
         navigate(`/update-tutor/${id}`)
     }
@@ -53,7 +40,7 @@ const ReadTutor = () => {
         setLoading(true);
         axios
             .delete(`http://localhost:8082/api/tutoring/tutor/${id}`)
-            .then((res) => navigate('/'))
+            .then(() => navigate('/'))
             .catch((error) => console.error('Error deleting tutor: ', error))
             .finally(() => setLoading(false));
     }
