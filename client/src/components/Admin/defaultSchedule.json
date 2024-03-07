@@ -1,0 +1,51 @@
+{
+    "mon": [
+        {
+            "start": "09:00:00",
+            "end": "17:00:00",
+            "location": "Valencia"
+        }
+    ],
+    "tue": [
+        {
+            "start": "09:00:00",
+            "end": "17:00:00",
+            "location": "Valencia"
+        }
+    ],
+    "wed": [
+        {
+            "start": "09:00:00",
+            "end": "17:00:00",
+            "location": "Valencia"
+        }
+    ],
+    "thu": [
+        {
+            "start": "09:00:00",
+            "end": "17:00:00",
+            "location": "Valencia"
+        }
+    ],
+    "fri": [
+        {
+            "start": "09:00:00",
+            "end": "17:00:00",
+            "location": "Valencia"
+        }
+    ],
+    "sat": [
+        {
+            "start": "09:00:00",
+            "end": "17:00:00",
+            "location": "Valencia"
+        }
+    ],
+    "sun": [
+        {
+            "start": "09:00:00",
+            "end": "17:00:00",
+            "location": "Valencia"
+        }
+    ]
+}

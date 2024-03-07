@@ -3,13 +3,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import './App.css';
 
-import ReadTutor from "./components/ReadTutor.tsx";
-import ReadTutorsList from "./components/ReadTutorsList.tsx";
-import CreateTutor from "./components/CreateTutor.tsx";
-import UpdateTutor from "./components/UpdateTutor.tsx";
+// import HomePage from "./components/HomePage/HomePage.tsx";
+import ReadTutor from "./components/Admin/ReadTutor.tsx";
+import ReadTutorsList from "./components/Admin/ReadTutorsList.tsx";
+import CreateTutor from "./components/Admin/CreateTutor.tsx";
+import UpdateTutor from "./components/Admin/UpdateTutor.tsx";
 
 const router = createBrowserRouter([
-  { path: "/", element: <ReadTutorsList /> },
+  // { path: "/", element: <HomePage /> },
+  { path: "/tutors", element: <ReadTutorsList /> },
   { path: "/create-tutor", element: <CreateTutor /> },
   { path: "/read-tutor/:id", element: <ReadTutor /> },
   { path: "/update-tutor/:id", element: <UpdateTutor/> },
