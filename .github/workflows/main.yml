@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Vite CI to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -35,6 +35,9 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
+          cache-dependency-path: client/package-lock.json
+          # specify client directory lock file
+          # https://stackoverflow.com/questions/68639588/github-actions-dependencies-lock-file-is-not-found-in-runners-path
       - name: Install dependencies
         run: npm install
       - name: Build
