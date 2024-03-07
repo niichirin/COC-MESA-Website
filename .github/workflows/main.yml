@@ -38,19 +38,18 @@ jobs:
           cache-dependency-path: client/package-lock.json
           # specify client directory lock file
           # https://stackoverflow.com/questions/68639588/github-actions-dependencies-lock-file-is-not-found-in-runners-path
-      - name: Change to client directory and install dependencies
+      - name: Install dependencies and build
         run: |
           cd client
           npm install
-      - name: Build
-        run: npm run build
+          npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload dist repository
-          path: './dist'
+          path: './client/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
