@@ -1,11 +1,6 @@
 import React from "react";
 
-interface Course {
-    course_id: number;
-    name: string;
-    subject: string;
-    number: number;
-}
+import { Course } from "./Interfaces.ts";
 
 interface TutorCoursesListProps {
     courses: { [key: string]: Course };
