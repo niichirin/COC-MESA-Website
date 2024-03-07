@@ -33,7 +33,7 @@ const ReadTutorsList = () => {
         setSearch(e.target.value);
     }
 
-    const handleAddClick = (e: any) => {
+    const handleAddClick = () => {
         navigate("/create-tutor");
     }
 
