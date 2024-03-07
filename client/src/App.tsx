@@ -3,14 +3,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import './App.css';
 
-// import HomePage from "./components/HomePage/HomePage.tsx";
-import ReadTutor from "./components/Admin/ReadTutor.tsx";
-import ReadTutorsList from "./components/Admin/ReadTutorsList.tsx";
-import CreateTutor from "./components/Admin/CreateTutor.tsx";
-import UpdateTutor from "./components/Admin/UpdateTutor.tsx";
+import HomePage from "./components/HomePage/HomePage";
+import ReadTutor from "./components/Admin/ReadTutor";
+import ReadTutorsList from "./components/Admin/ReadTutorsList";
+import CreateTutor from "./components/Admin/CreateTutor";
+import UpdateTutor from "./components/Admin/UpdateTutor";
 
 const router = createBrowserRouter([
-  // { path: "/", element: <HomePage /> },
+  { path: "/", element: <HomePage /> },
   { path: "/tutors", element: <ReadTutorsList /> },
   { path: "/create-tutor", element: <CreateTutor /> },
   { path: "/read-tutor/:id", element: <ReadTutor /> },
