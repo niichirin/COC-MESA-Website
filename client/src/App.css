@@ -34,12 +34,11 @@
   padding: 1rem 2rem;
   border-radius: 10px;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 
-  transition: 0.15s;
+  grid-auto-flow: row;
 }
 
 .TutorCard {
