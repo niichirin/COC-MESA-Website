@@ -4,9 +4,13 @@ import { Course } from "./Interfaces.ts";
 
 interface Props {
   inputCourse: Course;
+  handleRemoveCourse: () => void;
 }
 
-const CourseInput : React.FC<Props> = ({ inputCourse }) => {
+const CourseInput: React.FC<Props> = ({ 
+  inputCourse, 
+  handleRemoveCourse 
+}) => {
 
   const [course, setCourse] = useState<Course>(inputCourse);
 
@@ -15,11 +19,11 @@ const CourseInput : React.FC<Props> = ({ inputCourse }) => {
     setCourse({ ...course, [name]: value });
   };
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     onSubmit(course);
-//     setCourse({ course_id: inputCourse.course_id, name: '', subject: '', number: 0});
-//   };
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     onSubmit(course);
+  //     setCourse({ course_id: inputCourse.course_id, name: '', subject: '', number: 0});
+  //   };
 
   return (
     <>
@@ -34,12 +38,12 @@ const CourseInput : React.FC<Props> = ({ inputCourse }) => {
         />
       </label> */}
       <label>
-        Subject:
+        <b>Subject:</b>
         <select
           name="subject"
           value={course.subject}
           onChange={handleChange}
-          className="p-1 ml-1 mb-1 rounded"
+          className="px-2 py-1 ml-2 mb-1 rounded"
           required
         >
           <option value="">-</option>
@@ -53,8 +57,8 @@ const CourseInput : React.FC<Props> = ({ inputCourse }) => {
           <option value="PHILOS">PHILOS</option>
         </select>
       </label>
-      <label className="ml-3">
-        Number:
+      <label className="ml-4">
+        <b>Number:</b>
         <input
           type="text"
           name="number"
@@ -63,10 +67,17 @@ const CourseInput : React.FC<Props> = ({ inputCourse }) => {
           maxLength={3}
           pattern="\d{1,3}"
           title="Please enter a three-digit number"
-          className="p-1 ml-1 mb-1 rounded w-10"
+          className="px-2 py-1 ml-2 mb-1 rounded w-20"
           required
         />
       </label>
+      <button
+        type="button"
+        className="px-2 py-1 ml-4 bg-red-800 rounded transition duration-200 hover:bg-red-600"
+        onClick={handleRemoveCourse}
+      >
+        <p className="font-bold">-</p>
+      </button>
     </>
   );
 };

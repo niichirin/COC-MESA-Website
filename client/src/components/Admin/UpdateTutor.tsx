@@ -5,14 +5,14 @@ import axios from "axios";
 import { Tutor, Course } from "./Interfaces.ts"
 import BackToTutors from "./BackToTutors.tsx";
 import UpdateTutorCourses from "./UpdateTutorCourses.tsx"
-import UpdateTutorSchedule from "./UpdateTutorSchedule.tsx";
+import UpdateTutorWeek from "./UpdateTutorWeek.tsx";
 
 // updates tutor by ID from DB
 
 const UpdateTutor = () => {
 
     const [tutor, setTutor] = useState<Tutor>();
-    const [courses, setCourses] = useState<{ [key: string]: Course }>();
+    const [courses, setCourses] = useState<Course[]>();
     const [loading, setLoading] = useState(false);
 
     const [newName, setNewName] = useState();
@@ -62,17 +62,13 @@ const UpdateTutor = () => {
 
     if (loading) return <div>Loading...</div>
     if (!tutor) return <div>No tutor with ID {id} found!</div>
-
+    
     return (
-        <div>
-            {/* <BackToTutors /> */}
+        <div className="py-4`">
+            <h1 className="text-center mb-4 font-bold">Update Tutor</h1>
+            <BackToTutors />
             <form 
-                className="
-                    bg-neutral-900
-                    px-8 
-                    py-4
-                    rounded
-                " 
+                className="bg-neutral-900 px-8 py-4 mt-2 rounded" 
                 onSubmit={handleUpdate}
             >
                 <label>
@@ -90,13 +86,16 @@ const UpdateTutor = () => {
                         type="text"
                         value={newEmail}
                         onChange={handleChangeEmail}
-                        className="px-4 py-1 mb-2 w-full rounded"
+                        className="px-4 py-1 mb-4 w-full rounded"
                     />
                 </label>
-                <UpdateTutorCourses courses={courses}/>
-                {/* <UpdateTutorSchedule schedule={tutor.schedule}/> */}
+                <h3 className="font-bold mb-2">Courses</h3>
+                <UpdateTutorCourses inputCourses={courses}/>
+                <br></br>
+                <h3 className="font-bold mb-2">Schedule</h3>
+                <UpdateTutorWeek inputSchedule={tutor.schedule}/>
                 <button
-                    className="bg-neutral-800 rounded mt-2"
+                    className="bg-neutral-800 rounded my-4"
                     type="submit"
                 >
                     Update

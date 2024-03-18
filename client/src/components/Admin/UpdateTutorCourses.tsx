@@ -4,48 +4,60 @@ import { Course } from "./Interfaces.ts"
 import CourseInput from "./CourseInput.tsx"
 
 interface Props {
-    courses: { [key: string]: Course } | undefined;
+    inputCourses: Course[] | undefined;
 }
 
-const UpdateTutorCourses: React.FC<Props> = ({ courses }) => {
+const UpdateTutorCourses: React.FC<Props> = ({ inputCourses }) => {
     
-    const [coursesState, setCoursesState] = useState(courses);
-    
-    const handleAddToCourses = () => {
-        if (!coursesState) return;
+    const [courses, setCourses] = useState(inputCourses);
+    if(!courses) return;   
 
-        const newCourseId = Object.keys(coursesState).length - 1;
-        const lastCourse = coursesState[newCourseId];
-        const newCourse: Course = {
-            course_id: lastCourse.course_id,
-            name: lastCourse.name,
-            subject: lastCourse.subject,
-            number: lastCourse.number
-        };
+    console.log(courses);
 
-        const newCourses = { 
-            ...coursesState, 
-            [newCourseId + 1]: newCourse 
-        };
-        
-        setCoursesState(newCourses);
+    const defaultCourse: Course = {
+        course_id: 0,
+        name: "",
+        subject: "-",
+        number: ""
     };
 
-    return <div className="bg-neutral-800 rounded px-4 py-2">
-        <h3 className="font-bold mb-2">Courses</h3>
-        {!coursesState && <p>None</p>}
-        {coursesState && Object.keys(coursesState).map((key, index) => 
-            <>
-                <CourseInput key={index} inputCourse={coursesState[key]}/>
-                <br></br>
-            </>
+    const handleAddToCourses = () => {
+        if (!courses || courses.length == 0) {
+            setCourses([defaultCourse]);
+            return
+        }
+
+        const newCourse: Course = defaultCourse;
+        const updatedCourses = [...courses, newCourse];
+        setCourses(updatedCourses);
+        console.log("Added a course");
+    };
+
+    const handleRemoveCourse = (key: string): void => {
+        const keySplit = key.split('-'); // subject-number-index => [subject, number, index]
+        const targetIndex = keySplit[2];
+        setCourses(courses.filter((course, index) => index !== parseInt(targetIndex)));
+    };
+
+    return <div className="bg-neutral-800 rounded px-4 py-8">
+        {!courses && <p>None</p>}
+        {courses && courses.map((course, index) => {
+            const uniqueKey = `${course.subject}-${course.number}-${index}`;
+            return (
+                <div key={uniqueKey}>
+                    <CourseInput 
+                        inputCourse={course}
+                        handleRemoveCourse={() => handleRemoveCourse(uniqueKey)}
+                    />
+                </div> 
+            )}
         )}
         <button 
             type="button"
-            className="bg-neutral-700 rounded" 
+            className="my-2 py-1 bg-neutral-700 rounded" 
             onClick={handleAddToCourses}
         >
-            + Add Course
+            <b>+ Add Course</b>
         </button>
     </div>
 }
