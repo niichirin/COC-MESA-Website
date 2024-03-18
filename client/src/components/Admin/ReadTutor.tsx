@@ -40,7 +40,7 @@ const ReadTutor = () => {
         setLoading(true);
         axios
             .delete(`http://localhost:8082/api/tutoring/tutor/${id}`)
-            .then(() => navigate('/'))
+            .then(() => navigate('/tutors/'))
             .catch((error) => console.error('Error deleting tutor: ', error))
             .finally(() => setLoading(false));
     }

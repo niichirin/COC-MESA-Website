@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import TutorCard from "./TutorCard.tsx"
@@ -13,13 +13,13 @@ interface Tutor {
 }
 
 const ReadTutorsList = () => {
-    
+
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState("");
     const [tutors, setTutors] = useState<{ [key: string]: Tutor }>({});
 
     const navigate = useNavigate();
-    
+
     useEffect(() => {
         setLoading(true);
         axios
@@ -43,8 +43,15 @@ const ReadTutorsList = () => {
         return Object.keys(tutors).map((key) => {
             const tutor: Tutor = tutors[key];
             if (tutor.name.toLowerCase().includes(search.toLowerCase())) {
-                return (    
-                    <div key={tutor.tutor_id} className="TutorCard">
+                return (
+                    <div key={tutor.tutor_id}
+                        className="
+                        bg-white 
+                        text-black 
+                        px-8 
+                        py-4
+                        rounded
+                    ">
                         <TutorCard tutor={tutor} />
                     </div>
                 );
@@ -63,17 +70,17 @@ const ReadTutorsList = () => {
 
     return (
         <div>
-            <h1>Tutors</h1>
-            <div style={{ marginBottom: "1rem"}}>
-                <button 
-                    className="AddTutorBtn" 
+            <h1 className="my-4">Tutors</h1>
+            <div>
+                <button
+                    className="rounded px-4 py-2 mr-4"
                     onClick={handleAddClick}
                 >
                     Add Tutor
                 </button>
                 <label>
                     <input
-                        className="SearchTutorBar"
+                        className="px-4 py-2 rounded"
                         type="text"
                         placeholder="Search Tutor"
                         onChange={handleSearchChange}
@@ -81,15 +88,12 @@ const ReadTutorsList = () => {
                     </input>
                 </label>
             </div>
-            <div className="TutorsList">
-                {/* {Object.keys(tutors).map((key) => {
-                    return renderTutor(key)
-                })} */}
+            <div className="grid grid-cols-3 gap-2">
                 {renderedTutors}
             </div>
         </div>
     )
-    
+
 }
 
 export default ReadTutorsList;
