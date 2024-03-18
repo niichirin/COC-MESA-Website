@@ -44,14 +44,15 @@ const ReadTutorsList = () => {
             const tutor: Tutor = tutors[key];
             if (tutor.name.toLowerCase().includes(search.toLowerCase())) {
                 return (
-                    <div key={tutor.tutor_id}
+                    <div 
+                        key={tutor.tutor_id}
                         className="
-                        bg-white 
-                        text-black 
-                        px-8 
-                        py-4
-                        rounded
-                    ">
+                            bg-neutral-900
+                            px-8 
+                            py-4
+                            rounded
+                        "
+                    >
                         <TutorCard tutor={tutor} />
                     </div>
                 );

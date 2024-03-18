@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Course } from "./Interfaces.ts"
 
 import CourseInput from "./CourseInput.tsx"
@@ -8,12 +9,13 @@ interface Props {
 
 const UpdateTutorCourses: React.FC<Props> = ({ courses }) => {
     
-    const handleAddCourse = () => {
-        
+    const [coursesState, setCoursesState] = useState(courses);
+    
+    const handleAddToCourses = () => {
     }
 
-    return <form>
-        <h3>Courses</h3>
+    return <div className="bg-neutral-800 rounded px-4 py-2">
+        <h3 className="font-bold mb-2">Courses</h3>
         {!courses && <p>None</p>}
         {courses && Object.keys(courses).map((key, index) => 
             <>
@@ -21,8 +23,14 @@ const UpdateTutorCourses: React.FC<Props> = ({ courses }) => {
                 <br></br>
             </>
         )}
-        <button onClick={handleAddCourse}>+ Add Course</button>
-    </form>
+        <button 
+            type="button"
+            className="bg-neutral-700 rounded" 
+            onClick={handleAddToCourses}
+        >
+            + Add Course
+        </button>
+    </div>
 }
 
 export default UpdateTutorCourses;

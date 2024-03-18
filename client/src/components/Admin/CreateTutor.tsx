@@ -29,9 +29,12 @@ const CreateTutor = () => {
     };
 
     return (
-        <div>
+        <div className="
+            bg-white
+            text-black
+        ">
             <BackToTutors />
-            <h2 style={{textAlign:"center"}}>Create Tutor</h2>
+            <h2 className="text-center">Create Tutor</h2>
             {loading && <div>Loading...</div>}
             {errorMessage && <div style={{color:"red"}}>{errorMessage}</div>}
             {successMessage && <div style={{color:"lightgreen"}}>{successMessage}</div>}

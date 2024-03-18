@@ -25,12 +25,12 @@ const ReadTutor = () => {
             axios.get(`http://localhost:8082/api/tutoring/tutor/${id}`),
             axios.get(`http://localhost:8082/api/tutoring/tutor/course/${id}`)
         ])
-        .then(([tutorRes, coursesRes]) => {
-            setTutor(tutorRes.data)
-            setCourses(coursesRes.data)
-        })
-        .catch((error) => console.error('Error reading tutor: ', error))
-        .finally(() => setLoading(false))
+            .then(([tutorRes, coursesRes]) => {
+                setTutor(tutorRes.data)
+                setCourses(coursesRes.data)
+            })
+            .catch((error) => console.error('Error reading tutor: ', error))
+            .finally(() => setLoading(false))
     }, [id]);
     const handleUpdateClick = () => {
         navigate(`/update-tutor/${id}`)
@@ -47,29 +47,40 @@ const ReadTutor = () => {
 
     if (loading) return <div>Loading...</div>;
     if (tutor == null) return <div>No tutor with {id} found!</div>;
-      
+
     return (
-        <div>
-            <h2 style={{textAlign: "center"}}>Tutor Information</h2>
-            <BackToTutors />
-            <div className="TutorCard">
-                <h2>{tutor.name}</h2>
+        <div className="">
+            <h2 className="text-center font-bold my-4">Tutor Information</h2>
+            <div className="
+                bg-neutral-900
+                px-8 
+                py-4
+                rounded
+            ">
+                {/* <BackToTutors /> */}
+                <h2 className="font-bold mb-2">{tutor.name}</h2>
                 <p><b>Email: </b><u><a href={`mailto:${tutor.email}`}>{tutor.email}</a></u></p>
-                <TutorCoursesList courses={courses}/>
-                <TutorScheduleList tutor={tutor}/>
+                <p className="mb-2">
+                    <b>Courses: </b>
+                    <TutorCoursesList courses={courses} />
+                </p>
+                <h3 className="font-bold mb-2">Schedule</h3>
+                <TutorScheduleList tutor={tutor} />
+                <div className="mt-4">
+                    <button
+                        className="bg-neutral-600 rounded"
+                        onClick={handleUpdateClick}
+                    >
+                        Update
+                    </button>
+                    <button
+                        className="bg-red-800 ml-2 rounded"
+                        onClick={handleDeleteClick}
+                    >
+                        Delete
+                    </button>
+                </div>
             </div>
-            <button 
-                onClick={handleUpdateClick}
-            >
-                Update
-            </button>
-            <button 
-                style={{ marginLeft: "0.5rem"}}
-                className="DeleteTutorBtn"
-                onClick={handleDeleteClick}
-            >
-                Delete
-            </button>
         </div>
     )
 }

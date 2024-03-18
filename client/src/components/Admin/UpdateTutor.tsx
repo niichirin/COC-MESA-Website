@@ -65,30 +65,38 @@ const UpdateTutor = () => {
 
     return (
         <div>
-            <BackToTutors />
-            <form className="TutorCard" onSubmit={handleUpdate}>
+            {/* <BackToTutors /> */}
+            <form 
+                className="
+                    bg-neutral-900
+                    px-8 
+                    py-4
+                    rounded
+                " 
+                onSubmit={handleUpdate}
+            >
                 <label>
                     <b>Name: </b>
                     <input
                         type="text"
                         value={newName}
                         onChange={handleChangeName}
+                        className="px-4 py-1 mb-2 w-full rounded"
                     />
                 </label>
-                <br></br>
                 <label>
                     <b>Email: </b>
                     <input
                         type="text"
                         value={newEmail}
                         onChange={handleChangeEmail}
+                        className="px-4 py-1 mb-2 w-full rounded"
                     />
                 </label>
-                <br></br>
                 <UpdateTutorCourses courses={courses}/>
-                <UpdateTutorSchedule schedule={tutor.schedule}/>
+                {/* <UpdateTutorSchedule schedule={tutor.schedule}/> */}
                 <button
-                    style={{ marginTop: "0.5rem" }}
+                    className="bg-neutral-800 rounded mt-2"
                     type="submit"
                 >
                     Update

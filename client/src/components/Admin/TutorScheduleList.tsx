@@ -94,7 +94,6 @@ const TutorScheduleList: React.FC<TutorScheduleListProps> = ({ tutor }) => {
 
     return (
         scheduleExists && <>
-            <h3>Schedule</h3>
             <div>{renderedSchedule.filter((item) => item !== null)}</div>
         </>
     );

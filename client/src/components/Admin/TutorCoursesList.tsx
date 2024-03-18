@@ -54,7 +54,7 @@ const TutorCoursesList: React.FC<TutorCoursesListProps> = ({ courses }) => {
         tutorCoursesList += currStr;
     });
 
-    return <p><b>Courses: </b>{tutorCoursesList }</p>;
+    return <>{tutorCoursesList}</>;
 };
 
 export default TutorCoursesList;

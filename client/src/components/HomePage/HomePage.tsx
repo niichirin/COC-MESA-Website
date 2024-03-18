@@ -5,7 +5,7 @@ import HomeServices from "./HomeServices.tsx";
 
 const HomePage = () => {
     return (
-      <div className="HomePage">
+      <div>
           <HomeHeader />
           <HomeAbout />
           <HomeResults />

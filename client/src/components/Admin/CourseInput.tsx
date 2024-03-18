@@ -39,6 +39,7 @@ const CourseInput : React.FC<Props> = ({ inputCourse }) => {
           name="subject"
           value={course.subject}
           onChange={handleChange}
+          className="p-1 ml-1 mb-1 rounded"
           required
         >
           <option value="">-</option>
@@ -52,15 +53,17 @@ const CourseInput : React.FC<Props> = ({ inputCourse }) => {
           <option value="PHILOS">PHILOS</option>
         </select>
       </label>
-      <label style={{marginLeft: "10px"}}>
+      <label className="ml-3">
         Number:
         <input
           type="text"
           name="number"
           value={course.number}
           onChange={handleChange}
-          pattern="\d{3}"
+          maxLength={3}
+          pattern="\d{1,3}"
           title="Please enter a three-digit number"
+          className="p-1 ml-1 mb-1 rounded w-10"
           required
         />
       </label>
