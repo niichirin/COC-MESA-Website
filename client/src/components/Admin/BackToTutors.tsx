@@ -5,7 +5,7 @@ const BackToTutors = () => {
     const handleGoBack = () => navigate('/tutors/');
     return (
         <button 
-            className="rounded" 
+            className="rounded bg-neutral-700" 
             onClick={handleGoBack}
         >
             Back to Tutors

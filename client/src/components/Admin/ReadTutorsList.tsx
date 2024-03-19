@@ -71,17 +71,17 @@ const ReadTutorsList = () => {
 
     return (
         <div>
-            <h1 className="my-4">Tutors</h1>
-            <div>
+            <h1 className="mb-4">Tutors</h1>
+            <div className="mb-4">
                 <button
-                    className="rounded px-4 py-2 mr-4"
+                    className="bg-neutral-700 rounded px-4 py-2 mr-4"
                     onClick={handleAddClick}
                 >
                     Add Tutor
                 </button>
                 <label>
                     <input
-                        className="px-4 py-2 rounded"
+                        className="bg-neutral-600 px-4 py-2 rounded"
                         type="text"
                         placeholder="Search Tutor"
                         onChange={handleSearchChange}
