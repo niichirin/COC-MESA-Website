@@ -34,7 +34,7 @@ const UpdateTutorCourses: React.FC<Props> = ({ inputCourses }) => {
     const handleRemoveCourse = (key: string): void => {
         const keySplit = key.split('-'); // subject-number-index => [subject, number, index]
         const targetIndex = keySplit[2];
-        setCourses(courses.filter((course, index) => index !== parseInt(targetIndex)));
+        setCourses(courses.filter((_, index) => index !== parseInt(targetIndex)));
     };
 
     return <div className="bg-neutral-800 rounded px-4 py-8">

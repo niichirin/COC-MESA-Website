@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Day } from "./Interfaces.ts";
+import { Schedule, Day } from "./Interfaces.ts";
 
 interface Props {
-    dayKey: string;
+    dayKey: keyof Schedule;
     inputDay: Day[];
+    handleRemoveFromSchedule: (uniqueKey: string) => void;
+    handleAddToSchedule: (dayKey: keyof Schedule) => void;
     handleChangeSchedule: (
         uniqueKey: string,
         property: string,
@@ -11,19 +13,29 @@ interface Props {
     ) => void;
 }
 
-const UpdateTutorDay: React.FC<Props> = ({ dayKey, inputDay, handleChangeSchedule }) => {
+const UpdateTutorDay: React.FC<Props> = ({ 
+    dayKey, 
+    inputDay, 
+    handleAddToSchedule,
+    handleRemoveFromSchedule,
+    handleChangeSchedule
+}) => {
 
     const [day, setDay] = useState<Day[]>(inputDay);
 
     const handleAddTimeSlot = () => {
         setDay(prevDay => [
             ...prevDay,
-            { start: "", end: "", location: "" }
+            { start: "09:00:00", end: "17:00:00", location: "Valencia" }
         ]);
+        handleAddToSchedule(dayKey);
     };
 
-    const handleRemoveTimeSlot = (index: number) => {
-        setDay(prevDay => prevDay.filter((_, i) => i !== index));
+    const handleRemoveTimeSlot = (uniqueKey: string) => {
+        const keySplit = uniqueKey.split('-') // day-index => [day, index]
+        const targetIndex = keySplit[1];
+        setDay(day.filter((_, index) => index !== parseInt(targetIndex)));
+        handleRemoveFromSchedule(uniqueKey);
     };
 
     const handleInputChange = (uniqueKey: string, property: keyof Day, value: string) => {
@@ -32,7 +44,7 @@ const UpdateTutorDay: React.FC<Props> = ({ dayKey, inputDay, handleChangeSchedul
         setDay(prevDay => prevDay.map((timeSlot, i) =>
             i === index ? { ...timeSlot, [property]: value } : timeSlot
         ));
-        handleChangeSchedule(uniqueKey, property, value)
+        handleChangeSchedule(uniqueKey, property, value);
     };
 
     // note: time converts like this
@@ -73,7 +85,7 @@ const UpdateTutorDay: React.FC<Props> = ({ dayKey, inputDay, handleChangeSchedul
                         <button
                             type="button"
                             className="px-2 py-1 ml-4 bg-red-800 rounded transtion duration-200 hover:bg-red-600"
-                            onClick={() => handleRemoveTimeSlot(index)}
+                            onClick={() => handleRemoveTimeSlot(uniqueKey)}
                         >
                             <b>-</b>
                         </button>
