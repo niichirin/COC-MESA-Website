@@ -1,21 +1,17 @@
 import React from "react";
 
-interface Tutor {
-    name: string;
-    schedule: {
-        [key: string]: { start: string; end: string; location?: string }[];
-    };
-}
+import { Schedule } from "./Interfaces.ts"
 
 interface TutorScheduleListProps {
-    tutor: Tutor;
+    inputSchedule: Schedule;
 }
 
-const TutorScheduleList: React.FC<TutorScheduleListProps> = ({ tutor }) => {
-    if (!tutor || !tutor.schedule) return null;
+const TutorScheduleList: React.FC<TutorScheduleListProps> = ({ inputSchedule }) => {
+    
+    if (!inputSchedule) return null;
 
     // JSON in PSQL is unordered, this is here to order the iterations
-    const daysOrder = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+    const daysOrder: (keyof Schedule)[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
     // prevents schedule heading from rendering w/o values
     let scheduleExists = false;
@@ -26,7 +22,7 @@ const TutorScheduleList: React.FC<TutorScheduleListProps> = ({ tutor }) => {
         // split time into hours, minutes, and seconds
         const [hours, minutes] = sqlTime.split(':').map(Number);
 
-        // determine AM or Pm
+        // determine AM or PM
         const meridian = hours >= 12 ? 'PM' : 'AM';
     
         // convert hours to 12-hour format
@@ -35,7 +31,7 @@ const TutorScheduleList: React.FC<TutorScheduleListProps> = ({ tutor }) => {
         // handle 12:00 PM as 12:00 XM
         hours12 = (hours12 === 0 ? 12 : hours12);
     
-        // Format the time as xx:xx XM
+        // format the time as xx:xx XM
         const regularTime = `${hours12.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')} ${meridian}`;
     
         return regularTime;
@@ -44,10 +40,10 @@ const TutorScheduleList: React.FC<TutorScheduleListProps> = ({ tutor }) => {
     // iterate through schedules of each day
     const renderedSchedule = daysOrder.map((key) => {
         // tutor doesn't teach on this day
-        if (!tutor.schedule[key]?.length) return null; 
+        if (!inputSchedule[key].length) return null; 
 
         // concat strings for each timeframe of the day
-        const times = tutor.schedule[key].map((item) => {
+        const times = inputSchedule[key].map((item) => {
             if (item) {
                 scheduleExists = true;
                 return `${convertSQLtime(item.start)} - ${convertSQLtime(item.end)} (${item.location})`;

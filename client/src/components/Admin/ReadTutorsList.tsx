@@ -46,12 +46,7 @@ const ReadTutorsList = () => {
                 return (
                     <div 
                         key={tutor.tutor_id}
-                        className="
-                            bg-neutral-900
-                            px-8 
-                            py-4
-                            rounded
-                        "
+                        className="bg-neutral-900 px-8 py-4 rounded"
                     >
                         <TutorCard tutor={tutor} />
                     </div>
