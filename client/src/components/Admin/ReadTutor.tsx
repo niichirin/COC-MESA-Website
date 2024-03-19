@@ -16,8 +16,6 @@ const ReadTutor = () => {
     const [courses, setCourses] = useState<{ [key: string]: Course }>({});
     const [schedule, setSchedule] = useState<Schedule>();
     const [loading, setLoading] = useState(false);
-    
-    if (!tutor || !courses || !schedule) return;
 
     const { id } = useParams();
     const navigate = useNavigate();
@@ -57,7 +55,7 @@ const ReadTutor = () => {
             <h2 className="text-center font-bold my-4">Tutor Information</h2>
             <div className="bg-neutral-900 px-8 py-4 rounded">
                 <BackToTutors />
-                <h2 className="font-bold mb-2">{tutor.name}</h2>
+                <h2 className="font-bold mt-4 mb-2">{tutor.name}</h2>
                 <p><b>Email: </b><u><a href={`mailto:${tutor.email}`}>{tutor.email}</a></u></p>
                 <p className="mb-2">
                     <b>Courses: </b>

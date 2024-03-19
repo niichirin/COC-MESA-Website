@@ -3,7 +3,7 @@ import React from "react";
 import { Schedule } from "./Interfaces.ts"
 
 interface TutorScheduleListProps {
-    inputSchedule: Schedule;
+    inputSchedule: Schedule | undefined;
 }
 
 const TutorScheduleList: React.FC<TutorScheduleListProps> = ({ inputSchedule }) => {
