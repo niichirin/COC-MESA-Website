@@ -12,8 +12,6 @@ const UpdateTutorCourses: React.FC<Props> = ({ inputCourses }) => {
     const [courses, setCourses] = useState(inputCourses);
     if(!courses) return;   
 
-    console.log(courses);
-
     const defaultCourse: Course = {
         course_id: 0,
         name: "",
